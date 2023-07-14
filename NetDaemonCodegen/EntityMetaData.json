@@ -1,0 +1,1330 @@
+{
+  "domains": [
+    {
+      "domain": "binary_sensor",
+      "entities": [
+        {
+          "id": "binary_sensor.closet_sensor_motion",
+          "friendlyName": "Closet Sensor Motion",
+          "cSharpName": "ClosetSensorMotion"
+        },
+        {
+          "id": "binary_sensor.dteske_pixel_is_charging",
+          "friendlyName": "dteske-pixel Is Charging",
+          "cSharpName": "DteskePixelIsCharging"
+        },
+        {
+          "id": "binary_sensor.ewelink_ds01_d0701129_ias_zone",
+          "friendlyName": "Zigbee Door Sensor d0701129 ias_zone",
+          "cSharpName": "EwelinkDs01D0701129IasZone"
+        },
+        {
+          "id": "binary_sensor.ewelink_ms01_6cee1629_ias_zone",
+          "friendlyName": "Zigbee Motion Sensor 6cee1629 ias_zone",
+          "cSharpName": "EwelinkMs016cee1629IasZone"
+        },
+        {
+          "id": "binary_sensor.hallway_sensor_motion",
+          "friendlyName": "Hallway Sensor Motion",
+          "cSharpName": "HallwaySensorMotion"
+        },
+        {
+          "id": "binary_sensor.laundry_room_sensor_motion",
+          "friendlyName": "Laundry Room Sensor Motion",
+          "cSharpName": "LaundryRoomSensorMotion"
+        },
+        {
+          "id": "binary_sensor.office_motion_ias_zone",
+          "friendlyName": "Office Motion ias_zone",
+          "cSharpName": "OfficeMotionIasZone"
+        },
+        {
+          "id": "binary_sensor.remote_ui",
+          "friendlyName": "Remote UI",
+          "cSharpName": "RemoteUi"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "motion_valid",
+          "cSharpName": "MotionValid",
+          "clrType": "System.Boolean"
+        }
+      ]
+    },
+    {
+      "domain": "button",
+      "entities": [
+        {
+          "id": "button.ewelink_ds01_d0701129_identify",
+          "friendlyName": "Zigbee Door Sensor d0701129 identify",
+          "cSharpName": "EwelinkDs01D0701129Identify"
+        },
+        {
+          "id": "button.ewelink_ms01_6cee1629_identify",
+          "friendlyName": "Zigbee Motion Sensor 6cee1629 identify",
+          "cSharpName": "EwelinkMs016cee1629Identify"
+        },
+        {
+          "id": "button.ewelink_wb01_606f1425_identify",
+          "friendlyName": "Office Button 606f1425 identify",
+          "cSharpName": "EwelinkWb01606f1425Identify"
+        },
+        {
+          "id": "button.ewelink_wb01_64bd1625_identify",
+          "friendlyName": "Living Room Button 64bd1625 identify",
+          "cSharpName": "EwelinkWb0164bd1625Identify"
+        },
+        {
+          "id": "button.ewelink_wb01_cab21625_identify",
+          "friendlyName": "Master Bedroom Button cab21625 identify",
+          "cSharpName": "EwelinkWb01Cab21625Identify"
+        },
+        {
+          "id": "button.identify_elements_ac4b",
+          "friendlyName": "Identify Elements AC4B",
+          "cSharpName": "IdentifyElementsAc4b"
+        },
+        {
+          "id": "button.identify_shapes_7b48",
+          "friendlyName": "Identify Shapes 7B48",
+          "cSharpName": "IdentifyShapes7b48"
+        },
+        {
+          "id": "button.jasco_products_43084_1bccbcfe_identify",
+          "friendlyName": "Dining Room Switch 1bccbcfe identify",
+          "cSharpName": "JascoProducts430841bccbcfeIdentify"
+        },
+        {
+          "id": "button.jasco_products_43084_65ccbcfe_identify",
+          "friendlyName": "Hallway Switch 65ccbcfe identify",
+          "cSharpName": "JascoProducts4308465ccbcfeIdentify"
+        },
+        {
+          "id": "button.jasco_products_43084_7fccbcfe_identify",
+          "friendlyName": "Entryway Switch 7fccbcfe identify",
+          "cSharpName": "JascoProducts430847fccbcfeIdentify"
+        },
+        {
+          "id": "button.jasco_products_43084_84ccbcfe_identify",
+          "friendlyName": "Basement Switch 84ccbcfe identify",
+          "cSharpName": "JascoProducts4308484ccbcfeIdentify"
+        },
+        {
+          "id": "button.jasco_products_43084_8eccbcfe_identify",
+          "friendlyName": "Living Room Switch 8eccbcfe identify",
+          "cSharpName": "JascoProducts430848eccbcfeIdentify"
+        },
+        {
+          "id": "button.jasco_products_43084_f769a6fe_identify",
+          "friendlyName": "Outside Light Switch f769a6fe identify",
+          "cSharpName": "JascoProducts43084F769a6feIdentify"
+        },
+        {
+          "id": "button.office_motion_identify",
+          "friendlyName": "Office Motion identify",
+          "cSharpName": "OfficeMotionIdentify"
+        },
+        {
+          "id": "button.sonoff_s31_lite_zb_086a3d25_identify",
+          "friendlyName": "Table Switch 086a3d25 identify",
+          "cSharpName": "SonoffS31LiteZb086a3d25Identify"
+        },
+        {
+          "id": "button.sonoff_s31_lite_zb_7f673d25_identify",
+          "friendlyName": "Lamp Switch 7f673d25 identify",
+          "cSharpName": "SonoffS31LiteZb7f673d25Identify"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "cover",
+      "entities": [
+        {
+          "id": "cover.garage_door",
+          "friendlyName": "Garage Door",
+          "cSharpName": "GarageDoor"
+        },
+        {
+          "id": "cover.garage_door_2",
+          "friendlyName": "Garage Door",
+          "cSharpName": "GarageDoor2"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "device_tracker",
+      "entities": [
+        {
+          "id": "device_tracker.dteske_pixel",
+          "friendlyName": "dteske-pixel",
+          "cSharpName": "DteskePixel"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "source_type",
+          "cSharpName": "SourceType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "gps_accuracy",
+          "cSharpName": "GpsAccuracy",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "altitude",
+          "cSharpName": "Altitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "course",
+          "cSharpName": "Course",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "speed",
+          "cSharpName": "Speed",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "vertical_accuracy",
+          "cSharpName": "VerticalAccuracy",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "input_boolean",
+      "entities": [
+        {
+          "id": "input_boolean.dev_netdaemon_app_model_hello_yaml_app",
+          "friendlyName": "dev_netdaemon_app_model_hello_yaml_app",
+          "cSharpName": "DevNetdaemonAppModelHelloYamlApp"
+        },
+        {
+          "id": "input_boolean.dev_netdaemon_extensions_scheduling_scheduling_app",
+          "friendlyName": "dev_netdaemon_extensions_scheduling_scheduling_app",
+          "cSharpName": "DevNetdaemonExtensionsSchedulingSchedulingApp"
+        },
+        {
+          "id": "input_boolean.dev_netdaemon_hass_model_hello_world_app",
+          "friendlyName": "dev_netdaemon_hass_model_hello_world_app",
+          "cSharpName": "DevNetdaemonHassModelHelloWorldApp"
+        },
+        {
+          "id": "input_boolean.dev_netdaemon_hass_model_light_on_movement",
+          "friendlyName": "dev_netdaemon_hass_model_light_on_movement",
+          "cSharpName": "DevNetdaemonHassModelLightOnMovement"
+        },
+        {
+          "id": "input_boolean.hallway_motion_allowed",
+          "friendlyName": "Hallway Motion Allowed",
+          "cSharpName": "HallwayMotionAllowed"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "light",
+      "entities": [
+        {
+          "id": "light.bedroom",
+          "friendlyName": "Bedroom",
+          "cSharpName": "Bedroom"
+        },
+        {
+          "id": "light.bulb_2",
+          "friendlyName": "Living Room Lamp",
+          "cSharpName": "Bulb2"
+        },
+        {
+          "id": "light.closet",
+          "friendlyName": "Closet",
+          "cSharpName": "Closet"
+        },
+        {
+          "id": "light.closet_1",
+          "friendlyName": "Closet 1",
+          "cSharpName": "Closet1"
+        },
+        {
+          "id": "light.closet_2",
+          "friendlyName": "Closet 2",
+          "cSharpName": "Closet2"
+        },
+        {
+          "id": "light.driveway",
+          "friendlyName": "Driveway",
+          "cSharpName": "Driveway"
+        },
+        {
+          "id": "light.elements_ac4b",
+          "friendlyName": "Elements AC4B",
+          "cSharpName": "ElementsAc4b"
+        },
+        {
+          "id": "light.hallway",
+          "friendlyName": "Hallway",
+          "cSharpName": "Hallway"
+        },
+        {
+          "id": "light.hallway_1",
+          "friendlyName": "Hallway 1",
+          "cSharpName": "Hallway1"
+        },
+        {
+          "id": "light.hallway_2",
+          "friendlyName": "Hallway 2",
+          "cSharpName": "Hallway2"
+        },
+        {
+          "id": "light.hallway_3",
+          "friendlyName": "Hallway",
+          "cSharpName": "Hallway3"
+        },
+        {
+          "id": "light.hue_bloom",
+          "friendlyName": "Hue Bloom",
+          "cSharpName": "HueBloom"
+        },
+        {
+          "id": "light.hue_bloom_2",
+          "friendlyName": "Hue Bloom 2",
+          "cSharpName": "HueBloom2"
+        },
+        {
+          "id": "light.hue_color_lamp_1",
+          "friendlyName": "Kitchen Sink",
+          "cSharpName": "HueColorLamp1"
+        },
+        {
+          "id": "light.hue_filament_bulb_1",
+          "friendlyName": "Hue filament bulb 1",
+          "cSharpName": "HueFilamentBulb1"
+        },
+        {
+          "id": "light.hue_filament_bulb_2",
+          "friendlyName": "Hue filament bulb 2",
+          "cSharpName": "HueFilamentBulb2"
+        },
+        {
+          "id": "light.hue_filament_bulb_3",
+          "friendlyName": "Hue filament bulb 3",
+          "cSharpName": "HueFilamentBulb3"
+        },
+        {
+          "id": "light.jasco_products_43084_1bccbcfe_on_off",
+          "friendlyName": "Dining Room Switch",
+          "cSharpName": "JascoProducts430841bccbcfeOnOff"
+        },
+        {
+          "id": "light.jasco_products_43084_65ccbcfe_on_off",
+          "friendlyName": "Hallway Switch 65ccbcfe on_off",
+          "cSharpName": "JascoProducts4308465ccbcfeOnOff"
+        },
+        {
+          "id": "light.jasco_products_43084_7fccbcfe_on_off",
+          "friendlyName": "Entryway Switch 7fccbcfe on_off",
+          "cSharpName": "JascoProducts430847fccbcfeOnOff"
+        },
+        {
+          "id": "light.jasco_products_43084_84ccbcfe_on_off",
+          "friendlyName": "Basement Switch 84ccbcfe on_off",
+          "cSharpName": "JascoProducts4308484ccbcfeOnOff"
+        },
+        {
+          "id": "light.jasco_products_43084_8eccbcfe_on_off",
+          "friendlyName": "Living Room Switch 8eccbcfe on_off",
+          "cSharpName": "JascoProducts430848eccbcfeOnOff"
+        },
+        {
+          "id": "light.jasco_products_43084_f769a6fe_on_off",
+          "friendlyName": "Outside Light Switch f769a6fe on_off",
+          "cSharpName": "JascoProducts43084F769a6feOnOff"
+        },
+        {
+          "id": "light.kitchen",
+          "friendlyName": "Kitchen",
+          "cSharpName": "Kitchen"
+        },
+        {
+          "id": "light.kitchen_overhead",
+          "friendlyName": "Kitchen Overhead ",
+          "cSharpName": "KitchenOverhead"
+        },
+        {
+          "id": "light.lamp",
+          "friendlyName": "Lamp",
+          "cSharpName": "Lamp"
+        },
+        {
+          "id": "light.laundry_room",
+          "friendlyName": "Laundry room",
+          "cSharpName": "LaundryRoom"
+        },
+        {
+          "id": "light.laundry_room_light",
+          "friendlyName": "Laundry Room Light",
+          "cSharpName": "LaundryRoomLight"
+        },
+        {
+          "id": "light.nightstand",
+          "friendlyName": "Nightstand",
+          "cSharpName": "Nightstand"
+        },
+        {
+          "id": "light.office",
+          "friendlyName": "Office",
+          "cSharpName": "Office"
+        },
+        {
+          "id": "light.outside_front",
+          "friendlyName": "Outside Front",
+          "cSharpName": "OutsideFront"
+        },
+        {
+          "id": "light.overhead_light_1",
+          "friendlyName": "Kitchen Tall 3",
+          "cSharpName": "OverheadLight1"
+        },
+        {
+          "id": "light.overhead_light_2",
+          "friendlyName": "Kitchen Tall 1",
+          "cSharpName": "OverheadLight2"
+        },
+        {
+          "id": "light.overhead_light_3",
+          "friendlyName": "Kitchen Tall 2",
+          "cSharpName": "OverheadLight3"
+        },
+        {
+          "id": "light.shapes_7b48",
+          "friendlyName": "Shapes 7B48",
+          "cSharpName": "Shapes7b48"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "min_mireds",
+          "cSharpName": "MinMireds",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max_mireds",
+          "cSharpName": "MaxMireds",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "effect_list",
+          "cSharpName": "EffectList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "supported_color_modes",
+          "cSharpName": "SupportedColorModes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "entity_id",
+          "cSharpName": "EntityId",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "hs_color",
+          "cSharpName": "HsColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "rgb_color",
+          "cSharpName": "RgbColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "xy_color",
+          "cSharpName": "XyColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "effect",
+          "cSharpName": "Effect",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "dynamics",
+          "cSharpName": "Dynamics",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "is_hue_group",
+          "cSharpName": "IsHueGroup",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "hue_scenes",
+          "cSharpName": "HueScenes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "hue_type",
+          "cSharpName": "HueType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "lights",
+          "cSharpName": "Lights",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "off_with_transition",
+          "cSharpName": "OffWithTransition",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "off_brightness",
+          "cSharpName": "OffBrightness",
+          "clrType": "System.Object"
+        }
+      ]
+    },
+    {
+      "domain": "media_player",
+      "entities": [
+        {
+          "id": "media_player.basement_speaker",
+          "friendlyName": "Basement speaker",
+          "cSharpName": "BasementSpeaker"
+        },
+        {
+          "id": "media_player.basement_tv_2",
+          "friendlyName": "Basement TV",
+          "cSharpName": "BasementTv2"
+        },
+        {
+          "id": "media_player.bathroom_clock",
+          "friendlyName": "Bathroom Clock",
+          "cSharpName": "BathroomClock"
+        },
+        {
+          "id": "media_player.bedroom_clock",
+          "friendlyName": "Bedroom clock",
+          "cSharpName": "BedroomClock"
+        },
+        {
+          "id": "media_player.kitchen_speaker",
+          "friendlyName": "Kitchen speaker",
+          "cSharpName": "KitchenSpeaker"
+        },
+        {
+          "id": "media_player.living_room_speaker",
+          "friendlyName": "Living Room speaker",
+          "cSharpName": "LivingRoomSpeaker"
+        },
+        {
+          "id": "media_player.living_room_tv",
+          "friendlyName": "Living Room TV",
+          "cSharpName": "LivingRoomTv"
+        },
+        {
+          "id": "media_player.master_bedroom",
+          "friendlyName": "Master Bedroom",
+          "cSharpName": "MasterBedroom"
+        },
+        {
+          "id": "media_player.master_bedroom_display",
+          "friendlyName": "Master Bedroom display",
+          "cSharpName": "MasterBedroomDisplay"
+        },
+        {
+          "id": "media_player.office_display",
+          "friendlyName": "Office display",
+          "cSharpName": "OfficeDisplay"
+        },
+        {
+          "id": "media_player.speakers",
+          "friendlyName": "Speakers",
+          "cSharpName": "Speakers"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "person",
+      "entities": [
+        {
+          "id": "person.daric_teske",
+          "friendlyName": "Daric Teske",
+          "cSharpName": "DaricTeske"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "gps_accuracy",
+          "cSharpName": "GpsAccuracy",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "source",
+          "cSharpName": "Source",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "user_id",
+          "cSharpName": "UserId",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "scene",
+      "entities": [
+        {
+          "id": "scene.bedroom_bright",
+          "friendlyName": "Bedroom Bright",
+          "cSharpName": "BedroomBright"
+        },
+        {
+          "id": "scene.bedroom_read",
+          "friendlyName": "Bedroom Read",
+          "cSharpName": "BedroomRead"
+        },
+        {
+          "id": "scene.bedroom_relax",
+          "friendlyName": "Bedroom Relax",
+          "cSharpName": "BedroomRelax"
+        },
+        {
+          "id": "scene.bedroom_rest",
+          "friendlyName": "Bedroom Rest",
+          "cSharpName": "BedroomRest"
+        },
+        {
+          "id": "scene.hallway_concentrate",
+          "friendlyName": "Hallway Concentrate",
+          "cSharpName": "HallwayConcentrate"
+        },
+        {
+          "id": "scene.hallway_energize",
+          "friendlyName": "Hallway Energize",
+          "cSharpName": "HallwayEnergize"
+        },
+        {
+          "id": "scene.hallway_nightlight",
+          "friendlyName": "Hallway Nightlight",
+          "cSharpName": "HallwayNightlight"
+        },
+        {
+          "id": "scene.hallway_read",
+          "friendlyName": "Hallway Read",
+          "cSharpName": "HallwayRead"
+        },
+        {
+          "id": "scene.hallway_relax",
+          "friendlyName": "Hallway Relax",
+          "cSharpName": "HallwayRelax"
+        },
+        {
+          "id": "scene.hallway_rest",
+          "friendlyName": "Hallway Rest",
+          "cSharpName": "HallwayRest"
+        },
+        {
+          "id": "scene.kitchen_concentrate",
+          "friendlyName": "Kitchen Concentrate",
+          "cSharpName": "KitchenConcentrate"
+        },
+        {
+          "id": "scene.kitchen_energize",
+          "friendlyName": "Kitchen Energize",
+          "cSharpName": "KitchenEnergize"
+        },
+        {
+          "id": "scene.kitchen_nightlight",
+          "friendlyName": "Kitchen Nightlight",
+          "cSharpName": "KitchenNightlight"
+        },
+        {
+          "id": "scene.kitchen_read",
+          "friendlyName": "Kitchen Read",
+          "cSharpName": "KitchenRead"
+        },
+        {
+          "id": "scene.kitchen_relax",
+          "friendlyName": "Kitchen Relax",
+          "cSharpName": "KitchenRelax"
+        },
+        {
+          "id": "scene.kitchen_rest",
+          "friendlyName": "Kitchen Rest",
+          "cSharpName": "KitchenRest"
+        },
+        {
+          "id": "scene.laundry_room_bright",
+          "friendlyName": "Laundry room Bright",
+          "cSharpName": "LaundryRoomBright"
+        },
+        {
+          "id": "scene.office_bright",
+          "friendlyName": "Office Bright",
+          "cSharpName": "OfficeBright"
+        },
+        {
+          "id": "scene.office_relax",
+          "friendlyName": "Office Relax",
+          "cSharpName": "OfficeRelax"
+        },
+        {
+          "id": "scene.office_rest",
+          "friendlyName": "Office Rest",
+          "cSharpName": "OfficeRest"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "group_name",
+          "cSharpName": "GroupName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "group_type",
+          "cSharpName": "GroupType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "name",
+          "cSharpName": "Name",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "speed",
+          "cSharpName": "Speed",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "is_dynamic",
+          "cSharpName": "IsDynamic",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "entities": [
+        {
+          "id": "sensor.dteske_pixel_battery_health",
+          "friendlyName": "dteske-pixel Battery Health",
+          "cSharpName": "DteskePixelBatteryHealth"
+        },
+        {
+          "id": "sensor.dteske_pixel_battery_state",
+          "friendlyName": "dteske-pixel Battery State",
+          "cSharpName": "DteskePixelBatteryState"
+        },
+        {
+          "id": "sensor.dteske_pixel_charger_type",
+          "friendlyName": "dteske-pixel Charger Type",
+          "cSharpName": "DteskePixelChargerType"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "sensor.closet_sensor_battery",
+          "friendlyName": "Closet Sensor Battery",
+          "cSharpName": "ClosetSensorBattery"
+        },
+        {
+          "id": "sensor.closet_sensor_illuminance",
+          "friendlyName": "Closet Sensor Illuminance",
+          "cSharpName": "ClosetSensorIlluminance"
+        },
+        {
+          "id": "sensor.closet_sensor_temperature",
+          "friendlyName": "Closet Sensor Temperature",
+          "cSharpName": "ClosetSensorTemperature"
+        },
+        {
+          "id": "sensor.dteske_pixel_battery_level",
+          "friendlyName": "dteske-pixel Battery Level",
+          "cSharpName": "DteskePixelBatteryLevel"
+        },
+        {
+          "id": "sensor.dteske_pixel_battery_power",
+          "friendlyName": "dteske-pixel Battery Power",
+          "cSharpName": "DteskePixelBatteryPower"
+        },
+        {
+          "id": "sensor.dteske_pixel_battery_temperature",
+          "friendlyName": "dteske-pixel Battery Temperature",
+          "cSharpName": "DteskePixelBatteryTemperature"
+        },
+        {
+          "id": "sensor.ewelink_ds01_d0701129_power",
+          "friendlyName": "Zigbee Door Sensor d0701129 power",
+          "cSharpName": "EwelinkDs01D0701129Power"
+        },
+        {
+          "id": "sensor.ewelink_ms01_6cee1629_power",
+          "friendlyName": "Zigbee Motion Sensor 6cee1629 power",
+          "cSharpName": "EwelinkMs016cee1629Power"
+        },
+        {
+          "id": "sensor.ewelink_wb01_606f1425_power",
+          "friendlyName": "Office Button 606f1425 power",
+          "cSharpName": "EwelinkWb01606f1425Power"
+        },
+        {
+          "id": "sensor.ewelink_wb01_64bd1625_power",
+          "friendlyName": "Living Room Button 64bd1625 power",
+          "cSharpName": "EwelinkWb0164bd1625Power"
+        },
+        {
+          "id": "sensor.ewelink_wb01_cab21625_power",
+          "friendlyName": "Master Bedroom Button cab21625 power",
+          "cSharpName": "EwelinkWb01Cab21625Power"
+        },
+        {
+          "id": "sensor.hallway_sensor_battery",
+          "friendlyName": "Hallway Sensor Battery",
+          "cSharpName": "HallwaySensorBattery"
+        },
+        {
+          "id": "sensor.hallway_sensor_illuminance",
+          "friendlyName": "Hallway Sensor Illuminance",
+          "cSharpName": "HallwaySensorIlluminance"
+        },
+        {
+          "id": "sensor.hallway_sensor_temperature",
+          "friendlyName": "Hallway Sensor Temperature",
+          "cSharpName": "HallwaySensorTemperature"
+        },
+        {
+          "id": "sensor.laundry_room_sensor_battery",
+          "friendlyName": "Laundry Room Sensor Battery",
+          "cSharpName": "LaundryRoomSensorBattery"
+        },
+        {
+          "id": "sensor.laundry_room_sensor_illuminance",
+          "friendlyName": "Laundry Room Sensor Illuminance",
+          "cSharpName": "LaundryRoomSensorIlluminance"
+        },
+        {
+          "id": "sensor.laundry_room_sensor_temperature",
+          "friendlyName": "Laundry Room Sensor Temperature",
+          "cSharpName": "LaundryRoomSensorTemperature"
+        },
+        {
+          "id": "sensor.office_motion_power",
+          "friendlyName": "Office Motion power",
+          "cSharpName": "OfficeMotionPower"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "unit_of_measurement",
+          "cSharpName": "UnitOfMeasurement",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "current",
+          "cSharpName": "Current",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "voltage",
+          "cSharpName": "Voltage",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "state_class",
+          "cSharpName": "StateClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "temperature_valid",
+          "cSharpName": "TemperatureValid",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "light_level",
+          "cSharpName": "LightLevel",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "light_level_valid",
+          "cSharpName": "LightLevelValid",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "battery_state",
+          "cSharpName": "BatteryState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "battery_voltage",
+          "cSharpName": "BatteryVoltage",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "sun",
+      "entities": [
+        {
+          "id": "sun.sun",
+          "friendlyName": "Sun",
+          "cSharpName": "Sun"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "next_dawn",
+          "cSharpName": "NextDawn",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_dusk",
+          "cSharpName": "NextDusk",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_midnight",
+          "cSharpName": "NextMidnight",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_noon",
+          "cSharpName": "NextNoon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_rising",
+          "cSharpName": "NextRising",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_setting",
+          "cSharpName": "NextSetting",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "elevation",
+          "cSharpName": "Elevation",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "azimuth",
+          "cSharpName": "Azimuth",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "rising",
+          "cSharpName": "Rising",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "switch",
+      "entities": [
+        {
+          "id": "switch.closet_sensor_illuminance",
+          "friendlyName": "Closet Sensor Illuminance",
+          "cSharpName": "ClosetSensorIlluminance"
+        },
+        {
+          "id": "switch.closet_sensor_motion",
+          "friendlyName": "Closet Sensor Motion",
+          "cSharpName": "ClosetSensorMotion"
+        },
+        {
+          "id": "switch.hallway_sensor_illuminance",
+          "friendlyName": "Hallway Sensor Illuminance",
+          "cSharpName": "HallwaySensorIlluminance"
+        },
+        {
+          "id": "switch.hallway_sensor_motion",
+          "friendlyName": "Hallway Sensor Motion",
+          "cSharpName": "HallwaySensorMotion"
+        },
+        {
+          "id": "switch.laundry_room_sensor_illuminance",
+          "friendlyName": "Laundry Room Sensor Illuminance",
+          "cSharpName": "LaundryRoomSensorIlluminance"
+        },
+        {
+          "id": "switch.laundry_room_sensor_motion",
+          "friendlyName": "Laundry Room Sensor Motion",
+          "cSharpName": "LaundryRoomSensorMotion"
+        },
+        {
+          "id": "switch.sonoff_s31_lite_zb_086a3d25_on_off",
+          "friendlyName": "Table Switch",
+          "cSharpName": "SonoffS31LiteZb086a3d25OnOff"
+        },
+        {
+          "id": "switch.sonoff_s31_lite_zb_7f673d25_on_off",
+          "friendlyName": "Lamp Switch",
+          "cSharpName": "SonoffS31LiteZb7f673d25OnOff"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "weather",
+      "entities": [
+        {
+          "id": "weather.home",
+          "friendlyName": "Home",
+          "cSharpName": "Home"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "temperature_unit",
+          "cSharpName": "TemperatureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "humidity",
+          "cSharpName": "Humidity",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure",
+          "cSharpName": "Pressure",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure_unit",
+          "cSharpName": "PressureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "wind_bearing",
+          "cSharpName": "WindBearing",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "wind_speed",
+          "cSharpName": "WindSpeed",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "wind_speed_unit",
+          "cSharpName": "WindSpeedUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "visibility_unit",
+          "cSharpName": "VisibilityUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "precipitation_unit",
+          "cSharpName": "PrecipitationUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "forecast",
+          "cSharpName": "Forecast",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "zone",
+      "entities": [
+        {
+          "id": "zone.buildertrend",
+          "friendlyName": "Buildertrend",
+          "cSharpName": "Buildertrend"
+        },
+        {
+          "id": "zone.home",
+          "friendlyName": "Home",
+          "cSharpName": "Home"
+        },
+        {
+          "id": "zone.megan_s",
+          "friendlyName": "Megan\u0027s",
+          "cSharpName": "MeganS"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "radius",
+          "cSharpName": "Radius",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "passive",
+          "cSharpName": "Passive",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "persons",
+          "cSharpName": "Persons",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    }
+  ]
+}
