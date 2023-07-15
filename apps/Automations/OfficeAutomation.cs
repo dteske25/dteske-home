@@ -5,17 +5,16 @@ using HomeAssistantGenerated;
 using NetDaemon.Extensions.Scheduler;
 using TeskeHomeAssistant;
 
-namespace HassModel;
+namespace Automations;
 
 /// <summary>
 ///     Showcase using the new HassModel API and turn on light on movement
 /// </summary>
 [NetDaemonApp]
-public class OfficeMotion
+public class OfficeAutomation
 {
-    public OfficeMotion(IHaContext ha, IScheduler scheduler)
+    public OfficeAutomation(IHaContext ha, IScheduler scheduler, ZhaServices zhaServices, Entities entities)
     {
-        var entities = new Entities(ha);
         entities.BinarySensor.OfficeMotionIasZone
             .StateChanges()
             .Where(obv => obv.New?.State == "on")
@@ -45,7 +44,7 @@ public class OfficeMotion
                 entities.Light.Shapes7b48.TurnOff(turnOffData);
             });
 
-
+        
 //        Event { DataElement = {"device_ieee":"00:12:4b:00:25:14:6f:60","unique_id":"00:12:4b:00:25:14:6f:60:1:0x0006","device_id":"4cb66373e53a04de144b897a321661f2","endpoint_id":1,"cluster_id":6,"command":"toggle","args":[],"params":{}}, EventType = zha_event, Origin = LOCAL, TimeFired = 7/11/2023 11:20:37 PM }
 //Event { DataElement = {"device_ieee":"00:12:4b:00:25:14:6f:60","unique_id":"00:12:4b:00:25:14:6f:60:1:0x0006","device_id":"4cb66373e53a04de144b897a321661f2","endpoint_id":1,"cluster_id":6,"command":"off","args":[],"params":{}}, EventType = zha_event, Origin = LOCAL, TimeFired = 7/11/2023 11:20:40 PM }
 
