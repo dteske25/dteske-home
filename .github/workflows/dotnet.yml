@@ -22,11 +22,11 @@ jobs:
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Publish
-      run: dotnet publish -c Release -o /build
-    - name: Upload dotnet test results
-      uses: actions/upload-artifact@v3
-      with:
-        name: dotnet-results-${{ vars.GITHUB_RUN_ID }}
-        path: /build
-      if: ${{ always() }}
+    - name: Build
+      run: dotnet build -c Release
+#     - name: Upload dotnet test results
+#       uses: actions/upload-artifact@v3
+#       with:
+#         name: dotnet-results-${{ vars.GITHUB_RUN_ID }}
+#         path: 
+#       if: ${{ always() }}
