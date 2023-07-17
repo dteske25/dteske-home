@@ -24,9 +24,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet publish -c Release
-    - name: Upload dotnet test results
+    - name: Upload dotnet artifacts
       uses: actions/upload-artifact@v3
       with:
         name: dotnet-results-${{ vars.GITHUB_RUN_ID }}
-        path: /home/runner/work/dteske-home/dteske-home/bin/Release/net7.0/
+        path: /home/runner/work/dteske-home/dteske-home/bin/Release/net7.0/publish/
       if: ${{ always() }}
