@@ -1,10 +1,3 @@
-// Use unique namespaces for your apps if you going to share with others to avoid
-// conflicting names
-using System.Reactive.Concurrency;
-using HomeAssistantGenerated;
-using NetDaemon.Extensions.Scheduler;
-using TeskeHomeAssistant;
-
 namespace Automations;
 
 /// <summary>
@@ -13,21 +6,26 @@ namespace Automations;
 [NetDaemonApp]
 public class OfficeAutomation
 {
-    public OfficeAutomation(IHaContext ha, IScheduler scheduler, ZhaServices zhaServices, Entities entities)
+    private bool _motionEnabled;
+    public OfficeAutomation(IHaContext ha, IScheduler scheduler, Entities entities)
     {
+        var officeLights = new List<LightEntity>
+        {
+            entities.Light.HueBloom,
+            entities.Light.HueBloom2,
+            entities.Light.Shapes7b48
+        };
+
         entities.BinarySensor.OfficeMotionIasZone
             .StateChanges()
             .Where(obv => obv.New?.State == "on")
             .Subscribe(_ =>
             {
-                var turnOnData = new LightTurnOnParameters
+                if (!_motionEnabled)
                 {
-                    Transition = 3,
-                    BrightnessPct = GlobalConfiguration.GetBrightness(),
-                };
-                entities.Light.HueBloom.TurnOn(turnOnData);
-                entities.Light.HueBloom2.TurnOn(turnOnData);
-                entities.Light.Shapes7b48.TurnOn(turnOnData);
+                    return;
+                }
+                LightHelpers.TurnOn(officeLights);
             });
 
         entities.BinarySensor.OfficeMotionIasZone
@@ -35,28 +33,25 @@ public class OfficeAutomation
             .WhenStateIsFor(obv => obv?.State == "off", TimeSpan.FromMinutes(15), scheduler)
             .Subscribe(_ =>
             {
-                var turnOffData = new LightTurnOffParameters
+                if (!_motionEnabled)
                 {
-                    Transition = 3
-                };
-                entities.Light.HueBloom.TurnOff(turnOffData); 
-                entities.Light.HueBloom2.TurnOff(turnOffData);
-                entities.Light.Shapes7b48.TurnOff(turnOffData);
+                    return;
+                }
+                LightHelpers.TurnOff(officeLights);
             });
 
-        
-//        Event { DataElement = {"device_ieee":"00:12:4b:00:25:14:6f:60","unique_id":"00:12:4b:00:25:14:6f:60:1:0x0006","device_id":"4cb66373e53a04de144b897a321661f2","endpoint_id":1,"cluster_id":6,"command":"toggle","args":[],"params":{}}, EventType = zha_event, Origin = LOCAL, TimeFired = 7/11/2023 11:20:37 PM }
-//Event { DataElement = {"device_ieee":"00:12:4b:00:25:14:6f:60","unique_id":"00:12:4b:00:25:14:6f:60:1:0x0006","device_id":"4cb66373e53a04de144b897a321661f2","endpoint_id":1,"cluster_id":6,"command":"off","args":[],"params":{}}, EventType = zha_event, Origin = LOCAL, TimeFired = 7/11/2023 11:20:40 PM }
-
-        ha.Events.Where(e => e.EventType == "zha_event").Subscribe(e =>
+        ha.Events.Where(ZigbeeDeviceName.Office, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
-            var deviceId = e.DataElement?.GetProperty("device_id").GetString();
-            var command = e.DataElement?.GetProperty("command").GetString();
-
-            Console.WriteLine($"{deviceId} {command}");
+            _motionEnabled = false;
+            LightHelpers.TurnOff(officeLights);
+            scheduler.Schedule(TimeSpan.FromHours(6), () => _motionEnabled = true);
         });
-        entities.Button.EwelinkWb01606f1425Identify.StateChanges().Subscribe(obv => obv.ToString());
-        entities.Button.EwelinkWb0164bd1625Identify.StateChanges().Subscribe(obv => obv.ToString());
-        entities.Button.EwelinkWb01Cab21625Identify.StateChanges().Subscribe(obv => obv.ToString());
+
+        ha.Events.Where(ZigbeeDeviceName.Office, ZigbeeButtonCommands.Press).Subscribe(_ =>
+        {
+            _motionEnabled = false;
+            LightHelpers.TurnOn(officeLights);
+            scheduler.Schedule(TimeSpan.FromMinutes(15), () => _motionEnabled = true);
+        });
     }
 }
