@@ -23,10 +23,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build -c Release
-#     - name: Upload dotnet test results
-#       uses: actions/upload-artifact@v3
-#       with:
-#         name: dotnet-results-${{ vars.GITHUB_RUN_ID }}
-#         path: 
-#       if: ${{ always() }}
+      run: dotnet publish -c Release
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: dotnet-results-${{ vars.GITHUB_RUN_ID }}
+        path: /home/runner/work/dteske-home/dteske-home/bin/Release/net7.0/
+      if: ${{ always() }}
