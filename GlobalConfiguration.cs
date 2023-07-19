@@ -38,6 +38,7 @@ namespace TeskeHomeAssistant
             ZigbeeDeviceName.LivingRoomSwitch => "84:fd:27:ff:fe:bc:cc:8e",
             ZigbeeDeviceName.LivingRoomOutlet => "00:12:4b:00:25:3d:67:7f",
             ZigbeeDeviceName.LivingRoomTable => "00:12:4b:00:25:3d:6a:08",
+            ZigbeeDeviceName.OfficeButton => "00:12:4b:00:25:14:6f:60",
             _ => ""
         };
 

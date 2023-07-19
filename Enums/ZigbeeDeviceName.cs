@@ -13,7 +13,7 @@ namespace TeskeHomeAssistant.Enums
         LivingRoomSwitch,
         LivingRoomOutlet,
         LivingRoomTable,
-        Office,
+        OfficeButton,
         MasterBed
     }
 

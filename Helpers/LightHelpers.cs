@@ -10,12 +10,12 @@ namespace TeskeHomeAssistant.Helpers
 {
     public static class LightHelpers
     {
-        public static void TurnOn(IEnumerable<LightEntity> lights)
+        public static void TurnOn(IEnumerable<LightEntity> lights, long? brightnessPct = null)
         {
             var turnOnData = new LightTurnOnParameters
             {
                 Transition = 1,
-                BrightnessPct = GlobalConfiguration.GetBrightness(),
+                BrightnessPct = brightnessPct ?? GlobalConfiguration.GetBrightness(),
             };
             foreach (var light in lights)
             {
@@ -27,7 +27,7 @@ namespace TeskeHomeAssistant.Helpers
         {
             var turnOffData = new LightTurnOffParameters
             {
-                Transition = 3
+                Transition = 1
             };
             foreach (var light in lights)
             {

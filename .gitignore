@@ -10,3 +10,4 @@ access-token.txt
 *.pubxml
 *.pubxml.user
 *.csproj.user
+publish/**

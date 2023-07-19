@@ -6,7 +6,7 @@ namespace Automations;
 [NetDaemonApp]
 public class OfficeAutomation
 {
-    private bool _motionEnabled;
+    //private bool _motionEnabled = true;
     public OfficeAutomation(IHaContext ha, IScheduler scheduler, Entities entities)
     {
         var officeLights = new List<LightEntity>
@@ -21,10 +21,10 @@ public class OfficeAutomation
             .Where(obv => obv.New?.State == "on")
             .Subscribe(_ =>
             {
-                if (!_motionEnabled)
-                {
-                    return;
-                }
+                //if (!_motionEnabled)
+                //{
+                //    return;
+                //}
                 LightHelpers.TurnOn(officeLights);
             });
 
@@ -33,25 +33,25 @@ public class OfficeAutomation
             .WhenStateIsFor(obv => obv?.State == "off", TimeSpan.FromMinutes(15), scheduler)
             .Subscribe(_ =>
             {
-                if (!_motionEnabled)
-                {
-                    return;
-                }
+                //if (!_motionEnabled)
+                //{
+                //    return;
+                //}
                 LightHelpers.TurnOff(officeLights);
             });
 
-        ha.Events.Where(ZigbeeDeviceName.Office, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
+        ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
-            _motionEnabled = false;
+            //_motionEnabled = false;
             LightHelpers.TurnOff(officeLights);
-            scheduler.Schedule(TimeSpan.FromHours(6), () => _motionEnabled = true);
+            //scheduler.Schedule(TimeSpan.FromHours(6), () => _motionEnabled = true);
         });
 
-        ha.Events.Where(ZigbeeDeviceName.Office, ZigbeeButtonCommands.Press).Subscribe(_ =>
+        ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
-            _motionEnabled = false;
-            LightHelpers.TurnOn(officeLights);
-            scheduler.Schedule(TimeSpan.FromMinutes(15), () => _motionEnabled = true);
+            //_motionEnabled = false;
+            LightHelpers.TurnOn(officeLights, 60);
+            //scheduler.Schedule(TimeSpan.FromMinutes(15), () => _motionEnabled = true);
         });
     }
 }
