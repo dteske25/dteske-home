@@ -27,6 +27,6 @@ jobs:
     - name: Upload dotnet artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: dotnet-results-${{ env.GITHUB_RUN_ID }}
+        name: "dotnet-results-${{ github.RUN_ID }}"
         path: /home/runner/work/dteske-home/dteske-home/bin/Release/net7.0/publish/
       if: ${{ always() }}
