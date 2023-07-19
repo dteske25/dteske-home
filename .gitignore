@@ -7,3 +7,6 @@ appsettings.Development.json
 #appsettings.json
 #HomeAssistantGenerated.cs
 access-token.txt
+*.pubxml
+*.pubxml.user
+*.csproj.user
