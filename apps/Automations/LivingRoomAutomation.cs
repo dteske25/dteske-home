@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+
 namespace Automations;
 
 /// <summary>
@@ -6,40 +8,39 @@ namespace Automations;
 [NetDaemonApp]
 public class LivingRoomAutomation
 {
-    public LivingRoomAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ZhaServices zhaServices)
+    public LivingRoomAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<LivingRoomAutomation> logger)
     {
         var lights = new List<LightEntity>
         {
             entities.Light.Bulb2,
-
-
         };
+
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
             LightHelpers.TurnOn(lights);
 
-            entities.Switch.SonoffS31LiteZb086a3d25OnOff.TurnOn();
-            entities.Switch.SonoffS31LiteZb7f673d25OnOff.TurnOn();
+            entities.Switch.LivingRoomTable.TurnOn();
+            entities.Switch.LivingRoomSquareLamp.TurnOn();
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
-            entities.Switch.SonoffS31LiteZb086a3d25OnOff.TurnOff();
+            entities.Switch.LivingRoomSquareLamp.TurnOff();
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             LightHelpers.TurnOff(lights);
-            entities.Switch.SonoffS31LiteZb086a3d25OnOff.TurnOff();
-            entities.Switch.SonoffS31LiteZb7f673d25OnOff.TurnOff();
+            entities.Switch.LivingRoomTable.TurnOff();
+            entities.Switch.LivingRoomSquareLamp.TurnOff();
         });
 
-        entities.Light.JascoProducts430848eccbcfeOnOff.StateChanges()
+        entities.Light.LivingRoomSwitch.StateChanges()
             .Subscribe(e =>
             {
                 if (e.New?.State == "off")
                 {
-                    entities.Light.JascoProducts430848eccbcfeOnOff.TurnOn();
+                    entities.Light.LivingRoomSwitch.TurnOn();
                     scheduler.Schedule(TimeSpan.FromSeconds(1), () =>
                     {
                         LightHelpers.TurnOff(lights);

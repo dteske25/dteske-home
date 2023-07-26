@@ -1,3 +1,6 @@
+using Microsoft.Extensions.Logging;
+using NetDaemon.Extensions.Tts;
+
 namespace Automations;
 
 /// <summary>
@@ -6,8 +9,7 @@ namespace Automations;
 [NetDaemonApp]
 public class OfficeAutomation
 {
-    //private bool _motionEnabled = true;
-    public OfficeAutomation(IHaContext ha, IScheduler scheduler, Entities entities)
+    public OfficeAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<OfficeAutomation> logger)
     {
         var officeLights = new List<LightEntity>
         {
@@ -16,42 +18,24 @@ public class OfficeAutomation
             entities.Light.Shapes7b48
         };
 
-        entities.BinarySensor.OfficeMotionIasZone
-            .StateChanges()
-            .Where(obv => obv.New?.State == "on")
-            .Subscribe(_ =>
-            {
-                //if (!_motionEnabled)
-                //{
-                //    return;
-                //}
-                LightHelpers.TurnOn(officeLights);
-            });
-
-        entities.BinarySensor.OfficeMotionIasZone
-            .StateChanges()
-            .WhenStateIsFor(obv => obv?.State == "off", TimeSpan.FromMinutes(15), scheduler)
-            .Subscribe(_ =>
-            {
-                //if (!_motionEnabled)
-                //{
-                //    return;
-                //}
-                LightHelpers.TurnOff(officeLights);
-            });
+        new MotionBuilder(entities.BinarySensor.OfficeSensorMotion, scheduler, logger)
+            .WithMotionAllowed(entities.InputBoolean.OfficeMotionAllowed)
+            .WithOnAction(_ => LightHelpers.TurnOn(officeLights, 60))
+            .WithOffAction(_ => LightHelpers.TurnOff(officeLights))
+            .Build();
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
-            //_motionEnabled = false;
+            entities.InputBoolean.OfficeMotionAllowed.TurnOff();
             LightHelpers.TurnOff(officeLights);
-            //scheduler.Schedule(TimeSpan.FromHours(6), () => _motionEnabled = true);
+            scheduler.Schedule(TimeSpan.FromHours(2), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
-            //_motionEnabled = false;
+            entities.InputBoolean.OfficeMotionAllowed.TurnOff();
             LightHelpers.TurnOn(officeLights, 60);
-            //scheduler.Schedule(TimeSpan.FromMinutes(15), () => _motionEnabled = true);
+            scheduler.Schedule(TimeSpan.FromHours(1), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });
     }
 }

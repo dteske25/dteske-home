@@ -676,62 +676,6 @@
       }
     }
   },
-  "timer": {
-    "reload": {
-      "name": "",
-      "description": "",
-      "fields": {}
-    },
-    "start": {
-      "name": "Start",
-      "description": "Start a timer",
-      "fields": {
-        "duration": {
-          "description": "Duration the timer requires to finish. [optional]",
-          "default": 0,
-          "example": "00:01:00 or 60",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "timer"
-        }
-      }
-    },
-    "pause": {
-      "name": "Pause",
-      "description": "Pause a timer.",
-      "fields": {},
-      "target": {
-        "entity": {
-          "domain": "timer"
-        }
-      }
-    },
-    "cancel": {
-      "name": "Cancel",
-      "description": "Cancel a timer.",
-      "fields": {},
-      "target": {
-        "entity": {
-          "domain": "timer"
-        }
-      }
-    },
-    "finish": {
-      "name": "Finish",
-      "description": "Finish a timer.",
-      "fields": {},
-      "target": {
-        "entity": {
-          "domain": "timer"
-        }
-      }
-    }
-  },
   "script": {
     "reload": {
       "name": "Reload",
@@ -834,53 +778,58 @@
       "fields": {}
     }
   },
-  "input_number": {
+  "timer": {
     "reload": {
-      "name": "Reload",
-      "description": "Reload the input_number configuration.",
+      "name": "",
+      "description": "",
       "fields": {}
     },
-    "set_value": {
-      "name": "Set",
-      "description": "Set the value of an input number entity.",
+    "start": {
+      "name": "Start",
+      "description": "Start a timer",
       "fields": {
-        "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
-          "required": true,
+        "duration": {
+          "description": "Duration the timer requires to finish. [optional]",
+          "default": 0,
+          "example": "00:01:00 or 60",
           "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "step": 0.001,
-              "mode": "box"
-            }
+            "text": null
           }
         }
       },
       "target": {
         "entity": {
-          "domain": "input_number"
+          "domain": "timer"
         }
       }
     },
-    "increment": {
-      "name": "Increment",
-      "description": "Increment the value of an input number entity by its stepping.",
+    "pause": {
+      "name": "Pause",
+      "description": "Pause a timer.",
       "fields": {},
       "target": {
         "entity": {
-          "domain": "input_number"
+          "domain": "timer"
         }
       }
     },
-    "decrement": {
-      "name": "Decrement",
-      "description": "Decrement the value of an input number entity by its stepping.",
+    "cancel": {
+      "name": "Cancel",
+      "description": "Cancel a timer.",
       "fields": {},
       "target": {
         "entity": {
-          "domain": "input_number"
+          "domain": "timer"
+        }
+      }
+    },
+    "finish": {
+      "name": "Finish",
+      "description": "Finish a timer.",
+      "fields": {},
+      "target": {
+        "entity": {
+          "domain": "timer"
         }
       }
     }
@@ -900,93 +849,6 @@
           "domain": "input_button"
         }
       }
-    }
-  },
-  "input_text": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the input_text configuration.",
-      "fields": {}
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Set the value of an input text entity.",
-      "fields": {
-        "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
-          "required": true,
-          "example": "This is an example text",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "input_text"
-        }
-      }
-    }
-  },
-  "input_datetime": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the input_datetime configuration.",
-      "fields": {}
-    },
-    "set_datetime": {
-      "name": "Set",
-      "description": "This can be used to dynamically set the date and/or time.",
-      "fields": {
-        "date": {
-          "name": "Date",
-          "description": "The target date the entity should be set to.",
-          "example": "\u00222019-04-20\u0022",
-          "selector": {
-            "text": null
-          }
-        },
-        "time": {
-          "name": "Time",
-          "description": "The target time the entity should be set to.",
-          "example": "\u002205:04:20\u0022",
-          "selector": {
-            "time": null
-          }
-        },
-        "datetime": {
-          "name": "Date \u0026 Time",
-          "description": "The target date \u0026 time the entity should be set to.",
-          "example": "\u00222019-04-20 05:04:20\u0022",
-          "selector": {
-            "text": null
-          }
-        },
-        "timestamp": {
-          "name": "Timestamp",
-          "description": "The target date \u0026 time the entity should be set to as expressed by a UNIX timestamp.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "mode": "box"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "input_datetime"
-        }
-      }
-    }
-  },
-  "zone": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the YAML-based zone configuration.",
-      "fields": {}
     }
   },
   "input_select": {
@@ -1092,6 +954,144 @@
           "domain": "input_select"
         }
       }
+    }
+  },
+  "input_datetime": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_datetime configuration.",
+      "fields": {}
+    },
+    "set_datetime": {
+      "name": "Set",
+      "description": "This can be used to dynamically set the date and/or time.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "The target date the entity should be set to.",
+          "example": "\u00222019-04-20\u0022",
+          "selector": {
+            "text": null
+          }
+        },
+        "time": {
+          "name": "Time",
+          "description": "The target time the entity should be set to.",
+          "example": "\u002205:04:20\u0022",
+          "selector": {
+            "time": null
+          }
+        },
+        "datetime": {
+          "name": "Date \u0026 Time",
+          "description": "The target date \u0026 time the entity should be set to.",
+          "example": "\u00222019-04-20 05:04:20\u0022",
+          "selector": {
+            "text": null
+          }
+        },
+        "timestamp": {
+          "name": "Timestamp",
+          "description": "The target date \u0026 time the entity should be set to as expressed by a UNIX timestamp.",
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "mode": "box"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "input_datetime"
+        }
+      }
+    }
+  },
+  "input_text": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_text configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Set the value of an input text entity.",
+      "fields": {
+        "value": {
+          "name": "Value",
+          "description": "The target value the entity should be set to.",
+          "required": true,
+          "example": "This is an example text",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "input_text"
+        }
+      }
+    }
+  },
+  "input_number": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_number configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Set the value of an input number entity.",
+      "fields": {
+        "value": {
+          "name": "Value",
+          "description": "The target value the entity should be set to.",
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "step": 0.001,
+              "mode": "box"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "input_number"
+        }
+      }
+    },
+    "increment": {
+      "name": "Increment",
+      "description": "Increment the value of an input number entity by its stepping.",
+      "fields": {},
+      "target": {
+        "entity": {
+          "domain": "input_number"
+        }
+      }
+    },
+    "decrement": {
+      "name": "Decrement",
+      "description": "Decrement the value of an input number entity by its stepping.",
+      "fields": {},
+      "target": {
+        "entity": {
+          "domain": "input_number"
+        }
+      }
+    }
+  },
+  "zone": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the YAML-based zone configuration.",
+      "fields": {}
     }
   },
   "light": {
@@ -1808,18 +1808,6 @@
       }
     }
   },
-  "button": {
-    "press": {
-      "name": "Press",
-      "description": "Press the button entity.",
-      "fields": {},
-      "target": {
-        "entity": {
-          "domain": "button"
-        }
-      }
-    }
-  },
   "tts": {
     "google_translate_say": {
       "name": "Say an TTS message with google_translate",
@@ -1923,6 +1911,18 @@
           "selector": {
             "object": null
           }
+        }
+      }
+    }
+  },
+  "button": {
+    "press": {
+      "name": "Press",
+      "description": "Press the button entity.",
+      "fields": {},
+      "target": {
+        "entity": {
+          "domain": "button"
         }
       }
     }
@@ -2100,13 +2100,6 @@
       }
     }
   },
-  "backup": {
-    "create": {
-      "name": "Create backup",
-      "description": "Create a new backup.",
-      "fields": {}
-    }
-  },
   "cast": {
     "show_lovelace_view": {
       "name": "Show lovelace view",
@@ -2141,6 +2134,13 @@
           }
         }
       }
+    }
+  },
+  "backup": {
+    "create": {
+      "name": "Create backup",
+      "description": "Create a new backup.",
+      "fields": {}
     }
   },
   "media_player": {
@@ -3297,6 +3297,398 @@
       }
     }
   },
+  "fan": {
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn fan on.",
+      "fields": {
+        "speed": {
+          "name": "Speed",
+          "description": "Speed setting.",
+          "example": "high",
+          "selector": {
+            "text": null
+          }
+        },
+        "percentage": {
+          "name": "Percentage",
+          "description": "Percentage speed setting.",
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          }
+        },
+        "preset_mode": {
+          "name": "Preset mode",
+          "description": "Preset mode setting.",
+          "example": "auto",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn fan off.",
+      "fields": {},
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle the fan on/off.",
+      "fields": {},
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "increase_speed": {
+      "name": "Increase speed",
+      "description": "Increase the speed of the fan by one speed or a percentage_step.",
+      "fields": {
+        "percentage_step": {
+          "advanced": true,
+          "required": false,
+          "description": "Increase speed by a percentage.",
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "decrease_speed": {
+      "name": "Decrease speed",
+      "description": "Decrease the speed of the fan by one speed or a percentage_step.",
+      "fields": {
+        "percentage_step": {
+          "advanced": true,
+          "required": false,
+          "description": "Decrease speed by a percentage.",
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "oscillate": {
+      "name": "Oscillate",
+      "description": "Oscillate the fan.",
+      "fields": {
+        "oscillating": {
+          "name": "Oscillating",
+          "description": "Flag to turn on/off oscillation.",
+          "required": true,
+          "selector": {
+            "boolean": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "set_direction": {
+      "name": "Set direction",
+      "description": "Set the fan rotation.",
+      "fields": {
+        "direction": {
+          "name": "Direction",
+          "description": "The direction to rotate.",
+          "required": true,
+          "selector": {
+            "select": {
+              "options": [
+                {
+                  "label": "Forward",
+                  "value": "forward"
+                },
+                {
+                  "label": "Reverse",
+                  "value": "reverse"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "set_percentage": {
+      "name": "Set speed percentage",
+      "description": "Set fan speed percentage.",
+      "fields": {
+        "percentage": {
+          "name": "Percentage",
+          "description": "Percentage speed setting.",
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    },
+    "set_preset_mode": {
+      "name": "Set preset mode",
+      "description": "Set preset mode for a fan device.",
+      "fields": {
+        "preset_mode": {
+          "name": "Preset mode",
+          "description": "New value of preset mode.",
+          "required": true,
+          "example": "auto",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "fan"
+        }
+      }
+    }
+  },
+  "lock": {
+    "unlock": {
+      "name": "Unlock",
+      "description": "Unlock all or specified locks.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to unlock the lock with.",
+          "example": 1234,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "lock"
+        }
+      }
+    },
+    "lock": {
+      "name": "Lock",
+      "description": "Lock all or specified locks.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to lock the lock with.",
+          "example": 1234,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "lock"
+        }
+      }
+    },
+    "open": {
+      "name": "Open",
+      "description": "Open all or specified locks.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to open the lock with.",
+          "example": 1234,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "lock"
+        }
+      }
+    }
+  },
+  "alarm_control_panel": {
+    "alarm_disarm": {
+      "name": "Disarm",
+      "description": "Send the alarm the command for disarm.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to disarm the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    },
+    "alarm_arm_home": {
+      "name": "Arm home",
+      "description": "Send the alarm the command for arm home.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm home the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    },
+    "alarm_arm_away": {
+      "name": "Arm away",
+      "description": "Send the alarm the command for arm away.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm away the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    },
+    "alarm_arm_night": {
+      "name": "Arm night",
+      "description": "Send the alarm the command for arm night.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm night the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    },
+    "alarm_arm_vacation": {
+      "name": "Arm vacation",
+      "description": "Send the alarm the command for arm vacation.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm vacation the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    },
+    "alarm_arm_custom_bypass": {
+      "name": "Arm with custom bypass",
+      "description": "Send arm custom bypass command.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm custom bypass the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    },
+    "alarm_trigger": {
+      "name": "Trigger",
+      "description": "Send the alarm the command for trigger.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to trigger the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "alarm_control_panel"
+        }
+      }
+    }
+  },
   "climate": {
     "turn_on": {
       "name": "Turn on",
@@ -3557,65 +3949,6 @@
       }
     }
   },
-  "lock": {
-    "unlock": {
-      "name": "Unlock",
-      "description": "Unlock all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to unlock the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "lock"
-        }
-      }
-    },
-    "lock": {
-      "name": "Lock",
-      "description": "Lock all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to lock the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "lock"
-        }
-      }
-    },
-    "open": {
-      "name": "Open",
-      "description": "Open all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to open the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "lock"
-        }
-      }
-    }
-  },
   "number": {
     "set_value": {
       "name": "Set",
@@ -3633,6 +3966,28 @@
       "target": {
         "entity": {
           "domain": "number"
+        }
+      }
+    }
+  },
+  "select": {
+    "select_option": {
+      "name": "Select",
+      "description": "Select an option of an select entity.",
+      "fields": {
+        "option": {
+          "name": "Option",
+          "description": "Option to be selected.",
+          "required": true,
+          "example": "\u0022Item A\u0022",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": {
+          "domain": "select"
         }
       }
     }
@@ -3694,361 +4049,6 @@
       "target": {
         "entity": {
           "domain": "siren"
-        }
-      }
-    }
-  },
-  "select": {
-    "select_option": {
-      "name": "Select",
-      "description": "Select an option of an select entity.",
-      "fields": {
-        "option": {
-          "name": "Option",
-          "description": "Option to be selected.",
-          "required": true,
-          "example": "\u0022Item A\u0022",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "select"
-        }
-      }
-    }
-  },
-  "fan": {
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn fan on.",
-      "fields": {
-        "speed": {
-          "name": "Speed",
-          "description": "Speed setting.",
-          "example": "high",
-          "selector": {
-            "text": null
-          }
-        },
-        "percentage": {
-          "name": "Percentage",
-          "description": "Percentage speed setting.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        },
-        "preset_mode": {
-          "name": "Preset mode",
-          "description": "Preset mode setting.",
-          "example": "auto",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn fan off.",
-      "fields": {},
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle the fan on/off.",
-      "fields": {},
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "increase_speed": {
-      "name": "Increase speed",
-      "description": "Increase the speed of the fan by one speed or a percentage_step.",
-      "fields": {
-        "percentage_step": {
-          "advanced": true,
-          "required": false,
-          "description": "Increase speed by a percentage.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "decrease_speed": {
-      "name": "Decrease speed",
-      "description": "Decrease the speed of the fan by one speed or a percentage_step.",
-      "fields": {
-        "percentage_step": {
-          "advanced": true,
-          "required": false,
-          "description": "Decrease speed by a percentage.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "oscillate": {
-      "name": "Oscillate",
-      "description": "Oscillate the fan.",
-      "fields": {
-        "oscillating": {
-          "name": "Oscillating",
-          "description": "Flag to turn on/off oscillation.",
-          "required": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "set_direction": {
-      "name": "Set direction",
-      "description": "Set the fan rotation.",
-      "fields": {
-        "direction": {
-          "name": "Direction",
-          "description": "The direction to rotate.",
-          "required": true,
-          "selector": {
-            "select": {
-              "options": [
-                {
-                  "label": "Forward",
-                  "value": "forward"
-                },
-                {
-                  "label": "Reverse",
-                  "value": "reverse"
-                }
-              ]
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "set_percentage": {
-      "name": "Set speed percentage",
-      "description": "Set fan speed percentage.",
-      "fields": {
-        "percentage": {
-          "name": "Percentage",
-          "description": "Percentage speed setting.",
-          "required": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    },
-    "set_preset_mode": {
-      "name": "Set preset mode",
-      "description": "Set preset mode for a fan device.",
-      "fields": {
-        "preset_mode": {
-          "name": "Preset mode",
-          "description": "New value of preset mode.",
-          "required": true,
-          "example": "auto",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "fan"
-        }
-      }
-    }
-  },
-  "alarm_control_panel": {
-    "alarm_disarm": {
-      "name": "Disarm",
-      "description": "Send the alarm the command for disarm.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to disarm the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
-        }
-      }
-    },
-    "alarm_arm_home": {
-      "name": "Arm home",
-      "description": "Send the alarm the command for arm home.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm home the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
-        }
-      }
-    },
-    "alarm_arm_away": {
-      "name": "Arm away",
-      "description": "Send the alarm the command for arm away.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm away the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
-        }
-      }
-    },
-    "alarm_arm_night": {
-      "name": "Arm night",
-      "description": "Send the alarm the command for arm night.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm night the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
-        }
-      }
-    },
-    "alarm_arm_vacation": {
-      "name": "Arm vacation",
-      "description": "Send the alarm the command for arm vacation.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm vacation the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
-        }
-      }
-    },
-    "alarm_arm_custom_bypass": {
-      "name": "Arm with custom bypass",
-      "description": "Send arm custom bypass command.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm custom bypass the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
-        }
-      }
-    },
-    "alarm_trigger": {
-      "name": "Trigger",
-      "description": "Send the alarm the command for trigger.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to trigger the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": {
-          "domain": "alarm_control_panel"
         }
       }
     }

@@ -16,7 +16,7 @@ namespace TeskeHomeAssistant
         public const int BRIGHTNESS_MED = 60;
         public const int BRIGHTNESS_HIGH = 90;
 
-  
+
 
         public static int GetBrightness()
         {
@@ -39,6 +39,8 @@ namespace TeskeHomeAssistant
             ZigbeeDeviceName.LivingRoomOutlet => "00:12:4b:00:25:3d:67:7f",
             ZigbeeDeviceName.LivingRoomTable => "00:12:4b:00:25:3d:6a:08",
             ZigbeeDeviceName.OfficeButton => "00:12:4b:00:25:14:6f:60",
+            ZigbeeDeviceName.HallwaySwitch => "84:fd:27:ff:fe:bc:cc:65",
+            ZigbeeDeviceName.MasterBedroomButton => "00:12:4b:00:25:16:b2:ca",
             _ => ""
         };
 
@@ -50,12 +52,12 @@ namespace TeskeHomeAssistant
             _ => ""
         };
 
+        public static string GetZigbeeCommand(ZigbeeSwitchCommands switchCommand) => switchCommand switch
+        {
+            ZigbeeSwitchCommands.On => "on",
+            ZigbeeSwitchCommands.Off => "off",
+            _ => ""
+        };
+
     }
-
-    public static class GlobalExtensions
-    {
-        
-    }
-
-
 }

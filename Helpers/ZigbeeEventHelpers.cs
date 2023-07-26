@@ -18,6 +18,15 @@ namespace TeskeHomeAssistant.Helpers
                 e.DataElement?.GetProperty("command").GetString() == command);
         }
 
+        public static IObservable<Event> Where(this IObservable<Event> eventSource, ZigbeeDeviceName zigbeeDeviceName, ZigbeeSwitchCommands switchCommands)
+        {
+            var deviceId = GlobalConfiguration.GetZigbeeDeviceId(zigbeeDeviceName);
+            var command = GlobalConfiguration.GetZigbeeCommand(switchCommands);
+            return eventSource.Where(e => e.EventType == "zha_event" &&
+                e.DataElement?.GetProperty("device_ieee").GetString() == deviceId &&
+                e.DataElement?.GetProperty("command").GetString() == command);
+        }
+
         public static IObservable<Event> Where(this IObservable<Event> eventSource, ZigbeeDeviceName zigbeeDeviceName)
         {
 

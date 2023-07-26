@@ -10,6 +10,6 @@ namespace TeskeHomeAssistant.Enums
     {
         Press,
         DoublePress,
-        LongPress
+        LongPress,
     }
 }

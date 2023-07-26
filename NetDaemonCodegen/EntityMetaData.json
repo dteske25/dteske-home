@@ -34,9 +34,9 @@
           "cSharpName": "LaundryRoomSensorMotion"
         },
         {
-          "id": "binary_sensor.office_motion_ias_zone",
-          "friendlyName": "Office Motion ias_zone",
-          "cSharpName": "OfficeMotionIasZone"
+          "id": "binary_sensor.office_sensor_motion",
+          "friendlyName": "Office Sensor Motion",
+          "cSharpName": "OfficeSensorMotion"
         },
         {
           "id": "binary_sensor.remote_ui",
@@ -71,6 +71,21 @@
       "domain": "button",
       "entities": [
         {
+          "id": "button.basement_switch_identify",
+          "friendlyName": "Basement Switch Identify",
+          "cSharpName": "BasementSwitchIdentify"
+        },
+        {
+          "id": "button.dining_room_switch_identify",
+          "friendlyName": "Dining Room Switch Identify",
+          "cSharpName": "DiningRoomSwitchIdentify"
+        },
+        {
+          "id": "button.entryway_switch_identify",
+          "friendlyName": "Entryway Switch Identify",
+          "cSharpName": "EntrywaySwitchIdentify"
+        },
+        {
           "id": "button.ewelink_ds01_d0701129_identify",
           "friendlyName": "Zigbee Door Sensor d0701129 identify",
           "cSharpName": "EwelinkDs01D0701129Identify"
@@ -81,19 +96,9 @@
           "cSharpName": "EwelinkMs016cee1629Identify"
         },
         {
-          "id": "button.ewelink_wb01_606f1425_identify",
-          "friendlyName": "Office Button 606f1425 identify",
-          "cSharpName": "EwelinkWb01606f1425Identify"
-        },
-        {
-          "id": "button.ewelink_wb01_64bd1625_identify",
-          "friendlyName": "Living Room Button 64bd1625 identify",
-          "cSharpName": "EwelinkWb0164bd1625Identify"
-        },
-        {
-          "id": "button.ewelink_wb01_cab21625_identify",
-          "friendlyName": "Master Bedroom Button cab21625 identify",
-          "cSharpName": "EwelinkWb01Cab21625Identify"
+          "id": "button.hallway_switch_identify",
+          "friendlyName": "Hallway Switch Identify",
+          "cSharpName": "HallwaySwitchIdentify"
         },
         {
           "id": "button.identify_elements_ac4b",
@@ -106,34 +111,34 @@
           "cSharpName": "IdentifyShapes7b48"
         },
         {
-          "id": "button.jasco_products_43084_1bccbcfe_identify",
-          "friendlyName": "Dining Room Switch 1bccbcfe identify",
-          "cSharpName": "JascoProducts430841bccbcfeIdentify"
+          "id": "button.living_room",
+          "friendlyName": "Living Room Button",
+          "cSharpName": "LivingRoom"
         },
         {
-          "id": "button.jasco_products_43084_65ccbcfe_identify",
-          "friendlyName": "Hallway Switch 65ccbcfe identify",
-          "cSharpName": "JascoProducts4308465ccbcfeIdentify"
+          "id": "button.living_room_square_lamp_identify",
+          "friendlyName": "Living Room Square Lamp Identify",
+          "cSharpName": "LivingRoomSquareLampIdentify"
         },
         {
-          "id": "button.jasco_products_43084_7fccbcfe_identify",
-          "friendlyName": "Entryway Switch 7fccbcfe identify",
-          "cSharpName": "JascoProducts430847fccbcfeIdentify"
+          "id": "button.living_room_switch_identify",
+          "friendlyName": "Living Room Switch Identify",
+          "cSharpName": "LivingRoomSwitchIdentify"
         },
         {
-          "id": "button.jasco_products_43084_84ccbcfe_identify",
-          "friendlyName": "Basement Switch 84ccbcfe identify",
-          "cSharpName": "JascoProducts4308484ccbcfeIdentify"
+          "id": "button.living_room_table_identify",
+          "friendlyName": "Table Switch Identify",
+          "cSharpName": "LivingRoomTableIdentify"
         },
         {
-          "id": "button.jasco_products_43084_8eccbcfe_identify",
-          "friendlyName": "Living Room Switch 8eccbcfe identify",
-          "cSharpName": "JascoProducts430848eccbcfeIdentify"
+          "id": "button.master_bedroom",
+          "friendlyName": "Master Bedroom Button",
+          "cSharpName": "MasterBedroom"
         },
         {
-          "id": "button.jasco_products_43084_f769a6fe_identify",
-          "friendlyName": "Outside Light Switch f769a6fe identify",
-          "cSharpName": "JascoProducts43084F769a6feIdentify"
+          "id": "button.office",
+          "friendlyName": "Office Button",
+          "cSharpName": "Office"
         },
         {
           "id": "button.office_motion_identify",
@@ -141,14 +146,9 @@
           "cSharpName": "OfficeMotionIdentify"
         },
         {
-          "id": "button.sonoff_s31_lite_zb_086a3d25_identify",
-          "friendlyName": "Table Switch 086a3d25 identify",
-          "cSharpName": "SonoffS31LiteZb086a3d25Identify"
-        },
-        {
-          "id": "button.sonoff_s31_lite_zb_7f673d25_identify",
-          "friendlyName": "Lamp Switch 7f673d25 identify",
-          "cSharpName": "SonoffS31LiteZb7f673d25Identify"
+          "id": "button.outside_front_switch_identify",
+          "friendlyName": "Outside Front Switch Identify",
+          "cSharpName": "OutsideFrontSwitchIdentify"
         }
       ],
       "attributes": [
@@ -262,29 +262,24 @@
       "domain": "input_boolean",
       "entities": [
         {
-          "id": "input_boolean.dev_netdaemon_app_model_hello_yaml_app",
-          "friendlyName": "dev_netdaemon_app_model_hello_yaml_app",
-          "cSharpName": "DevNetdaemonAppModelHelloYamlApp"
+          "id": "input_boolean.netdaemon_automations_hallway_automation",
+          "friendlyName": "netdaemon_automations_hallway_automation",
+          "cSharpName": "NetdaemonAutomationsHallwayAutomation"
         },
         {
-          "id": "input_boolean.dev_netdaemon_extensions_scheduling_scheduling_app",
-          "friendlyName": "dev_netdaemon_extensions_scheduling_scheduling_app",
-          "cSharpName": "DevNetdaemonExtensionsSchedulingSchedulingApp"
+          "id": "input_boolean.netdaemon_automations_living_room_automation",
+          "friendlyName": "netdaemon_automations_living_room_automation",
+          "cSharpName": "NetdaemonAutomationsLivingRoomAutomation"
         },
         {
-          "id": "input_boolean.dev_netdaemon_hass_model_hello_world_app",
-          "friendlyName": "dev_netdaemon_hass_model_hello_world_app",
-          "cSharpName": "DevNetdaemonHassModelHelloWorldApp"
+          "id": "input_boolean.netdaemon_automations_office_automation",
+          "friendlyName": "netdaemon_automations_office_automation",
+          "cSharpName": "NetdaemonAutomationsOfficeAutomation"
         },
         {
-          "id": "input_boolean.dev_netdaemon_hass_model_light_on_movement",
-          "friendlyName": "dev_netdaemon_hass_model_light_on_movement",
-          "cSharpName": "DevNetdaemonHassModelLightOnMovement"
-        },
-        {
-          "id": "input_boolean.hallway_motion_allowed",
-          "friendlyName": "Hallway Motion Allowed",
-          "cSharpName": "HallwayMotionAllowed"
+          "id": "input_boolean.office_motion_allowed",
+          "friendlyName": "Office Sensor Motion",
+          "cSharpName": "OfficeMotionAllowed"
         }
       ],
       "attributes": [
@@ -308,6 +303,11 @@
     {
       "domain": "light",
       "entities": [
+        {
+          "id": "light.basement_switch",
+          "friendlyName": "Basement Switch",
+          "cSharpName": "BasementSwitch"
+        },
         {
           "id": "light.bedroom",
           "friendlyName": "Bedroom",
@@ -334,6 +334,11 @@
           "cSharpName": "Closet2"
         },
         {
+          "id": "light.dining_room_switch",
+          "friendlyName": "Dining Room Switch",
+          "cSharpName": "DiningRoomSwitch"
+        },
+        {
           "id": "light.driveway",
           "friendlyName": "Driveway",
           "cSharpName": "Driveway"
@@ -342,6 +347,11 @@
           "id": "light.elements_ac4b",
           "friendlyName": "Elements AC4B",
           "cSharpName": "ElementsAc4b"
+        },
+        {
+          "id": "light.entryway_switch",
+          "friendlyName": "Entryway Switch",
+          "cSharpName": "EntrywaySwitch"
         },
         {
           "id": "light.hallway",
@@ -364,6 +374,11 @@
           "cSharpName": "Hallway3"
         },
         {
+          "id": "light.hallway_switch",
+          "friendlyName": "Hallway Switch",
+          "cSharpName": "HallwaySwitch"
+        },
+        {
           "id": "light.hue_bloom",
           "friendlyName": "Hue Bloom",
           "cSharpName": "HueBloom"
@@ -372,11 +387,6 @@
           "id": "light.hue_bloom_2",
           "friendlyName": "Hue Bloom 2",
           "cSharpName": "HueBloom2"
-        },
-        {
-          "id": "light.hue_color_lamp_1",
-          "friendlyName": "Kitchen Sink",
-          "cSharpName": "HueColorLamp1"
         },
         {
           "id": "light.hue_filament_bulb_1",
@@ -394,36 +404,6 @@
           "cSharpName": "HueFilamentBulb3"
         },
         {
-          "id": "light.jasco_products_43084_1bccbcfe_on_off",
-          "friendlyName": "Dining Room Switch",
-          "cSharpName": "JascoProducts430841bccbcfeOnOff"
-        },
-        {
-          "id": "light.jasco_products_43084_65ccbcfe_on_off",
-          "friendlyName": "Hallway Switch 65ccbcfe on_off",
-          "cSharpName": "JascoProducts4308465ccbcfeOnOff"
-        },
-        {
-          "id": "light.jasco_products_43084_7fccbcfe_on_off",
-          "friendlyName": "Entryway Switch 7fccbcfe on_off",
-          "cSharpName": "JascoProducts430847fccbcfeOnOff"
-        },
-        {
-          "id": "light.jasco_products_43084_84ccbcfe_on_off",
-          "friendlyName": "Basement Switch 84ccbcfe on_off",
-          "cSharpName": "JascoProducts4308484ccbcfeOnOff"
-        },
-        {
-          "id": "light.jasco_products_43084_8eccbcfe_on_off",
-          "friendlyName": "Living Room Switch 8eccbcfe on_off",
-          "cSharpName": "JascoProducts430848eccbcfeOnOff"
-        },
-        {
-          "id": "light.jasco_products_43084_f769a6fe_on_off",
-          "friendlyName": "Outside Light Switch f769a6fe on_off",
-          "cSharpName": "JascoProducts43084F769a6feOnOff"
-        },
-        {
           "id": "light.kitchen",
           "friendlyName": "Kitchen",
           "cSharpName": "Kitchen"
@@ -432,6 +412,11 @@
           "id": "light.kitchen_overhead",
           "friendlyName": "Kitchen Overhead ",
           "cSharpName": "KitchenOverhead"
+        },
+        {
+          "id": "light.kitchen_sink",
+          "friendlyName": "Kitchen Sink",
+          "cSharpName": "KitchenSink"
         },
         {
           "id": "light.lamp",
@@ -449,6 +434,11 @@
           "cSharpName": "LaundryRoomLight"
         },
         {
+          "id": "light.living_room_switch",
+          "friendlyName": "Living Room Switch",
+          "cSharpName": "LivingRoomSwitch"
+        },
+        {
           "id": "light.nightstand",
           "friendlyName": "Nightstand",
           "cSharpName": "Nightstand"
@@ -462,6 +452,11 @@
           "id": "light.outside_front",
           "friendlyName": "Outside Front",
           "cSharpName": "OutsideFront"
+        },
+        {
+          "id": "light.outside_front_switch",
+          "friendlyName": "Outside Front Switch",
+          "cSharpName": "OutsideFrontSwitch"
         },
         {
           "id": "light.overhead_light_1",
@@ -955,21 +950,6 @@
           "cSharpName": "EwelinkMs016cee1629Power"
         },
         {
-          "id": "sensor.ewelink_wb01_606f1425_power",
-          "friendlyName": "Office Button 606f1425 power",
-          "cSharpName": "EwelinkWb01606f1425Power"
-        },
-        {
-          "id": "sensor.ewelink_wb01_64bd1625_power",
-          "friendlyName": "Living Room Button 64bd1625 power",
-          "cSharpName": "EwelinkWb0164bd1625Power"
-        },
-        {
-          "id": "sensor.ewelink_wb01_cab21625_power",
-          "friendlyName": "Master Bedroom Button cab21625 power",
-          "cSharpName": "EwelinkWb01Cab21625Power"
-        },
-        {
           "id": "sensor.hallway_sensor_battery",
           "friendlyName": "Hallway Sensor Battery",
           "cSharpName": "HallwaySensorBattery"
@@ -998,6 +978,21 @@
           "id": "sensor.laundry_room_sensor_temperature",
           "friendlyName": "Laundry Room Sensor Temperature",
           "cSharpName": "LaundryRoomSensorTemperature"
+        },
+        {
+          "id": "sensor.living_room_button_power",
+          "friendlyName": "Living Room Button power",
+          "cSharpName": "LivingRoomButtonPower"
+        },
+        {
+          "id": "sensor.master_bedroom_button_power",
+          "friendlyName": "Master Bedroom Button Power",
+          "cSharpName": "MasterBedroomButtonPower"
+        },
+        {
+          "id": "sensor.office_button_power",
+          "friendlyName": "Office Button Power",
+          "cSharpName": "OfficeButtonPower"
         },
         {
           "id": "sensor.office_motion_power",
@@ -1164,14 +1159,14 @@
           "cSharpName": "LaundryRoomSensorMotion"
         },
         {
-          "id": "switch.sonoff_s31_lite_zb_086a3d25_on_off",
-          "friendlyName": "Table Switch",
-          "cSharpName": "SonoffS31LiteZb086a3d25OnOff"
+          "id": "switch.living_room_square_lamp",
+          "friendlyName": "Living Room Square Lamp",
+          "cSharpName": "LivingRoomSquareLamp"
         },
         {
-          "id": "switch.sonoff_s31_lite_zb_7f673d25_on_off",
-          "friendlyName": "Lamp Switch",
-          "cSharpName": "SonoffS31LiteZb7f673d25OnOff"
+          "id": "switch.living_room_table",
+          "friendlyName": "Table Switch",
+          "cSharpName": "LivingRoomTable"
         }
       ],
       "attributes": [
