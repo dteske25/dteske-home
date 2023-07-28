@@ -21,7 +21,7 @@ public class HallwayAutomation
         new MotionBuilder(entities.BinarySensor.HallwaySensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.HallwaySensorMotion)
             .WithOnAction(_ => LightHelpers.TurnOn(hallwayLights))
-            .WithOffAction(_ => LightHelpers.TurnOff(hallwayLights))
+            .WithOffAction(_ => LightHelpers.TurnOff(hallwayLights), TimeSpan.FromMinutes(2))
             .Build();
 
         ha.Events.Where(ZigbeeDeviceName.HallwaySwitch, ZigbeeSwitchCommands.Off).Subscribe(_ =>

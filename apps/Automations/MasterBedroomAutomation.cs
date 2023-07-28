@@ -31,7 +31,7 @@ public class MasterBedroomAutomation
         new MotionBuilder(entities.BinarySensor.ClosetSensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.ClosetSensorMotion)
             .WithOnAction(_ => LightHelpers.TurnOn(closetLights))
-            .WithOffAction(_ => LightHelpers.TurnOff(closetLights))
+            .WithOffAction(_ => LightHelpers.TurnOff(closetLights), TimeSpan.FromMinutes(1))
             .Build();
 
         ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>

@@ -68,7 +68,7 @@ namespace TeskeHomeAssistant.Helpers
                     return;
                 }
                 _onAction?.Invoke(change);
-                _logger.LogInformation("Lights turned on");
+                _logger.LogInformation("On action called");
             });
 
 
@@ -86,7 +86,7 @@ namespace TeskeHomeAssistant.Helpers
                     return;
                 }
                 _offAction?.Invoke(change);
-                _logger.LogInformation("Lights turned off");
+                _logger.LogInformation("Off action called");
             });
         }
     }

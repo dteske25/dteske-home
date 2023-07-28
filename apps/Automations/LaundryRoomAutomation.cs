@@ -20,7 +20,7 @@ public class LaundryRoomAutomation
         new MotionBuilder(entities.BinarySensor.LaundryRoomSensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.LaundryRoomSensorMotion)
             .WithOnAction(_ => LightHelpers.TurnOn(laundryRoomLights, 60))
-            .WithOffAction(_ => LightHelpers.TurnOff(laundryRoomLights))
+            .WithOffAction(_ => LightHelpers.TurnOff(laundryRoomLights), TimeSpan.FromMinutes(5))
             .Build();
     }
 }
