@@ -1,12 +1,10 @@
 using Microsoft.Extensions.Logging;
-using NetDaemon.Extensions.Tts;
 
 namespace Automations;
 
 /// <summary>
 ///     Showcase using the new HassModel API and turn on light on movement
 /// </summary>
-[Focus]
 [NetDaemonApp]
 public class OfficeAutomation
 {

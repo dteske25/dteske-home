@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 
 namespace Automations;
 
-[Focus]
 [NetDaemonApp]
 public class HallwayAutomation
 {
