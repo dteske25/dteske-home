@@ -12,35 +12,35 @@ public class LivingRoomAutomation
     {
         var lights = new List<LightEntity>
         {
-            entities.Light.Bulb2,
+            entities.Light.LivingRoomLamp,
         };
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
             LightHelpers.TurnOn(lights);
 
-            entities.Switch.LivingRoomTable.TurnOn();
-            entities.Switch.LivingRoomSquareLamp.TurnOn();
+            entities.Switch.LivingRoomTableSwitch.TurnOn();
+            entities.Switch.LivingRoomSquareLampSwitch.TurnOn();
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
-            entities.Switch.LivingRoomSquareLamp.TurnOff();
+            entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             LightHelpers.TurnOff(lights);
-            entities.Switch.LivingRoomTable.TurnOff();
-            entities.Switch.LivingRoomSquareLamp.TurnOff();
+            entities.Switch.LivingRoomTableSwitch.TurnOff();
+            entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
         });
 
-        entities.Light.LivingRoomSwitch.StateChanges()
+        entities.Light.LivingRoomSwitchLight.StateChanges()
             .Subscribe(e =>
             {
                 if (e.New?.State == "off")
                 {
-                    entities.Light.LivingRoomSwitch.TurnOn();
+                    entities.Light.LivingRoomSwitchLight.TurnOn();
                     scheduler.Schedule(TimeSpan.FromSeconds(1), () =>
                     {
                         LightHelpers.TurnOff(lights);

@@ -14,8 +14,8 @@ public class OfficeAutomation
     {
         var officeLights = new List<LightEntity>
         {
-            entities.Light.HueBloom,
-            entities.Light.HueBloom2,
+            entities.Light.OfficeDeskLamp1,            
+            entities.Light.OfficeDeskLamp2,
             entities.Light.Shapes7b48
         };
 

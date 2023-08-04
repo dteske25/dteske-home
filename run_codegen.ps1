@@ -1,0 +1,1 @@
+dotnet tool run nd-codegen

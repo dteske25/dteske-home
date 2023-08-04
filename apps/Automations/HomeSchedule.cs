@@ -46,7 +46,7 @@ public class HomeSchedule
         // 07:00 PM
         scheduler.ScheduleCron("00 19 * * *", () =>
         {
-            entities.Light.OutsideFrontSwitch.TurnOn();
+            entities.Light.DrivewaySwitchLight.TurnOn();
             entities.Light.HueFilamentBulb1.TurnOn();
             entities.Light.HueFilamentBulb2.TurnOn();
             entities.Light.HueFilamentBulb3.TurnOn();
