@@ -1,3 +1,4 @@
+using HomeAssistantGenerated;
 using Microsoft.Extensions.Logging;
 
 namespace Automations;
@@ -6,6 +7,7 @@ namespace Automations;
 ///     Showcase using the new HassModel API and turn on light on movement
 /// </summary>
 [NetDaemonApp]
+[Focus]
 public class LivingRoomAutomation
 {
     public LivingRoomAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<LivingRoomAutomation> logger)
@@ -14,13 +16,18 @@ public class LivingRoomAutomation
         {
             entities.Light.LivingRoomLamp,
         };
+        var dimmer = new Dimmer(100, 20, 2);
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
-            LightHelpers.TurnOn(lights);
-
+            entities.Light.LivingRoomSwitchLight.TurnOn();
             entities.Switch.LivingRoomTableSwitch.TurnOn();
             entities.Switch.LivingRoomSquareLampSwitch.TurnOn();
+
+            scheduler.Schedule(TimeSpan.FromSeconds(1), () =>
+            {
+                LightHelpers.TurnOn(lights, dimmer.Next());
+            });
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
@@ -33,19 +40,28 @@ public class LivingRoomAutomation
             LightHelpers.TurnOff(lights);
             entities.Switch.LivingRoomTableSwitch.TurnOff();
             entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
+            entities.Light.LivingRoomSwitchLight.TurnOff();
         });
 
         entities.Light.LivingRoomSwitchLight.StateChanges()
             .Subscribe(e =>
             {
-                if (e.New?.State == "off")
+                if (e.New?.State == "on")
                 {
-                    entities.Light.LivingRoomSwitchLight.TurnOn();
+                    dimmer.SetStep(2);
+                    entities.Switch.LivingRoomTableSwitch.TurnOn();
+                    entities.Switch.LivingRoomSquareLampSwitch.TurnOn();
                     scheduler.Schedule(TimeSpan.FromSeconds(1), () =>
                     {
-                        LightHelpers.TurnOff(lights);
+                        LightHelpers.TurnOn(lights, dimmer.Current);
                     });
-
+                }
+                if (e.New?.State == "off")
+                {
+                    LightHelpers.TurnOff(lights);
+                    entities.Switch.LivingRoomTableSwitch.TurnOff();
+                    entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
+                    entities.Light.LivingRoomSwitchLight.TurnOff();
                 }
             });
 
