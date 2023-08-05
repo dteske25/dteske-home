@@ -7,7 +7,6 @@ namespace Automations;
 ///     Showcase using the new HassModel API and turn on light on movement
 /// </summary>
 [NetDaemonApp]
-[Focus]
 public class LivingRoomAutomation
 {
     public LivingRoomAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<LivingRoomAutomation> logger)
