@@ -21,7 +21,7 @@ public class HomeSchedule
         };
 
         // 06:30 AM Mon-Fri
-        scheduler.ScheduleCron("30 06 * * 1-5", () =>
+        scheduler.ScheduleCron("25 06 * * 1-5", () =>
         {
             var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
 
@@ -30,7 +30,7 @@ public class HomeSchedule
         });
 
         // 07:30 AM Sat & Sun
-        scheduler.ScheduleCron("30 07 * * 6,0", () =>
+        scheduler.ScheduleCron("25 07 * * 6,0", () =>
         {
             var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
 
@@ -67,7 +67,7 @@ public class HomeSchedule
         });
 
         // 11:30 PM
-        scheduler.ScheduleCron("15 23 * * *", () =>
+        scheduler.ScheduleCron("25 23 * * *", () =>
         {
             var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
             entities.Light.ElementsAc4b.TurnOff(fadeDuration);
