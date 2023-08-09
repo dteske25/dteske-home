@@ -7,14 +7,17 @@ public class HallwayAutomation
     {
         var hallwayLights = new List<LightEntity>
         {
-            entities.Light.HallwaySwitch,
             entities.Light.Hallway1,
             entities.Light.Hallway2,
         };
 
         new MotionBuilder(entities.BinarySensor.HallwaySensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.HallwaySensorMotion)
-            .WithOnAction(_ => hallwayLights.TurnOn())
+            .WithOnAction(_ => 
+            {
+                entities.Light.HallwaySwitch.TurnOn();
+                hallwayLights.TurnOn();
+            })
             .WithOffAction(_ => hallwayLights.TurnOff(), TimeSpan.FromMinutes(2))
             .Build();
 
