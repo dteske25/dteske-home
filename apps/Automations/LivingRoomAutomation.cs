@@ -1,45 +1,31 @@
-using HomeAssistantGenerated;
-using Microsoft.Extensions.Logging;
-
 namespace Automations;
 
-/// <summary>
-///     Showcase using the new HassModel API and turn on light on movement
-/// </summary>
 [NetDaemonApp]
 public class LivingRoomAutomation
 {
-    public LivingRoomAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<LivingRoomAutomation> logger)
+    public LivingRoomAutomation(IHaContext ha, Entities entities)
     {
-        var lights = new List<LightEntity>
+        var livingRoomLights = new List<Entity>
         {
+            entities.Light.LivingRoomSwitchLight,
             entities.Light.LivingRoomLamp,
+            entities.Switch.LivingRoomTableSwitch
         };
         var dimmer = new Dimmer(100, 20, 2);
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
-            entities.Light.LivingRoomSwitchLight.TurnOn();
-            entities.Switch.LivingRoomTableSwitch.TurnOn();
-            entities.Switch.LivingRoomSquareLampSwitch.TurnOn();
-
-            scheduler.Schedule(TimeSpan.FromSeconds(1), () =>
-            {
-                LightHelpers.TurnOn(lights, dimmer.Next());
-            });
+            livingRoomLights.TurnOn(dimmer.Next());
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
-            entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
+            entities.Switch.LivingRoomSquareLampSwitch.Toggle();
         });
 
         ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
-            LightHelpers.TurnOff(lights);
-            entities.Switch.LivingRoomTableSwitch.TurnOff();
-            entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
-            entities.Light.LivingRoomSwitchLight.TurnOff();
+            livingRoomLights.TurnOff();
         });
 
         entities.Light.LivingRoomSwitchLight.StateChanges()
@@ -48,19 +34,13 @@ public class LivingRoomAutomation
                 if (e.New?.State == "on")
                 {
                     dimmer.SetStep(2);
-                    entities.Switch.LivingRoomTableSwitch.TurnOn();
+                    livingRoomLights.TurnOn(dimmer.Current);
                     entities.Switch.LivingRoomSquareLampSwitch.TurnOn();
-                    scheduler.Schedule(TimeSpan.FromSeconds(1), () =>
-                    {
-                        LightHelpers.TurnOn(lights, dimmer.Current);
-                    });
                 }
                 if (e.New?.State == "off")
                 {
-                    LightHelpers.TurnOff(lights);
-                    entities.Switch.LivingRoomTableSwitch.TurnOff();
+                    livingRoomLights.TurnOff();
                     entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
-                    entities.Light.LivingRoomSwitchLight.TurnOff();
                 }
             });
 

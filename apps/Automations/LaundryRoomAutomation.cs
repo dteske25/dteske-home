@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace Automations;
+﻿namespace Automations;
 
 [NetDaemonApp]
 public class LaundryRoomAutomation
@@ -14,8 +12,8 @@ public class LaundryRoomAutomation
 
         new MotionBuilder(entities.BinarySensor.LaundryRoomSensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.LaundryRoomSensorMotion)
-            .WithOnAction(_ => LightHelpers.TurnOn(laundryRoomLights, 60))
-            .WithOffAction(_ => LightHelpers.TurnOff(laundryRoomLights), TimeSpan.FromMinutes(5))
+            .WithOnAction(_ => EntityHelpers.TurnOn(laundryRoomLights, 60))
+            .WithOffAction(_ => EntityHelpers.TurnOff(laundryRoomLights), TimeSpan.FromMinutes(5))
             .Build();
     }
 }

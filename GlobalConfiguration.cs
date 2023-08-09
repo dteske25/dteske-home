@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TeskeHomeAssistant.Enums;
-
-namespace TeskeHomeAssistant
+﻿namespace TeskeHomeAssistant
 {
-
-
     public class GlobalConfiguration
     {
         public const int BRIGHTNESS_DIM = 15;
         public const int BRIGHTNESS_LOW = 30;
         public const int BRIGHTNESS_MED = 60;
         public const int BRIGHTNESS_HIGH = 90;
-
-
 
         public static int GetBrightness()
         {
@@ -58,6 +47,5 @@ namespace TeskeHomeAssistant
             ZigbeeSwitchCommands.Off => "off",
             _ => ""
         };
-
     }
 }

@@ -5,22 +5,36 @@ public class HomeSchedule
 {
     public HomeSchedule(IScheduler scheduler, Entities entities, IHaContext ha)
     {
+        var bedroomLights = new List<Entity>
+        {
+            entities.Light.Lamp,
+            entities.Light.Nightstand,
+            entities.Light.ElementsAc4b,
+        };
+
+        var drivewayLights = new List<Entity>
+        {
+            entities.Light.DrivewaySwitchLight,
+            entities.Light.HueFilamentBulb1,
+            entities.Light.HueFilamentBulb2,
+            entities.Light.HueFilamentBulb3,
+        };
 
         // 06:30 AM Mon-Fri
         scheduler.ScheduleCron("30 06 * * 1-5", () =>
         {
-            entities.Light.Lamp.TurnOn();
-            entities.Light.Nightstand.TurnOn();
-            entities.Light.ElementsAc4b.TurnOn();
+            var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
+
+            bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
             ha.Message("Home Schedule", "6:30 AM Bedroom Lignts On");
         });
 
         // 07:30 AM Sat & Sun
         scheduler.ScheduleCron("30 07 * * 6,0", () =>
         {
-            entities.Light.Lamp.TurnOn();
-            entities.Light.Nightstand.TurnOn();
-            entities.Light.ElementsAc4b.TurnOn();
+            var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
+
+            bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
             ha.Message("Home Schedule", "7:30 AM Bedroom Lignts On");
         });
 
@@ -28,9 +42,7 @@ public class HomeSchedule
         // 08:30 AM
         scheduler.ScheduleCron("30 08 * * *", () =>
         {
-            entities.Light.Lamp.TurnOff();
-            entities.Light.Nightstand.TurnOff();
-            entities.Light.ElementsAc4b.TurnOff();
+            bedroomLights.TurnOff();
             ha.Message("Home Schedule", "8:30 AM Bedroom Lignts Off");
 
         });
@@ -38,21 +50,15 @@ public class HomeSchedule
         // 07:00 PM
         scheduler.ScheduleCron("00 19 * * *", () =>
         {
-            entities.Light.DrivewaySwitchLight.TurnOn();
-            entities.Light.HueFilamentBulb1.TurnOn();
-            entities.Light.HueFilamentBulb2.TurnOn();
-            entities.Light.HueFilamentBulb3.TurnOn();
+            drivewayLights.TurnOn();
             ha.Message("Home Schedule", "7:30 PM Outside Lights On");
         });
 
         // 11:00 PM
         scheduler.ScheduleCron("00 23 * * *", () =>
         {
-            entities.Light.HueFilamentBulb1.TurnOff();
-            entities.Light.HueFilamentBulb2.TurnOff();
-            entities.Light.HueFilamentBulb3.TurnOff();
-
-            var fadeDuration = TimeSpan.FromMinutes(15).Seconds;
+            drivewayLights.TurnOff();
+            var fadeDuration = (int)TimeSpan.FromMinutes(15).TotalSeconds;
 
             entities.Light.Lamp.TurnOff(fadeDuration);
             entities.Light.Nightstand.TurnOff(fadeDuration);
@@ -63,7 +69,7 @@ public class HomeSchedule
         // 11:30 PM
         scheduler.ScheduleCron("15 23 * * *", () =>
         {
-            var fadeDuration = TimeSpan.FromMinutes(5).Seconds;
+            var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
             entities.Light.ElementsAc4b.TurnOff(fadeDuration);
             ha.Message("Home Schedule", "11:15 PM Fade Bedroom Nanoleaf");
         });

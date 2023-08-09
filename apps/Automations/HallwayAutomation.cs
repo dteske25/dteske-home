@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using Microsoft.Extensions.Logging;
-
-namespace Automations;
+﻿namespace Automations;
 
 [NetDaemonApp]
 public class HallwayAutomation
@@ -10,29 +7,30 @@ public class HallwayAutomation
     {
         var hallwayLights = new List<LightEntity>
         {
+            entities.Light.HallwaySwitch,
             entities.Light.Hallway1,
-            entities.Light.Hallway2
+            entities.Light.Hallway2,
         };
 
         new MotionBuilder(entities.BinarySensor.HallwaySensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.HallwaySensorMotion)
-            .WithOnAction(_ => LightHelpers.TurnOn(hallwayLights))
-            .WithOffAction(_ => LightHelpers.TurnOff(hallwayLights), TimeSpan.FromMinutes(2))
+            .WithOnAction(_ => hallwayLights.TurnOn())
+            .WithOffAction(_ => hallwayLights.TurnOff(), TimeSpan.FromMinutes(2))
             .Build();
-
-        ha.Events.Where(ZigbeeDeviceName.HallwaySwitch, ZigbeeSwitchCommands.Off).Subscribe(_ =>
-        {
-            entities.Light.HallwaySwitch.TurnOn();
-            entities.Switch.HallwaySensorMotion.TurnOff();
-            LightHelpers.TurnOff(hallwayLights);
-            scheduler.Schedule(TimeSpan.FromHours(6), () => entities.Switch.HallwaySensorMotion.TurnOn());
-        });
 
         ha.Events.Where(ZigbeeDeviceName.HallwaySwitch, ZigbeeSwitchCommands.On).Subscribe(_ =>
         {
             entities.Switch.HallwaySensorMotion.TurnOff();
-            LightHelpers.TurnOn(hallwayLights, 90);
             scheduler.Schedule(TimeSpan.FromHours(2), () => entities.Switch.HallwaySensorMotion.TurnOn());
+            hallwayLights.TurnOn();
         });
+
+        ha.Events.Where(ZigbeeDeviceName.HallwaySwitch, ZigbeeSwitchCommands.Off).Subscribe(_ =>
+        {
+            entities.Switch.HallwaySensorMotion.TurnOff();
+            scheduler.Schedule(TimeSpan.FromHours(6), () => entities.Switch.HallwaySensorMotion.TurnOn());
+            hallwayLights.TurnOff();
+        });
+
     }
 }
