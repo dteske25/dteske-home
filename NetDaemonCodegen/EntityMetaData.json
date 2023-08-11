@@ -183,14 +183,14 @@
       "domain": "cover",
       "entities": [
         {
-          "id": "cover.garage_door",
-          "friendlyName": "Garage Door",
-          "cSharpName": "GarageDoor"
+          "id": "cover.darics_garage_door_2",
+          "friendlyName": "Daric\u0027s Garage Door",
+          "cSharpName": "DaricsGarageDoor2"
         },
         {
-          "id": "cover.garage_door_2",
-          "friendlyName": "Garage Door",
-          "cSharpName": "GarageDoor2"
+          "id": "cover.megans_garage_door",
+          "friendlyName": "Megan\u0027s Garage Door",
+          "cSharpName": "MegansGarageDoor"
         }
       ],
       "attributes": [
@@ -277,9 +277,24 @@
           "cSharpName": "NetdaemonAutomationsHallwayAutomation"
         },
         {
+          "id": "input_boolean.netdaemon_automations_home_schedule",
+          "friendlyName": "netdaemon_automations_home_schedule",
+          "cSharpName": "NetdaemonAutomationsHomeSchedule"
+        },
+        {
+          "id": "input_boolean.netdaemon_automations_laundry_room_automation",
+          "friendlyName": "netdaemon_automations_laundry_room_automation",
+          "cSharpName": "NetdaemonAutomationsLaundryRoomAutomation"
+        },
+        {
           "id": "input_boolean.netdaemon_automations_living_room_automation",
           "friendlyName": "netdaemon_automations_living_room_automation",
           "cSharpName": "NetdaemonAutomationsLivingRoomAutomation"
+        },
+        {
+          "id": "input_boolean.netdaemon_automations_master_bedroom_automation",
+          "friendlyName": "netdaemon_automations_master_bedroom_automation",
+          "cSharpName": "NetdaemonAutomationsMasterBedroomAutomation"
         },
         {
           "id": "input_boolean.netdaemon_automations_office_automation",
@@ -288,7 +303,7 @@
         },
         {
           "id": "input_boolean.office_motion_allowed",
-          "friendlyName": "Office Sensor Motion",
+          "friendlyName": "Office Motion Allowed",
           "cSharpName": "OfficeMotionAllowed"
         }
       ],
@@ -1193,6 +1208,11 @@
         {
           "jsonName": "friendly_name",
           "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
           "clrType": "System.String"
         }
       ]

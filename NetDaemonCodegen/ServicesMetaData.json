@@ -515,13 +515,6 @@
       }
     }
   },
-  "zone": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the YAML-based zone configuration.",
-      "fields": {}
-    }
-  },
   "timer": {
     "reload": {
       "name": "",
@@ -693,6 +686,13 @@
       "fields": {}
     }
   },
+  "zone": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the YAML-based zone configuration.",
+      "fields": {}
+    }
+  },
   "group": {
     "reload": {
       "name": "Reload",
@@ -774,6 +774,284 @@
             "object": null
           }
         }
+      }
+    }
+  },
+  "input_datetime": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_datetime configuration.",
+      "fields": {}
+    },
+    "set_datetime": {
+      "name": "Set",
+      "description": "This can be used to dynamically set the date and/or time.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "The target date the entity should be set to.",
+          "example": "\u00222019-04-20\u0022",
+          "selector": {
+            "text": null
+          }
+        },
+        "time": {
+          "name": "Time",
+          "description": "The target time the entity should be set to.",
+          "example": "\u002205:04:20\u0022",
+          "selector": {
+            "time": null
+          }
+        },
+        "datetime": {
+          "name": "Date \u0026 Time",
+          "description": "The target date \u0026 time the entity should be set to.",
+          "example": "\u00222019-04-20 05:04:20\u0022",
+          "selector": {
+            "text": null
+          }
+        },
+        "timestamp": {
+          "name": "Timestamp",
+          "description": "The target date \u0026 time the entity should be set to as expressed by a UNIX timestamp.",
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "mode": "box"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_datetime"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "schedule": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the schedule configuration",
+      "fields": {}
+    }
+  },
+  "input_button": {
+    "reload": {
+      "name": "",
+      "description": "",
+      "fields": {}
+    },
+    "press": {
+      "name": "Press",
+      "description": "Press the input button entity.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_button"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "script": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload all the available scripts",
+      "fields": {}
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn on script",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn off script",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle script",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "automation": {
+    "trigger": {
+      "name": "Trigger",
+      "description": "Trigger the actions of an automation.",
+      "fields": {
+        "skip_condition": {
+          "name": "Skip conditions",
+          "description": "Whether or not the conditions will be skipped.",
+          "default": true,
+          "selector": {
+            "boolean": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle (enable / disable) an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Enable an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Disable an automation.",
+      "fields": {
+        "stop_actions": {
+          "name": "Stop actions",
+          "description": "Stop currently running actions.",
+          "default": true,
+          "selector": {
+            "boolean": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the automation configuration.",
+      "fields": {}
+    }
+  },
+  "input_number": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_number configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Set the value of an input number entity.",
+      "fields": {
+        "value": {
+          "name": "Value",
+          "description": "The target value the entity should be set to.",
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "step": 0.001,
+              "mode": "box"
+            }
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    },
+    "increment": {
+      "name": "Increment",
+      "description": "Increment the value of an input number entity by its stepping.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    },
+    "decrement": {
+      "name": "Decrement",
+      "description": "Decrement the value of an input number entity by its stepping.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
       }
     }
   },
@@ -934,499 +1212,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "schedule": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the schedule configuration",
-      "fields": {}
-    }
-  },
-  "input_datetime": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the input_datetime configuration.",
-      "fields": {}
-    },
-    "set_datetime": {
-      "name": "Set",
-      "description": "This can be used to dynamically set the date and/or time.",
-      "fields": {
-        "date": {
-          "name": "Date",
-          "description": "The target date the entity should be set to.",
-          "example": "\u00222019-04-20\u0022",
-          "selector": {
-            "text": null
-          }
-        },
-        "time": {
-          "name": "Time",
-          "description": "The target time the entity should be set to.",
-          "example": "\u002205:04:20\u0022",
-          "selector": {
-            "time": null
-          }
-        },
-        "datetime": {
-          "name": "Date \u0026 Time",
-          "description": "The target date \u0026 time the entity should be set to.",
-          "example": "\u00222019-04-20 05:04:20\u0022",
-          "selector": {
-            "text": null
-          }
-        },
-        "timestamp": {
-          "name": "Timestamp",
-          "description": "The target date \u0026 time the entity should be set to as expressed by a UNIX timestamp.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "mode": "box"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_datetime"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "script": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload all the available scripts",
-      "fields": {}
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn on script",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn off script",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle script",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "automation": {
-    "trigger": {
-      "name": "Trigger",
-      "description": "Trigger the actions of an automation.",
-      "fields": {
-        "skip_condition": {
-          "name": "Skip conditions",
-          "description": "Whether or not the conditions will be skipped.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle (enable / disable) an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Enable an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Disable an automation.",
-      "fields": {
-        "stop_actions": {
-          "name": "Stop actions",
-          "description": "Stop currently running actions.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the automation configuration.",
-      "fields": {}
-    }
-  },
-  "input_button": {
-    "reload": {
-      "name": "",
-      "description": "",
-      "fields": {}
-    },
-    "press": {
-      "name": "Press",
-      "description": "Press the input button entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_button"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "input_boolean": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the input_boolean configuration",
-      "fields": {}
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn on an input boolean",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_boolean"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn off an input boolean",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_boolean"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle an input boolean",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_boolean"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "input_number": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the input_number configuration.",
-      "fields": {}
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Set the value of an input number entity.",
-      "fields": {
-        "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
-          "required": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "step": 0.001,
-              "mode": "box"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    },
-    "increment": {
-      "name": "Increment",
-      "description": "Increment the value of an input number entity by its stepping.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    },
-    "decrement": {
-      "name": "Decrement",
-      "description": "Decrement the value of an input number entity by its stepping.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "tts": {
-    "google_translate_say": {
-      "name": "Say a TTS message with google_translate",
-      "description": "Say something using text-to-speech on a media player with google_translate.",
-      "fields": {
-        "entity_id": {
-          "name": "Entity",
-          "description": "Name(s) of media player entities.",
-          "required": true,
-          "selector": {
-            "entity": {
-              "domain": "media_player"
-            }
-          }
-        },
-        "message": {
-          "name": "Message",
-          "description": "Text to speak on devices.",
-          "example": "My name is hanna",
-          "required": true,
-          "selector": {
-            "text": null
-          }
-        },
-        "cache": {
-          "name": "Cache",
-          "description": "Control file cache of this message.",
-          "default": false,
-          "selector": {
-            "boolean": null
-          }
-        },
-        "language": {
-          "name": "Language",
-          "description": "Language to use for speech generation.",
-          "example": "ru",
-          "selector": {
-            "text": null
-          }
-        },
-        "options": {
-          "name": "Options",
-          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
-          "advanced": true,
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        }
-      }
-    },
-    "speak": {
-      "name": "Speak",
-      "description": "Speak something using text-to-speech on a media player.",
-      "fields": {
-        "media_player_entity_id": {
-          "name": "Media Player Entity",
-          "description": "Name(s) of media player entities.",
-          "required": true,
-          "selector": {
-            "entity": {
-              "domain": "media_player"
-            }
-          }
-        },
-        "message": {
-          "name": "Message",
-          "description": "Text to speak on devices.",
-          "example": "My name is hanna",
-          "required": true,
-          "selector": {
-            "text": null
-          }
-        },
-        "cache": {
-          "name": "Cache",
-          "description": "Control file cache of this message.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        },
-        "language": {
-          "name": "Language",
-          "description": "Language to use for speech generation.",
-          "example": "ru",
-          "selector": {
-            "text": null
-          }
-        },
-        "options": {
-          "name": "Options",
-          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
-          "advanced": true,
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "tts"
-            ]
-          }
-        ]
-      }
-    },
-    "clear_cache": {
-      "name": "Clear TTS cache",
-      "description": "Remove all text-to-speech cache files and RAM cache.",
-      "fields": {}
-    },
-    "cloud_say": {
-      "name": "Say a TTS message with cloud",
-      "description": "Say something using text-to-speech on a media player with cloud.",
-      "fields": {
-        "entity_id": {
-          "name": "Entity",
-          "description": "Name(s) of media player entities.",
-          "required": true,
-          "selector": {
-            "entity": {
-              "domain": "media_player"
-            }
-          }
-        },
-        "message": {
-          "name": "Message",
-          "description": "Text to speak on devices.",
-          "example": "My name is hanna",
-          "required": true,
-          "selector": {
-            "text": null
-          }
-        },
-        "cache": {
-          "name": "Cache",
-          "description": "Control file cache of this message.",
-          "default": false,
-          "selector": {
-            "boolean": null
-          }
-        },
-        "language": {
-          "name": "Language",
-          "description": "Language to use for speech generation.",
-          "example": "ru",
-          "selector": {
-            "text": null
-          }
-        },
-        "options": {
-          "name": "Options",
-          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
-          "advanced": true,
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        }
       }
     }
   },
@@ -2499,6 +2284,237 @@
       }
     }
   },
+  "tts": {
+    "google_translate_say": {
+      "name": "Say a TTS message with google_translate",
+      "description": "Say something using text-to-speech on a media player with google_translate.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Name(s) of media player entities.",
+          "required": true,
+          "selector": {
+            "entity": {
+              "domain": "media_player"
+            }
+          }
+        },
+        "message": {
+          "name": "Message",
+          "description": "Text to speak on devices.",
+          "example": "My name is hanna",
+          "required": true,
+          "selector": {
+            "text": null
+          }
+        },
+        "cache": {
+          "name": "Cache",
+          "description": "Control file cache of this message.",
+          "default": false,
+          "selector": {
+            "boolean": null
+          }
+        },
+        "language": {
+          "name": "Language",
+          "description": "Language to use for speech generation.",
+          "example": "ru",
+          "selector": {
+            "text": null
+          }
+        },
+        "options": {
+          "name": "Options",
+          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
+          "advanced": true,
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      }
+    },
+    "speak": {
+      "name": "Speak",
+      "description": "Speak something using text-to-speech on a media player.",
+      "fields": {
+        "media_player_entity_id": {
+          "name": "Media Player Entity",
+          "description": "Name(s) of media player entities.",
+          "required": true,
+          "selector": {
+            "entity": {
+              "domain": "media_player"
+            }
+          }
+        },
+        "message": {
+          "name": "Message",
+          "description": "Text to speak on devices.",
+          "example": "My name is hanna",
+          "required": true,
+          "selector": {
+            "text": null
+          }
+        },
+        "cache": {
+          "name": "Cache",
+          "description": "Control file cache of this message.",
+          "default": true,
+          "selector": {
+            "boolean": null
+          }
+        },
+        "language": {
+          "name": "Language",
+          "description": "Language to use for speech generation.",
+          "example": "ru",
+          "selector": {
+            "text": null
+          }
+        },
+        "options": {
+          "name": "Options",
+          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
+          "advanced": true,
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "tts"
+            ]
+          }
+        ]
+      }
+    },
+    "clear_cache": {
+      "name": "Clear TTS cache",
+      "description": "Remove all text-to-speech cache files and RAM cache.",
+      "fields": {}
+    },
+    "cloud_say": {
+      "name": "Say a TTS message with cloud",
+      "description": "Say something using text-to-speech on a media player with cloud.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Name(s) of media player entities.",
+          "required": true,
+          "selector": {
+            "entity": {
+              "domain": "media_player"
+            }
+          }
+        },
+        "message": {
+          "name": "Message",
+          "description": "Text to speak on devices.",
+          "example": "My name is hanna",
+          "required": true,
+          "selector": {
+            "text": null
+          }
+        },
+        "cache": {
+          "name": "Cache",
+          "description": "Control file cache of this message.",
+          "default": false,
+          "selector": {
+            "boolean": null
+          }
+        },
+        "language": {
+          "name": "Language",
+          "description": "Language to use for speech generation.",
+          "example": "ru",
+          "selector": {
+            "text": null
+          }
+        },
+        "options": {
+          "name": "Options",
+          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
+          "advanced": true,
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      }
+    }
+  },
+  "input_boolean": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_boolean configuration",
+      "fields": {}
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn on an input boolean",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_boolean"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn off an input boolean",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_boolean"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle an input boolean",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_boolean"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "button": {
+    "press": {
+      "name": "Press",
+      "description": "Press the button entity.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "button"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "ffmpeg": {
     "start": {
       "name": "Start",
@@ -2546,22 +2562,6 @@
             }
           }
         }
-      }
-    }
-  },
-  "button": {
-    "press": {
-      "name": "Press",
-      "description": "Press the button entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "button"
-            ]
-          }
-        ]
       }
     }
   },
@@ -3248,6 +3248,50 @@
       }
     }
   },
+  "switch": {
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn a switch off",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn a switch on",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles a switch state",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "backup": {
     "create": {
       "name": "Create backup",
@@ -3339,50 +3383,6 @@
             "boolean": null
           }
         }
-      }
-    }
-  },
-  "switch": {
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn a switch off",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn a switch on",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggles a switch state",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
       }
     }
   },
@@ -4997,6 +4997,31 @@
       }
     }
   },
+  "number": {
+    "set_value": {
+      "name": "Set",
+      "description": "Set the value of a Number entity.",
+      "fields": {
+        "value": {
+          "name": "Value",
+          "description": "The target value the entity should be set to.",
+          "example": 42,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "number"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "lock": {
     "unlock": {
       "name": "Unlock",
@@ -5062,104 +5087,6 @@
           {
             "domain": [
               "lock"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "siren": {
-    "turn_on": {
-      "name": "",
-      "description": "Turn siren on.",
-      "fields": {
-        "tone": {
-          "description": "The tone to emit when turning the siren on. When \u0060available_tones\u0060 property is a map, either the key or the value can be used. Must be supported by the integration.",
-          "example": "fire",
-          "required": false,
-          "selector": {
-            "text": null
-          }
-        },
-        "volume_level": {
-          "description": "The volume level of the noise to emit when turning the siren on. Must be supported by the integration.",
-          "example": 0.5,
-          "required": false,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 1,
-              "step": 0.05
-            }
-          }
-        },
-        "duration": {
-          "description": "The duration in seconds of the noise to emit when turning the siren on. Must be supported by the integration.",
-          "example": 15,
-          "required": false,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "",
-      "description": "Turn siren off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "",
-      "description": "Toggles a siren.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "number": {
-    "set_value": {
-      "name": "Set",
-      "description": "Set the value of a Number entity.",
-      "fields": {
-        "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
-          "example": 42,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "number"
             ]
           }
         ]
@@ -5260,6 +5187,79 @@
           {
             "domain": [
               "select"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "siren": {
+    "turn_on": {
+      "name": "",
+      "description": "Turn siren on.",
+      "fields": {
+        "tone": {
+          "description": "The tone to emit when turning the siren on. When \u0060available_tones\u0060 property is a map, either the key or the value can be used. Must be supported by the integration.",
+          "example": "fire",
+          "required": false,
+          "selector": {
+            "text": null
+          }
+        },
+        "volume_level": {
+          "description": "The volume level of the noise to emit when turning the siren on. Must be supported by the integration.",
+          "example": 0.5,
+          "required": false,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 1,
+              "step": 0.05
+            }
+          }
+        },
+        "duration": {
+          "description": "The duration in seconds of the noise to emit when turning the siren on. Must be supported by the integration.",
+          "example": 15,
+          "required": false,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "siren"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "",
+      "description": "Turn siren off.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "siren"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "",
+      "description": "Toggles a siren.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "siren"
             ]
           }
         ]

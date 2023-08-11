@@ -26,35 +26,35 @@ public class HomeSchedule
         scheduler.ScheduleCron("25 06 * * 1-5", () =>
         {
             bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
-            ha.Message("Home Schedule", "6:30 AM Bedroom Lignts On");
+            ha.Message("Home Schedule", "6:30 AM Bedroom Lignts On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
         // 07:30 AM Sat & Sun
         scheduler.ScheduleCron("25 07 * * 6,0", () =>
         {
             bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
-            ha.Message("Home Schedule", "7:30 AM Bedroom Lignts On");
+            ha.Message("Home Schedule", "7:30 AM Bedroom Lignts On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
         // 08:30 AM
         scheduler.ScheduleCron("30 08 * * *", () =>
         {
             bedroomLights.TurnOff();
-            ha.Message("Home Schedule", "8:30 AM Bedroom Lignts Off");
+            ha.Message("Home Schedule", "8:30 AM Bedroom Lignts Off", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
         // 07:00 PM
         scheduler.ScheduleCron("00 19 * * *", () =>
         {
             drivewayLights.TurnOn();
-            ha.Message("Home Schedule", "7:30 PM Outside Lights On");
+            ha.Message("Home Schedule", "7:30 PM Outside Lights On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
         // 11:00 PM
         scheduler.ScheduleCron("00 23 * * *", () =>
         {
             drivewayLights.TurnOff();
-            ha.Message("Home Schedule", "11:00 PM Outside Lights Off");
+            ha.Message("Home Schedule", "11:00 PM Outside Lights Off", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
         // 11:15 PM
@@ -62,14 +62,14 @@ public class HomeSchedule
         {
             entities.Light.Lamp.TurnOff(fadeDuration);
             entities.Light.Nightstand.TurnOff(fadeDuration);
-            ha.Message("Home Schedule", "11:15 PM Fade Bedroom Lights");
+            ha.Message("Home Schedule", "11:15 PM Fade Bedroom Lights", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
         // 11:30 PM
         scheduler.ScheduleCron("25 23 * * *", () =>
         {
             entities.Light.ElementsAc4b.TurnOff(fadeDuration);
-            ha.Message("Home Schedule", "11:15 PM Fade Bedroom Nanoleaf");
+            ha.Message("Home Schedule", "11:15 PM Fade Bedroom Nanoleaf", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
         });
 
     }
