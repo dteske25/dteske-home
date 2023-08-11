@@ -1,3 +1,5 @@
+using TeskeHomeAssistant.Helpers;
+
 namespace Automations;
 
 [NetDaemonApp]
@@ -5,7 +7,7 @@ public class OfficeAutomation
 {
     public OfficeAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<OfficeAutomation> logger)
     {
-        var officeLights = new List<LightEntity>
+        var officeLights = new List<Entity>
         {
             entities.Light.OfficeDeskLamp1,            
             entities.Light.OfficeDeskLamp2,
@@ -16,10 +18,10 @@ public class OfficeAutomation
 
         new MotionBuilder(entities.BinarySensor.OfficeSensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.InputBoolean.OfficeMotionAllowed)
-            .WithOnAction(_ => EntityHelpers.TurnOn(officeLights, dimmer.Current))
+            .WithOnAction(_ => officeLights.TurnOn(dimmer.Current))
             .WithOffAction(_ =>
             {
-                EntityHelpers.TurnOff(officeLights);
+                officeLights.TurnOff();
                 dimmer.SetStep(2);
             }, TimeSpan.FromHours(1))
             .Build();
@@ -27,7 +29,7 @@ public class OfficeAutomation
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             entities.InputBoolean.OfficeMotionAllowed.TurnOff();
-            EntityHelpers.TurnOff(officeLights);
+            officeLights.TurnOff();
             dimmer.SetStep(2);
             scheduler.Schedule(TimeSpan.FromHours(2), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });
@@ -35,13 +37,13 @@ public class OfficeAutomation
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
             entities.InputBoolean.OfficeMotionAllowed.TurnOff();
-            EntityHelpers.TurnOn(officeLights, dimmer.Current);
+            officeLights.TurnOn(dimmer.Current);
             scheduler.Schedule(TimeSpan.FromHours(1), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
-            EntityHelpers.TurnOn(officeLights, dimmer.Next());
+            officeLights.TurnOn(dimmer.Next());
             logger.LogInformation("New brightness is {@brightness}", dimmer.Current);
         });
     }

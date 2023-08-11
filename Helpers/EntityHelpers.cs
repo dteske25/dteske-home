@@ -19,6 +19,10 @@
                 {
                     switchEntity.TurnOn();
                 }
+                else if (entity is InputBooleanEntity inputBooleanEntity)
+                {
+                    inputBooleanEntity.TurnOn();
+                }
             }
         }
 
@@ -37,6 +41,10 @@
                 else if (entity is SwitchEntity switchEntity)
                 {
                     switchEntity.TurnOff();
+                }
+                else if (entity is InputBooleanEntity inputBooleanEntity)
+                {
+                    inputBooleanEntity.TurnOff();
                 }
             }
         }

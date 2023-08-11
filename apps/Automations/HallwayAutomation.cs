@@ -5,7 +5,7 @@ public class HallwayAutomation
 {
     public HallwayAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<HallwayAutomation> logger)
     {
-        var hallwayLights = new List<LightEntity>
+        var hallwayLights = new List<Entity>
         {
             entities.Light.Hallway1,
             entities.Light.Hallway2,
@@ -15,7 +15,10 @@ public class HallwayAutomation
             .WithMotionAllowed(entities.Switch.HallwaySensorMotion)
             .WithOnAction(_ => 
             {
-                entities.Light.HallwaySwitch.TurnOn();
+                if (entities.Light.HallwaySwitch.State == "off")
+                {
+                    entities.Light.HallwaySwitch.TurnOn();
+                }
                 hallwayLights.TurnOn();
             })
             .WithOffAction(_ => hallwayLights.TurnOff(), TimeSpan.FromMinutes(2))
