@@ -12,11 +12,13 @@
             var hour = DateTime.Now.Hour;
             return hour switch
             {
-                int when hour < 5 => BRIGHTNESS_DIM,
-                int when hour >= 8 && hour < 20 => BRIGHTNESS_HIGH,
-                int when hour >= 22 => BRIGHTNESS_LOW,
+                int when hour >= 6 && hour < 8 => BRIGHTNESS_LOW,
+                int when hour >= 8 && hour < 10 => BRIGHTNESS_MED,
+                int when hour >= 10 && hour < 18 => BRIGHTNESS_HIGH,
+                int when hour >= 18 && hour < 21 => BRIGHTNESS_MED,
+                int when hour >= 21 && hour < 23 => BRIGHTNESS_LOW,
 
-                _ => BRIGHTNESS_MED
+                _ => BRIGHTNESS_DIM
             };
 
         }
