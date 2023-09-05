@@ -14,6 +14,11 @@
           "cSharpName": "DeckDoorOpening"
         },
         {
+          "id": "binary_sensor.dteske_pixel_high_accuracy_mode",
+          "friendlyName": "dteske-pixel High accuracy mode",
+          "cSharpName": "DteskePixelHighAccuracyMode"
+        },
+        {
           "id": "binary_sensor.garage_door_myq_gateway",
           "friendlyName": "Garage Door MyQ Gateway",
           "cSharpName": "GarageDoorMyqGateway"
@@ -606,39 +611,9 @@
       "domain": "media_player",
       "entities": [
         {
-          "id": "media_player.basement_speaker",
-          "friendlyName": "Basement speaker",
-          "cSharpName": "BasementSpeaker"
-        },
-        {
-          "id": "media_player.bathroom_clock",
-          "friendlyName": "Bathroom Clock",
-          "cSharpName": "BathroomClock"
-        },
-        {
           "id": "media_player.bedroom_clock",
           "friendlyName": "Bedroom clock",
           "cSharpName": "BedroomClock"
-        },
-        {
-          "id": "media_player.kitchen_speaker",
-          "friendlyName": "Kitchen speaker",
-          "cSharpName": "KitchenSpeaker"
-        },
-        {
-          "id": "media_player.living_room_speaker",
-          "friendlyName": "Living Room speaker",
-          "cSharpName": "LivingRoomSpeaker"
-        },
-        {
-          "id": "media_player.master_bedroom",
-          "friendlyName": "Master Bedroom",
-          "cSharpName": "MasterBedroom"
-        },
-        {
-          "id": "media_player.master_bedroom_display",
-          "friendlyName": "Master Bedroom display",
-          "cSharpName": "MasterBedroomDisplay"
         },
         {
           "id": "media_player.office_display",
@@ -878,13 +853,48 @@
       "entities": [
         {
           "id": "sensor.dteske_pixel_battery_state",
-          "friendlyName": "dteske-pixel Battery State",
+          "friendlyName": "dteske-pixel Battery state",
           "cSharpName": "DteskePixelBatteryState"
         },
         {
           "id": "sensor.dteske_pixel_charger_type",
-          "friendlyName": "dteske-pixel Charger Type",
+          "friendlyName": "dteske-pixel Charger type",
           "cSharpName": "DteskePixelChargerType"
+        },
+        {
+          "id": "sensor.dteske_pixel_next_alarm",
+          "friendlyName": "dteske-pixel Next alarm",
+          "cSharpName": "DteskePixelNextAlarm"
+        },
+        {
+          "id": "sensor.dteske_pixel_volume_level_alarm",
+          "friendlyName": "dteske-pixel Volume level alarm",
+          "cSharpName": "DteskePixelVolumeLevelAlarm"
+        },
+        {
+          "id": "sensor.google_wifi_current_version",
+          "friendlyName": "google_wifi_current_version",
+          "cSharpName": "GoogleWifiCurrentVersion"
+        },
+        {
+          "id": "sensor.google_wifi_last_restart",
+          "friendlyName": "google_wifi_last_restart",
+          "cSharpName": "GoogleWifiLastRestart"
+        },
+        {
+          "id": "sensor.google_wifi_local_ip",
+          "friendlyName": "google_wifi_local_ip",
+          "cSharpName": "GoogleWifiLocalIp"
+        },
+        {
+          "id": "sensor.google_wifi_new_version",
+          "friendlyName": "google_wifi_new_version",
+          "cSharpName": "GoogleWifiNewVersion"
+        },
+        {
+          "id": "sensor.google_wifi_status",
+          "friendlyName": "google_wifi_status",
+          "cSharpName": "GoogleWifiStatus"
         },
         {
           "id": "sensor.sun_next_dawn",
@@ -932,6 +942,21 @@
           "jsonName": "device_class",
           "cSharpName": "DeviceClass",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "Local Time",
+          "cSharpName": "LocalTime",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Package",
+          "cSharpName": "Package",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Time in Milliseconds",
+          "cSharpName": "TimeinMilliseconds",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -956,8 +981,18 @@
         },
         {
           "id": "sensor.dteske_pixel_battery_level",
-          "friendlyName": "dteske-pixel Battery Level",
+          "friendlyName": "dteske-pixel Battery level",
           "cSharpName": "DteskePixelBatteryLevel"
+        },
+        {
+          "id": "sensor.dteske_pixel_high_accuracy_update_interval",
+          "friendlyName": "dteske-pixel High accuracy update interval",
+          "cSharpName": "DteskePixelHighAccuracyUpdateInterval"
+        },
+        {
+          "id": "sensor.google_wifi_uptime",
+          "friendlyName": "google_wifi_uptime",
+          "cSharpName": "GoogleWifiUptime"
         },
         {
           "id": "sensor.hallway_sensor_battery",
@@ -1514,9 +1549,9 @@
       "domain": "tts",
       "entities": [
         {
-          "id": "tts.google_say",
+          "id": "tts.google_en_com",
           "friendlyName": "Google en com",
-          "cSharpName": "GoogleSay"
+          "cSharpName": "GoogleEnCom"
         }
       ],
       "attributes": [

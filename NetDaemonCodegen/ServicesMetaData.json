@@ -777,45 +777,23 @@
       }
     }
   },
-  "schedule": {
+  "input_text": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the schedule configuration",
-      "fields": {}
-    }
-  },
-  "input_button": {
-    "reload": {
-      "name": "",
-      "description": "",
+      "description": "Reload the input_text configuration.",
       "fields": {}
     },
-    "press": {
-      "name": "Press",
-      "description": "Press the input button entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_button"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "automation": {
-    "trigger": {
-      "name": "Trigger",
-      "description": "Trigger the actions of an automation.",
+    "set_value": {
+      "name": "Set",
+      "description": "Set the value of an input text entity.",
       "fields": {
-        "skip_condition": {
-          "name": "Skip conditions",
-          "description": "Whether or not the conditions will be skipped.",
-          "default": true,
+        "value": {
+          "name": "Value",
+          "description": "The target value the entity should be set to.",
+          "required": true,
+          "example": "This is an example text",
           "selector": {
-            "boolean": null
+            "text": null
           }
         }
       },
@@ -823,112 +801,7 @@
         "entity": [
           {
             "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle (enable / disable) an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Enable an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Disable an automation.",
-      "fields": {
-        "stop_actions": {
-          "name": "Stop actions",
-          "description": "Stop currently running actions.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the automation configuration.",
-      "fields": {}
-    }
-  },
-  "script": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload all the available scripts",
-      "fields": {}
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn on script",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn off script",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle script",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
+              "input_text"
             ]
           }
         ]
@@ -1127,23 +1000,38 @@
       }
     }
   },
-  "input_text": {
+  "input_button": {
     "reload": {
-      "name": "Reload",
-      "description": "Reload the input_text configuration.",
+      "name": "",
+      "description": "",
       "fields": {}
     },
-    "set_value": {
-      "name": "Set",
-      "description": "Set the value of an input text entity.",
+    "press": {
+      "name": "Press",
+      "description": "Press the input button entity.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_button"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "automation": {
+    "trigger": {
+      "name": "Trigger",
+      "description": "Trigger the actions of an automation.",
       "fields": {
-        "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
-          "required": true,
-          "example": "This is an example text",
+        "skip_condition": {
+          "name": "Skip conditions",
+          "description": "Whether or not the conditions will be skipped.",
+          "default": true,
           "selector": {
-            "text": null
+            "boolean": null
           }
         }
       },
@@ -1151,7 +1039,112 @@
         "entity": [
           {
             "domain": [
-              "input_text"
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle (enable / disable) an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Enable an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Disable an automation.",
+      "fields": {
+        "stop_actions": {
+          "name": "Stop actions",
+          "description": "Stop currently running actions.",
+          "default": true,
+          "selector": {
+            "boolean": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the automation configuration.",
+      "fields": {}
+    }
+  },
+  "script": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload all the available scripts",
+      "fields": {}
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn on script",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn off script",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle script",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
             ]
           }
         ]
@@ -1215,53 +1208,11 @@
       }
     }
   },
-  "input_boolean": {
+  "schedule": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the input_boolean configuration",
+      "description": "Reload the schedule configuration",
       "fields": {}
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn on an input boolean",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_boolean"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn off an input boolean",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_boolean"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle an input boolean",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_boolean"
-            ]
-          }
-        ]
-      }
     }
   },
   "light": {
@@ -2333,16 +2284,49 @@
       }
     }
   },
-  "button": {
-    "press": {
-      "name": "Press",
-      "description": "Press the button entity.",
+  "input_boolean": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reload the input_boolean configuration",
+      "fields": {}
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn on an input boolean",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "button"
+              "input_boolean"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn off an input boolean",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_boolean"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle an input boolean",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_boolean"
             ]
           }
         ]
@@ -2565,6 +2549,22 @@
       }
     }
   },
+  "button": {
+    "press": {
+      "name": "Press",
+      "description": "Press the button entity.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "button"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "notify": {
     "persistent_notification": {
       "name": "Send a persistent notification",
@@ -2585,6 +2585,45 @@
           "example": "Your Garage Door Friend",
           "selector": {
             "text": null
+          }
+        },
+        "data": {
+          "name": "Data",
+          "description": "Extended information for notification. Optional depending on the platform.",
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      }
+    },
+    "notify": {
+      "name": "Send a notification with notify",
+      "description": "Sends a notification message using the notify service.",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "Message body of the notification.",
+          "required": true,
+          "example": "The garage door has been open for 10 minutes.",
+          "selector": {
+            "text": null
+          }
+        },
+        "title": {
+          "name": "Title",
+          "description": "Title for your notification.",
+          "example": "Your Garage Door Friend",
+          "selector": {
+            "text": null
+          }
+        },
+        "target": {
+          "name": "Target",
+          "description": "An array of targets to send the notification to. Optional depending on the platform.",
+          "example": "platform specific",
+          "selector": {
+            "object": null
           }
         },
         "data": {
@@ -2635,42 +2674,39 @@
           }
         }
       }
-    },
-    "notify": {
-      "name": "Send a notification with notify",
-      "description": "Sends a notification message using the notify service.",
+    }
+  },
+  "cast": {
+    "show_lovelace_view": {
+      "name": "Show lovelace view",
+      "description": "Show a Lovelace view on a Chromecast.",
       "fields": {
-        "message": {
-          "name": "Message",
-          "description": "Message body of the notification.",
+        "entity_id": {
+          "name": "Entity",
+          "description": "Media Player entity to show the Lovelace view on.",
           "required": true,
-          "example": "The garage door has been open for 10 minutes.",
+          "selector": {
+            "entity": {
+              "integration": "cast",
+              "domain": "media_player"
+            }
+          }
+        },
+        "dashboard_path": {
+          "name": "Dashboard path",
+          "description": "The URL path of the Lovelace dashboard to show.",
+          "required": true,
+          "example": "lovelace-cast",
           "selector": {
             "text": null
           }
         },
-        "title": {
-          "name": "Title",
-          "description": "Title for your notification.",
-          "example": "Your Garage Door Friend",
+        "view_path": {
+          "name": "View Path",
+          "description": "The path of the Lovelace view to show.",
+          "example": "downstairs",
           "selector": {
             "text": null
-          }
-        },
-        "target": {
-          "name": "Target",
-          "description": "An array of targets to send the notification to. Optional depending on the platform.",
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        },
-        "data": {
-          "name": "Data",
-          "description": "Extended information for notification. Optional depending on the platform.",
-          "example": "platform specific",
-          "selector": {
-            "object": null
           }
         }
       }
@@ -2746,39 +2782,47 @@
       }
     }
   },
-  "cast": {
-    "show_lovelace_view": {
-      "name": "Show lovelace view",
-      "description": "Show a Lovelace view on a Chromecast.",
-      "fields": {
-        "entity_id": {
-          "name": "Entity",
-          "description": "Media Player entity to show the Lovelace view on.",
-          "required": true,
-          "selector": {
-            "entity": {
-              "integration": "cast",
-              "domain": "media_player"
-            }
+  "switch": {
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turn a switch off",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
           }
-        },
-        "dashboard_path": {
-          "name": "Dashboard path",
-          "description": "The URL path of the Lovelace dashboard to show.",
-          "required": true,
-          "example": "lovelace-cast",
-          "selector": {
-            "text": null
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turn a switch on",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
           }
-        },
-        "view_path": {
-          "name": "View Path",
-          "description": "The path of the Lovelace view to show.",
-          "example": "downstairs",
-          "selector": {
-            "text": null
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles a switch state",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
           }
-        }
+        ]
       }
     }
   },
@@ -3248,57 +3292,6 @@
       }
     }
   },
-  "switch": {
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn a switch off",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn a switch on",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggles a switch state",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "backup": {
-    "create": {
-      "name": "Create backup",
-      "description": "Create a new backup.",
-      "fields": {}
-    }
-  },
   "hue": {
     "activate_scene": {
       "name": "Activate Hue Scene",
@@ -3384,6 +3377,13 @@
           }
         }
       }
+    }
+  },
+  "backup": {
+    "create": {
+      "name": "Create backup",
+      "description": "Create a new backup.",
+      "fields": {}
     }
   },
   "cover": {
@@ -4608,6 +4608,240 @@
       }
     }
   },
+  "alarm_control_panel": {
+    "alarm_disarm": {
+      "name": "Disarm",
+      "description": "Send the alarm the command for disarm.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to disarm the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_home": {
+      "name": "Arm home",
+      "description": "Send the alarm the command for arm home.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm home the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_away": {
+      "name": "Arm away",
+      "description": "Send the alarm the command for arm away.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm away the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_night": {
+      "name": "Arm night",
+      "description": "Send the alarm the command for arm night.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm night the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_vacation": {
+      "name": "Arm vacation",
+      "description": "Send the alarm the command for arm vacation.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm vacation the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_custom_bypass": {
+      "name": "Arm with custom bypass",
+      "description": "Send arm custom bypass command.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to arm custom bypass the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_trigger": {
+      "name": "Trigger",
+      "description": "Send the alarm the command for trigger.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to trigger the alarm control panel with.",
+          "example": "1234",
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "lock": {
+    "unlock": {
+      "name": "Unlock",
+      "description": "Unlock all or specified locks.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to unlock the lock with.",
+          "example": 1234,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "lock"
+            ]
+          }
+        ]
+      }
+    },
+    "lock": {
+      "name": "Lock",
+      "description": "Lock all or specified locks.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to lock the lock with.",
+          "example": 1234,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "lock"
+            ]
+          }
+        ]
+      }
+    },
+    "open": {
+      "name": "Open",
+      "description": "Open all or specified locks.",
+      "fields": {
+        "code": {
+          "name": "Code",
+          "description": "An optional code to open the lock with.",
+          "example": 1234,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "lock"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "fan": {
     "turn_on": {
       "name": "Turn on",
@@ -4834,15 +5068,15 @@
       }
     }
   },
-  "alarm_control_panel": {
-    "alarm_disarm": {
-      "name": "Disarm",
-      "description": "Send the alarm the command for disarm.",
+  "number": {
+    "set_value": {
+      "name": "Set",
+      "description": "Set the value of a Number entity.",
       "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to disarm the alarm control panel with.",
-          "example": "1234",
+        "value": {
+          "name": "Value",
+          "description": "The target value the entity should be set to.",
+          "example": 42,
           "selector": {
             "text": null
           }
@@ -4852,145 +5086,80 @@
         "entity": [
           {
             "domain": [
-              "alarm_control_panel"
+              "number"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "siren": {
+    "turn_on": {
+      "name": "",
+      "description": "Turn siren on.",
+      "fields": {
+        "tone": {
+          "description": "The tone to emit when turning the siren on. When \u0060available_tones\u0060 property is a map, either the key or the value can be used. Must be supported by the integration.",
+          "example": "fire",
+          "required": false,
+          "selector": {
+            "text": null
+          }
+        },
+        "volume_level": {
+          "description": "The volume level of the noise to emit when turning the siren on. Must be supported by the integration.",
+          "example": 0.5,
+          "required": false,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 1,
+              "step": 0.05
+            }
+          }
+        },
+        "duration": {
+          "description": "The duration in seconds of the noise to emit when turning the siren on. Must be supported by the integration.",
+          "example": 15,
+          "required": false,
+          "selector": {
+            "text": null
+          }
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "siren"
             ]
           }
         ]
       }
     },
-    "alarm_arm_home": {
-      "name": "Arm home",
-      "description": "Send the alarm the command for arm home.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm home the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
+    "turn_off": {
+      "name": "",
+      "description": "Turn siren off.",
+      "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "alarm_control_panel"
+              "siren"
             ]
           }
         ]
       }
     },
-    "alarm_arm_away": {
-      "name": "Arm away",
-      "description": "Send the alarm the command for arm away.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm away the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
+    "toggle": {
+      "name": "",
+      "description": "Toggles a siren.",
+      "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_night": {
-      "name": "Arm night",
-      "description": "Send the alarm the command for arm night.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm night the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_vacation": {
-      "name": "Arm vacation",
-      "description": "Send the alarm the command for arm vacation.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm vacation the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_custom_bypass": {
-      "name": "Arm with custom bypass",
-      "description": "Send arm custom bypass command.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm custom bypass the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_trigger": {
-      "name": "Trigger",
-      "description": "Send the alarm the command for trigger.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to trigger the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
+              "siren"
             ]
           }
         ]
@@ -5091,175 +5260,6 @@
           {
             "domain": [
               "select"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "lock": {
-    "unlock": {
-      "name": "Unlock",
-      "description": "Unlock all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to unlock the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "lock"
-            ]
-          }
-        ]
-      }
-    },
-    "lock": {
-      "name": "Lock",
-      "description": "Lock all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to lock the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "lock"
-            ]
-          }
-        ]
-      }
-    },
-    "open": {
-      "name": "Open",
-      "description": "Open all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to open the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "lock"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "siren": {
-    "turn_on": {
-      "name": "",
-      "description": "Turn siren on.",
-      "fields": {
-        "tone": {
-          "description": "The tone to emit when turning the siren on. When \u0060available_tones\u0060 property is a map, either the key or the value can be used. Must be supported by the integration.",
-          "example": "fire",
-          "required": false,
-          "selector": {
-            "text": null
-          }
-        },
-        "volume_level": {
-          "description": "The volume level of the noise to emit when turning the siren on. Must be supported by the integration.",
-          "example": 0.5,
-          "required": false,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 1,
-              "step": 0.05
-            }
-          }
-        },
-        "duration": {
-          "description": "The duration in seconds of the noise to emit when turning the siren on. Must be supported by the integration.",
-          "example": 15,
-          "required": false,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "",
-      "description": "Turn siren off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "",
-      "description": "Toggles a siren.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "number": {
-    "set_value": {
-      "name": "Set",
-      "description": "Set the value of a Number entity.",
-      "fields": {
-        "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
-          "example": 42,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "number"
             ]
           }
         ]

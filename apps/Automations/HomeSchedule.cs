@@ -22,18 +22,37 @@ public class HomeSchedule
 
         var fadeDuration = (int)TimeSpan.FromMinutes(5).TotalSeconds;
 
-        // 06:30 AM Mon-Fri - turn on bedroom lights
-        scheduler.ScheduleCron("25 06 * * 1-5", () =>
+        scheduler.ScheduleCron("*/15 * * * *", () =>
         {
-            bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
-            ha.Message("Home Schedule", "6:30 AM Bedroom Lignts On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
-        });
+            var alarmString = entities.Sensor.DteskePixelNextAlarm.State;
+            var result = DateTimeOffset.TryParse(alarmString, out DateTimeOffset nextAlarm);
+            nextAlarm = nextAlarm.ToOffset(DateTimeOffset.Now.Offset);
+            if (result)
+            {
+                scheduler.Schedule(nextAlarm.LocalDateTime, () =>
+                {
+                    bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH);
+                    ha.Message("Home Schedule", "Bedroom Lights On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
+                });
 
-        // 07:30 AM Sat & Sun - turn on bedroom lights
-        scheduler.ScheduleCron("25 07 * * 6,0", () =>
-        {
-            bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
-            ha.Message("Home Schedule", "7:30 AM Bedroom Lignts On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
+                nextAlarm = nextAlarm.Subtract(TimeSpan.FromMinutes(5));
+                scheduler.Schedule(nextAlarm.LocalDateTime, () =>
+                {
+                    bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH, fadeDuration);
+                });
+                ha.Message("Home Schedule", $"Lights scheduled to turn on at {nextAlarm.LocalDateTime}", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
+            }
+            else
+            {
+                // Otherwise fall back to 7 am
+                var fallbackTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 0, 0);
+                scheduler.Schedule(fallbackTime, (_sched, _offset) =>
+                {
+                    bedroomLights.TurnOn(GlobalConfiguration.BRIGHTNESS_HIGH);
+                    ha.Message("Home Schedule", "Bedroom Lights On", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
+                });
+                ha.Message("Home Schedule", $"**Unable to parse alarm!** Lights scheduled to turn on at {fallbackTime}", entities.InputBoolean.NetdaemonAutomationsHomeSchedule.EntityId);
+            }
         });
 
         // 08:30 AM - turn off bedroom lights
