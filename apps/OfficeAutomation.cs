@@ -1,8 +1,6 @@
-using TeskeHomeAssistant.Helpers;
-
 namespace TeskeHomeAssistant.apps;
 
-[NetDaemonApp]
+[NetDaemonApp(Id = "Office")]
 public class OfficeAutomation
 {
     public OfficeAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<OfficeAutomation> logger)

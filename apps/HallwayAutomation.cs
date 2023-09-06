@@ -1,6 +1,6 @@
 ﻿namespace TeskeHomeAssistant.apps;
 
-[NetDaemonApp]
+[NetDaemonApp(Id = "Hallway")]
 public class HallwayAutomation
 {
     public HallwayAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<HallwayAutomation> logger)

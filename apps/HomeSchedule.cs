@@ -1,6 +1,6 @@
 ﻿namespace TeskeHomeAssistant.apps;
 
-[NetDaemonApp]
+[NetDaemonApp(Id = "Schedule")]
 public class HomeSchedule
 {
     public HomeSchedule(IScheduler scheduler, Entities entities, IHaContext ha)
