@@ -1,6 +1,6 @@
 ﻿namespace TeskeHomeAssistant.apps;
 
-[NetDaemonApp(Id = "LaundryRoom")]
+[NetDaemonApp]
 public class LaundryRoomAutomation
 {
     public LaundryRoomAutomation(IScheduler scheduler, Entities entities, ILogger<LaundryRoomAutomation> logger)

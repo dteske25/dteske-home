@@ -1,6 +1,6 @@
 ﻿namespace TeskeHomeAssistant.apps;
 
-[NetDaemonApp(Id = "MasterBedroom")]
+[NetDaemonApp]
 public class MasterBedroomAutomation
 {
     public MasterBedroomAutomation(IHaContext ha, IScheduler scheduler, Entities entities, ILogger<MasterBedroomAutomation> logger)

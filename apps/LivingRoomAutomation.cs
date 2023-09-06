@@ -1,6 +1,6 @@
 namespace TeskeHomeAssistant.apps;
 
-[NetDaemonApp(Id = "LivingRoom")]
+[NetDaemonApp]
 public class LivingRoomAutomation
 {
     public LivingRoomAutomation(IHaContext ha, Entities entities)
