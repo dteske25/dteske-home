@@ -9,7 +9,7 @@ using NetDaemon.Runtime;
 try
 {
     await Host.CreateDefaultBuilder(args)
-        //.UseNetDaemonAppSettings()
+        .UseNetDaemonAppSettings()
         .UseNetDaemonDefaultLogging()
         .UseNetDaemonRuntime()
         .UseNetDaemonTextToSpeech()
