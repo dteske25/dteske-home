@@ -1,4 +1,4 @@
-﻿namespace Automations;
+﻿namespace TeskeHomeAssistant.apps;
 
 [NetDaemonApp]
 public class LaundryRoomAutomation

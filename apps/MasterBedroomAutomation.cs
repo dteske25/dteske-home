@@ -1,4 +1,4 @@
-﻿namespace Automations;
+﻿namespace TeskeHomeAssistant.apps;
 
 [NetDaemonApp]
 public class MasterBedroomAutomation
@@ -22,14 +22,14 @@ public class MasterBedroomAutomation
 
         new MotionBuilder(entities.BinarySensor.MasterClosetMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.MasterClosetMotion)
-            .WithOnAction(_ => EntityHelpers.TurnOn(closetLights))
-            .WithOffAction(_ => EntityHelpers.TurnOff(closetLights), TimeSpan.FromMinutes(1))
+            .WithOnAction(_ => closetLights.TurnOn())
+            .WithOffAction(_ => closetLights.TurnOff(), TimeSpan.FromMinutes(1))
             .Build();
 
         ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             bedroomLights.TurnOff();
-            closetLights.TurnOff();;
+            closetLights.TurnOff(); ;
             entities.Switch.MasterClosetMotion.TurnOff();
             scheduler.Schedule(TimeSpan.FromHours(6), () => entities.Switch.MasterClosetMotion.TurnOn());
             dimmer.SetStep(1);

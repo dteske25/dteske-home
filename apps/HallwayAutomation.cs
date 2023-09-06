@@ -1,4 +1,4 @@
-﻿namespace Automations;
+﻿namespace TeskeHomeAssistant.apps;
 
 [NetDaemonApp]
 public class HallwayAutomation
@@ -13,7 +13,7 @@ public class HallwayAutomation
 
         new MotionBuilder(entities.BinarySensor.HallwaySensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.Switch.HallwaySensorMotion)
-            .WithOnAction(_ => 
+            .WithOnAction(_ =>
             {
                 if (entities.Light.HallwaySwitch.State == "off")
                 {
