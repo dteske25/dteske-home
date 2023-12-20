@@ -7,14 +7,12 @@ public class OfficeAutomation
     {
         var officeLights = new List<Entity>
         {
-            entities.Light.OfficeDeskLamp1,
-            entities.Light.OfficeDeskLamp2,
-            entities.Light.Shapes7b48
+            entities.Light.OfficeLights,
         };
 
         var dimmer = new Dimmer(100, 20, 2);
 
-        new MotionBuilder(entities.BinarySensor.OfficeSensorMotion, scheduler, logger)
+        new MotionBuilder(entities.BinarySensor.OfficeMotionSensor, scheduler, logger)
             .WithMotionAllowed(entities.InputBoolean.OfficeMotionAllowed)
             .WithOnAction(_ => officeLights.TurnOn(dimmer.Current))
             .WithOffAction(_ =>
@@ -23,14 +21,6 @@ public class OfficeAutomation
                 dimmer.SetStep(2);
             }, TimeSpan.FromHours(1))
             .Build();
-
-        ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
-        {
-            entities.InputBoolean.OfficeMotionAllowed.TurnOff();
-            officeLights.TurnOff();
-            dimmer.SetStep(2);
-            scheduler.Schedule(TimeSpan.FromHours(2), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
-        });
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
@@ -43,6 +33,14 @@ public class OfficeAutomation
         {
             officeLights.TurnOn(dimmer.Next());
             logger.LogInformation("New brightness is {@brightness}", dimmer.Current);
+        });
+
+        ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
+        {
+            entities.InputBoolean.OfficeMotionAllowed.TurnOff();
+            officeLights.TurnOff();
+            dimmer.SetStep(2);
+            scheduler.Schedule(TimeSpan.FromHours(2), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });
     }
 }

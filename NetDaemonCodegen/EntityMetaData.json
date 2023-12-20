@@ -4,29 +4,14 @@
       "domain": "binary_sensor",
       "entities": [
         {
-          "id": "binary_sensor.basement_steps_sensor_motion",
-          "friendlyName": "Basement Steps Sensor Motion",
-          "cSharpName": "BasementStepsSensorMotion"
-        },
-        {
-          "id": "binary_sensor.deck_door_opening",
-          "friendlyName": "Deck Door Opening",
-          "cSharpName": "DeckDoorOpening"
+          "id": "binary_sensor.closet_sensor_motion",
+          "friendlyName": "Closet Sensor Motion",
+          "cSharpName": "ClosetSensorMotion"
         },
         {
           "id": "binary_sensor.dteske_pixel_high_accuracy_mode",
           "friendlyName": "dteske-pixel High accuracy mode",
           "cSharpName": "DteskePixelHighAccuracyMode"
-        },
-        {
-          "id": "binary_sensor.garage_door_myq_gateway",
-          "friendlyName": "Garage Door MyQ Gateway",
-          "cSharpName": "GarageDoorMyqGateway"
-        },
-        {
-          "id": "binary_sensor.garage_door_myq_gateway_2",
-          "friendlyName": "Garage Door MyQ Gateway",
-          "cSharpName": "GarageDoorMyqGateway2"
         },
         {
           "id": "binary_sensor.hallway_sensor_motion",
@@ -39,14 +24,14 @@
           "cSharpName": "LaundryRoomSensorMotion"
         },
         {
-          "id": "binary_sensor.master_closet_motion",
-          "friendlyName": "Master Closet Sensor Motion",
-          "cSharpName": "MasterClosetMotion"
+          "id": "binary_sensor.motion_sensor_2_motion",
+          "friendlyName": "Motion Sensor 2 Motion",
+          "cSharpName": "MotionSensor2Motion"
         },
         {
-          "id": "binary_sensor.office_sensor_motion",
-          "friendlyName": "Office Sensor Motion",
-          "cSharpName": "OfficeSensorMotion"
+          "id": "binary_sensor.office_motion_sensor",
+          "friendlyName": "Office Motion Sensor Motion",
+          "cSharpName": "OfficeMotionSensor"
         },
         {
           "id": "binary_sensor.remote_ui",
@@ -86,84 +71,49 @@
       "domain": "button",
       "entities": [
         {
-          "id": "button.basement_steps_sensor_identify",
-          "friendlyName": "Basement Steps Sensor Identify",
-          "cSharpName": "BasementStepsSensorIdentify"
-        },
-        {
-          "id": "button.basement_switch_identify",
-          "friendlyName": "Basement Switch Identify",
-          "cSharpName": "BasementSwitchIdentify"
-        },
-        {
-          "id": "button.deck_door_identify",
-          "friendlyName": "Deck Door Identify",
-          "cSharpName": "DeckDoorIdentify"
-        },
-        {
-          "id": "button.dining_room_switch_identify",
-          "friendlyName": "Dining Room Switch Identify",
-          "cSharpName": "DiningRoomSwitchIdentify"
-        },
-        {
-          "id": "button.driveway_switch_identify",
-          "friendlyName": "Driveway Switch Identify",
-          "cSharpName": "DrivewaySwitchIdentify"
-        },
-        {
-          "id": "button.entryway_switch_identify",
-          "friendlyName": "Entryway Switch Identify",
-          "cSharpName": "EntrywaySwitchIdentify"
-        },
-        {
-          "id": "button.hallway_switch_identify",
-          "friendlyName": "Hallway Switch Identify",
-          "cSharpName": "HallwaySwitchIdentify"
-        },
-        {
-          "id": "button.identify_elements_ac4b",
-          "friendlyName": "Identify Elements AC4B",
-          "cSharpName": "IdentifyElementsAc4b"
-        },
-        {
-          "id": "button.identify_shapes_7b48",
-          "friendlyName": "Identify Shapes 7B48",
-          "cSharpName": "IdentifyShapes7b48"
-        },
-        {
           "id": "button.living_room_button_identify",
           "friendlyName": "Living Room Button Identify",
           "cSharpName": "LivingRoomButtonIdentify"
         },
         {
-          "id": "button.living_room_square_lamp_identify",
-          "friendlyName": "Living Room Square Lamp Identify",
-          "cSharpName": "LivingRoomSquareLampIdentify"
+          "id": "button.motion_sensor_2_identify",
+          "friendlyName": "Motion Sensor 2 Identify",
+          "cSharpName": "MotionSensor2Identify"
         },
         {
-          "id": "button.living_room_switch_identify",
-          "friendlyName": "Living Room Switch Identify",
-          "cSharpName": "LivingRoomSwitchIdentify"
+          "id": "button.office_motion_sensor_identify",
+          "friendlyName": "Office Motion Sensor Identify",
+          "cSharpName": "OfficeMotionSensorIdentify"
         },
         {
-          "id": "button.living_room_table_identify",
-          "friendlyName": "Living Room Table Identify",
-          "cSharpName": "LivingRoomTableIdentify"
+          "id": "button.outlet_1_identify",
+          "friendlyName": "Outlet 1 Identify",
+          "cSharpName": "Outlet1Identify"
         },
         {
-          "id": "button.master_bedroom_button_identify",
-          "friendlyName": "Master Bedroom Button Identify",
-          "cSharpName": "MasterBedroomButtonIdentify"
+          "id": "button.outlet_2_identify",
+          "friendlyName": "Outlet 2 Identify",
+          "cSharpName": "Outlet2Identify"
         },
         {
-          "id": "button.office_button_identify",
-          "friendlyName": "Office Button Identify",
-          "cSharpName": "OfficeButtonIdentify"
+          "id": "button.outlet_3_identify",
+          "friendlyName": "Outlet 3 Identify",
+          "cSharpName": "Outlet3Identify"
         },
         {
-          "id": "button.office_sensor_identify",
-          "friendlyName": "Office Sensor Identify",
-          "cSharpName": "OfficeSensorIdentify"
+          "id": "button.outlet_4_identify",
+          "friendlyName": "Outlet 4 Identify",
+          "cSharpName": "Outlet4Identify"
+        },
+        {
+          "id": "button.outlet_5_identify",
+          "friendlyName": "Outlet 5 Identify",
+          "cSharpName": "Outlet5Identify"
+        },
+        {
+          "id": "button.outlet_6_identify",
+          "friendlyName": "Outlet 6 Identify",
+          "cSharpName": "Outlet6Identify"
         }
       ],
       "attributes": [
@@ -277,36 +227,6 @@
       "domain": "input_boolean",
       "entities": [
         {
-          "id": "input_boolean.netdaemon_automations_hallway_automation",
-          "friendlyName": "netdaemon_automations_hallway_automation",
-          "cSharpName": "NetdaemonAutomationsHallwayAutomation"
-        },
-        {
-          "id": "input_boolean.netdaemon_automations_home_schedule",
-          "friendlyName": "netdaemon_automations_home_schedule",
-          "cSharpName": "NetdaemonAutomationsHomeSchedule"
-        },
-        {
-          "id": "input_boolean.netdaemon_automations_laundry_room_automation",
-          "friendlyName": "netdaemon_automations_laundry_room_automation",
-          "cSharpName": "NetdaemonAutomationsLaundryRoomAutomation"
-        },
-        {
-          "id": "input_boolean.netdaemon_automations_living_room_automation",
-          "friendlyName": "netdaemon_automations_living_room_automation",
-          "cSharpName": "NetdaemonAutomationsLivingRoomAutomation"
-        },
-        {
-          "id": "input_boolean.netdaemon_automations_master_bedroom_automation",
-          "friendlyName": "netdaemon_automations_master_bedroom_automation",
-          "cSharpName": "NetdaemonAutomationsMasterBedroomAutomation"
-        },
-        {
-          "id": "input_boolean.netdaemon_automations_office_automation",
-          "friendlyName": "netdaemon_automations_office_automation",
-          "cSharpName": "NetdaemonAutomationsOfficeAutomation"
-        },
-        {
           "id": "input_boolean.office_motion_allowed",
           "friendlyName": "Office Motion Allowed",
           "cSharpName": "OfficeMotionAllowed"
@@ -334,144 +254,19 @@
       "domain": "light",
       "entities": [
         {
-          "id": "light.basement_switch_light",
-          "friendlyName": "Basement Switch Light",
-          "cSharpName": "BasementSwitchLight"
+          "id": "light.hue_bloom",
+          "friendlyName": "Hue Bloom",
+          "cSharpName": "HueBloom"
         },
         {
-          "id": "light.dining_room_switch_light",
-          "friendlyName": "Dining Room Switch Light",
-          "cSharpName": "DiningRoomSwitchLight"
+          "id": "light.hue_bloom_2",
+          "friendlyName": "Hue Bloom 2",
+          "cSharpName": "HueBloom2"
         },
         {
-          "id": "light.driveway_switch_light",
-          "friendlyName": "Driveway Switch Light",
-          "cSharpName": "DrivewaySwitchLight"
-        },
-        {
-          "id": "light.elements_ac4b",
-          "friendlyName": "Elements AC4B",
-          "cSharpName": "ElementsAc4b"
-        },
-        {
-          "id": "light.entryway_switch_light",
-          "friendlyName": "Entryway Switch Light",
-          "cSharpName": "EntrywaySwitchLight"
-        },
-        {
-          "id": "light.hallway_1",
-          "friendlyName": "Hallway 1",
-          "cSharpName": "Hallway1"
-        },
-        {
-          "id": "light.hallway_2",
-          "friendlyName": "Hallway 2",
-          "cSharpName": "Hallway2"
-        },
-        {
-          "id": "light.hallway_lights",
-          "friendlyName": "Hallway Lights",
-          "cSharpName": "HallwayLights"
-        },
-        {
-          "id": "light.hallway_switch",
-          "friendlyName": "Hallway Switch Light",
-          "cSharpName": "HallwaySwitch"
-        },
-        {
-          "id": "light.hue_filament_bulb_1",
-          "friendlyName": "Hue filament bulb 1",
-          "cSharpName": "HueFilamentBulb1"
-        },
-        {
-          "id": "light.hue_filament_bulb_2",
-          "friendlyName": "Hue filament bulb 2",
-          "cSharpName": "HueFilamentBulb2"
-        },
-        {
-          "id": "light.hue_filament_bulb_3",
-          "friendlyName": "Hue filament bulb 3",
-          "cSharpName": "HueFilamentBulb3"
-        },
-        {
-          "id": "light.kitchen_overhead",
-          "friendlyName": "Kitchen Overhead",
-          "cSharpName": "KitchenOverhead"
-        },
-        {
-          "id": "light.kitchen_sink",
-          "friendlyName": "Kitchen Sink",
-          "cSharpName": "KitchenSink"
-        },
-        {
-          "id": "light.kitchen_tall_1",
-          "friendlyName": "Kitchen Tall 1",
-          "cSharpName": "KitchenTall1"
-        },
-        {
-          "id": "light.kitchen_tall_2",
-          "friendlyName": "Kitchen Tall 2",
-          "cSharpName": "KitchenTall2"
-        },
-        {
-          "id": "light.kitchen_tall_3",
-          "friendlyName": "Kitchen Tall 3",
-          "cSharpName": "KitchenTall3"
-        },
-        {
-          "id": "light.lamp",
-          "friendlyName": "Lamp",
-          "cSharpName": "Lamp"
-        },
-        {
-          "id": "light.laundry_room_light",
-          "friendlyName": "Laundry Room Light",
-          "cSharpName": "LaundryRoomLight"
-        },
-        {
-          "id": "light.living_room_lamp",
-          "friendlyName": "Living Room Lamp",
-          "cSharpName": "LivingRoomLamp"
-        },
-        {
-          "id": "light.living_room_switch_light",
-          "friendlyName": "Living Room Switch Light",
-          "cSharpName": "LivingRoomSwitchLight"
-        },
-        {
-          "id": "light.master_closet_1",
-          "friendlyName": "Master Closet 1",
-          "cSharpName": "MasterCloset1"
-        },
-        {
-          "id": "light.master_closet_2",
-          "friendlyName": "Master Closet 2",
-          "cSharpName": "MasterCloset2"
-        },
-        {
-          "id": "light.nightstand",
-          "friendlyName": "Nightstand",
-          "cSharpName": "Nightstand"
-        },
-        {
-          "id": "light.office_desk_lamp_1",
-          "friendlyName": "Office Desk Lamp 1",
-          "cSharpName": "OfficeDeskLamp1"
-        },
-        {
-          "id": "light.office_desk_lamp_2",
-          "friendlyName": "Office Desk Lamp 2",
-          "cSharpName": "OfficeDeskLamp2"
-        },
-        {
-          "id": "light.office_desk_lamps",
-          "friendlyName": "Office Desk Lamps",
-          "cSharpName": "OfficeDeskLamps"
-        },
-        {
-          "id": "light.shapes_7b48",
-          "friendlyName": "Shapes 7B48",
-          "cSharpName": "Shapes7b48"
+          "id": "light.office_lights",
+          "friendlyName": "Office Lights",
+          "cSharpName": "OfficeLights"
         }
       ],
       "attributes": [
@@ -872,31 +667,6 @@
           "cSharpName": "DteskePixelVolumeLevelAlarm"
         },
         {
-          "id": "sensor.google_wifi_current_version",
-          "friendlyName": "google_wifi_current_version",
-          "cSharpName": "GoogleWifiCurrentVersion"
-        },
-        {
-          "id": "sensor.google_wifi_last_restart",
-          "friendlyName": "google_wifi_last_restart",
-          "cSharpName": "GoogleWifiLastRestart"
-        },
-        {
-          "id": "sensor.google_wifi_local_ip",
-          "friendlyName": "google_wifi_local_ip",
-          "cSharpName": "GoogleWifiLocalIp"
-        },
-        {
-          "id": "sensor.google_wifi_new_version",
-          "friendlyName": "google_wifi_new_version",
-          "cSharpName": "GoogleWifiNewVersion"
-        },
-        {
-          "id": "sensor.google_wifi_status",
-          "friendlyName": "google_wifi_status",
-          "cSharpName": "GoogleWifiStatus"
-        },
-        {
           "id": "sensor.sun_next_dawn",
           "friendlyName": "Sun Next dawn",
           "cSharpName": "SunNextDawn"
@@ -965,19 +735,24 @@
       "isNumeric": true,
       "entities": [
         {
-          "id": "sensor.basement_steps_sensor_battery",
-          "friendlyName": "Basement Steps Sensor Battery",
-          "cSharpName": "BasementStepsSensorBattery"
+          "id": "sensor.closet_sensor_battery",
+          "friendlyName": "Closet Sensor Battery",
+          "cSharpName": "ClosetSensorBattery"
+        },
+        {
+          "id": "sensor.closet_sensor_illuminance",
+          "friendlyName": "Closet Sensor Illuminance",
+          "cSharpName": "ClosetSensorIlluminance"
+        },
+        {
+          "id": "sensor.closet_sensor_temperature",
+          "friendlyName": "Closet Sensor Temperature",
+          "cSharpName": "ClosetSensorTemperature"
         },
         {
           "id": "sensor.cpu_speed",
           "friendlyName": "CPU Speed",
           "cSharpName": "CpuSpeed"
-        },
-        {
-          "id": "sensor.deck_door_battery",
-          "friendlyName": "Deck Door Battery",
-          "cSharpName": "DeckDoorBattery"
         },
         {
           "id": "sensor.dteske_pixel_battery_level",
@@ -988,11 +763,6 @@
           "id": "sensor.dteske_pixel_high_accuracy_update_interval",
           "friendlyName": "dteske-pixel High accuracy update interval",
           "cSharpName": "DteskePixelHighAccuracyUpdateInterval"
-        },
-        {
-          "id": "sensor.google_wifi_uptime",
-          "friendlyName": "google_wifi_uptime",
-          "cSharpName": "GoogleWifiUptime"
         },
         {
           "id": "sensor.hallway_sensor_battery",
@@ -1040,34 +810,14 @@
           "cSharpName": "LivingRoomButtonBattery"
         },
         {
-          "id": "sensor.master_bedroom_button_battery",
-          "friendlyName": "Master Bedroom Button Battery",
-          "cSharpName": "MasterBedroomButtonBattery"
+          "id": "sensor.motion_sensor_2_battery",
+          "friendlyName": "Motion Sensor 2 Battery",
+          "cSharpName": "MotionSensor2Battery"
         },
         {
-          "id": "sensor.master_closet_battery",
-          "friendlyName": "Master Closet Sensor Battery",
-          "cSharpName": "MasterClosetBattery"
-        },
-        {
-          "id": "sensor.master_closet_illuminance",
-          "friendlyName": "Master Closet Sensor Illuminance",
-          "cSharpName": "MasterClosetIlluminance"
-        },
-        {
-          "id": "sensor.master_closet_temperature",
-          "friendlyName": "Master Closet Sensor Temperature",
-          "cSharpName": "MasterClosetTemperature"
-        },
-        {
-          "id": "sensor.office_button_battery",
-          "friendlyName": "Office Button Battery",
-          "cSharpName": "OfficeButtonBattery"
-        },
-        {
-          "id": "sensor.office_sensor_battery",
-          "friendlyName": "Office Sensor Battery",
-          "cSharpName": "OfficeSensorBattery"
+          "id": "sensor.office_motion_sensor_battery",
+          "friendlyName": "Office Motion Sensor Battery",
+          "cSharpName": "OfficeMotionSensorBattery"
         }
       ],
       "attributes": [
@@ -1214,44 +964,64 @@
       "domain": "switch",
       "entities": [
         {
-          "id": "switch.hallway_sensor_illuminance",
-          "friendlyName": "Hallway Sensor Illuminance",
-          "cSharpName": "HallwaySensorIlluminance"
+          "id": "switch.closet_sensor_light_sensor_enabled",
+          "friendlyName": "Closet Sensor Light sensor enabled",
+          "cSharpName": "ClosetSensorLightSensorEnabled"
         },
         {
-          "id": "switch.hallway_sensor_motion",
-          "friendlyName": "Hallway Sensor Motion",
-          "cSharpName": "HallwaySensorMotion"
+          "id": "switch.closet_sensor_motion_sensor_enabled",
+          "friendlyName": "Closet Sensor Motion sensor enabled",
+          "cSharpName": "ClosetSensorMotionSensorEnabled"
         },
         {
-          "id": "switch.laundry_room_sensor_illuminance",
-          "friendlyName": "Laundry Room Sensor Illuminance",
-          "cSharpName": "LaundryRoomSensorIlluminance"
+          "id": "switch.hallway_sensor_light_sensor_enabled",
+          "friendlyName": "Hallway Sensor Light sensor enabled",
+          "cSharpName": "HallwaySensorLightSensorEnabled"
         },
         {
-          "id": "switch.laundry_room_sensor_motion",
-          "friendlyName": "Laundry Room Sensor Motion",
-          "cSharpName": "LaundryRoomSensorMotion"
+          "id": "switch.hallway_sensor_motion_sensor_enabled",
+          "friendlyName": "Hallway Sensor Motion sensor enabled",
+          "cSharpName": "HallwaySensorMotionSensorEnabled"
         },
         {
-          "id": "switch.living_room_square_lamp_switch",
-          "friendlyName": "Living Room Square Lamp Switch",
-          "cSharpName": "LivingRoomSquareLampSwitch"
+          "id": "switch.laundry_room_sensor_light_sensor_enabled",
+          "friendlyName": "Laundry Room Sensor Light sensor enabled",
+          "cSharpName": "LaundryRoomSensorLightSensorEnabled"
         },
         {
-          "id": "switch.living_room_table_switch",
-          "friendlyName": "Living Room Table Switch",
-          "cSharpName": "LivingRoomTableSwitch"
+          "id": "switch.laundry_room_sensor_motion_sensor_enabled",
+          "friendlyName": "Laundry Room Sensor Motion sensor enabled",
+          "cSharpName": "LaundryRoomSensorMotionSensorEnabled"
         },
         {
-          "id": "switch.master_closet_illuminance",
-          "friendlyName": "Master Closet Sensor Illuminance",
-          "cSharpName": "MasterClosetIlluminance"
+          "id": "switch.outlet_1",
+          "friendlyName": "Outlet 1 Switch",
+          "cSharpName": "Outlet1"
         },
         {
-          "id": "switch.master_closet_motion",
-          "friendlyName": "Master Closet Sensor Motion",
-          "cSharpName": "MasterClosetMotion"
+          "id": "switch.outlet_2",
+          "friendlyName": "Outlet 2 Switch",
+          "cSharpName": "Outlet2"
+        },
+        {
+          "id": "switch.outlet_3",
+          "friendlyName": "Outlet 3 Switch",
+          "cSharpName": "Outlet3"
+        },
+        {
+          "id": "switch.outlet_4",
+          "friendlyName": "Outlet 4 Switch",
+          "cSharpName": "Outlet4"
+        },
+        {
+          "id": "switch.outlet_5",
+          "friendlyName": "Outlet 5 Switch",
+          "cSharpName": "Outlet5"
+        },
+        {
+          "id": "switch.outlet_6",
+          "friendlyName": "Outlet 6 Switch",
+          "cSharpName": "Outlet6"
         }
       ],
       "attributes": [
