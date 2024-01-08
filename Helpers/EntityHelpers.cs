@@ -14,7 +14,7 @@
                 if (entity is LightEntity light)
                 {
                     light.TurnOn(turnOnData);
-                } 
+                }
                 else if (entity is SwitchEntity switchEntity)
                 {
                     switchEntity.TurnOn();

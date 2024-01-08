@@ -24,6 +24,11 @@
           "cSharpName": "LaundryRoomSensorMotion"
         },
         {
+          "id": "binary_sensor.meg_focus",
+          "friendlyName": "meg Focus",
+          "cSharpName": "MegFocus"
+        },
+        {
           "id": "binary_sensor.motion_sensor_2_motion",
           "friendlyName": "Motion Sensor 2 Motion",
           "cSharpName": "MotionSensor2Motion"
@@ -71,6 +76,11 @@
       "domain": "button",
       "entities": [
         {
+          "id": "button.bedroom_button_identify",
+          "friendlyName": "Bedroom Button Identify",
+          "cSharpName": "BedroomButtonIdentify"
+        },
+        {
           "id": "button.living_room_button_identify",
           "friendlyName": "Living Room Button Identify",
           "cSharpName": "LivingRoomButtonIdentify"
@@ -79,6 +89,11 @@
           "id": "button.motion_sensor_2_identify",
           "friendlyName": "Motion Sensor 2 Identify",
           "cSharpName": "MotionSensor2Identify"
+        },
+        {
+          "id": "button.office_button_identify",
+          "friendlyName": "Office Button Identify",
+          "cSharpName": "OfficeButtonIdentify"
         },
         {
           "id": "button.office_motion_sensor_identify",
@@ -173,6 +188,11 @@
           "id": "device_tracker.dteske_pixel",
           "friendlyName": "dteske-pixel",
           "cSharpName": "DteskePixel"
+        },
+        {
+          "id": "device_tracker.meg",
+          "friendlyName": "meg",
+          "cSharpName": "Meg"
         }
       ],
       "attributes": [
@@ -227,6 +247,11 @@
       "domain": "input_boolean",
       "entities": [
         {
+          "id": "input_boolean.netdaemon_teske_home_assistant_apps_office_automation",
+          "friendlyName": "netdaemon_teske_home_assistant_apps_office_automation",
+          "cSharpName": "NetdaemonTeskeHomeAssistantAppsOfficeAutomation"
+        },
+        {
           "id": "input_boolean.office_motion_allowed",
           "friendlyName": "Office Motion Allowed",
           "cSharpName": "OfficeMotionAllowed"
@@ -253,6 +278,51 @@
     {
       "domain": "light",
       "entities": [
+        {
+          "id": "light.basement_living_room",
+          "friendlyName": "Basement Living Room",
+          "cSharpName": "BasementLivingRoom"
+        },
+        {
+          "id": "light.basement_wall_accent",
+          "friendlyName": "Basement Wall Accent",
+          "cSharpName": "BasementWallAccent"
+        },
+        {
+          "id": "light.basement_wall_accent_2",
+          "friendlyName": "Basement Wall Accent 2",
+          "cSharpName": "BasementWallAccent2"
+        },
+        {
+          "id": "light.basement_wall_accent_lights",
+          "friendlyName": "Basement Wall Accent Lights",
+          "cSharpName": "BasementWallAccentLights"
+        },
+        {
+          "id": "light.bedroom_fan",
+          "friendlyName": "Bedroom Fan",
+          "cSharpName": "BedroomFan"
+        },
+        {
+          "id": "light.bedroom_fan_1",
+          "friendlyName": "Bedroom Fan",
+          "cSharpName": "BedroomFan1"
+        },
+        {
+          "id": "light.bedroom_fan_2",
+          "friendlyName": "Bedroom Fan 2",
+          "cSharpName": "BedroomFan2"
+        },
+        {
+          "id": "light.bedroom_lamp",
+          "friendlyName": "Bedroom Lamp",
+          "cSharpName": "BedroomLamp"
+        },
+        {
+          "id": "light.bedroom_lamp_2",
+          "friendlyName": "Bedroom Lamp 2",
+          "cSharpName": "BedroomLamp2"
+        },
         {
           "id": "light.hue_bloom",
           "friendlyName": "Hue Bloom",
@@ -363,7 +433,7 @@
         {
           "jsonName": "hue_scenes",
           "cSharpName": "HueScenes",
-          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+          "clrType": "System.Object"
         },
         {
           "jsonName": "hue_type",
@@ -451,6 +521,11 @@
           "id": "person.daric_teske",
           "friendlyName": "Daric Teske",
           "cSharpName": "DaricTeske"
+        },
+        {
+          "id": "person.megan_mayfield",
+          "friendlyName": "Megan Mayfield",
+          "cSharpName": "MeganMayfield"
         }
       ],
       "attributes": [
@@ -667,6 +742,51 @@
           "cSharpName": "DteskePixelVolumeLevelAlarm"
         },
         {
+          "id": "sensor.meg_activity",
+          "friendlyName": "meg Activity",
+          "cSharpName": "MegActivity"
+        },
+        {
+          "id": "sensor.meg_battery_state",
+          "friendlyName": "meg Battery State",
+          "cSharpName": "MegBatteryState"
+        },
+        {
+          "id": "sensor.meg_bssid",
+          "friendlyName": "meg BSSID",
+          "cSharpName": "MegBssid"
+        },
+        {
+          "id": "sensor.meg_connection_type",
+          "friendlyName": "meg Connection Type",
+          "cSharpName": "MegConnectionType"
+        },
+        {
+          "id": "sensor.meg_geocoded_location",
+          "friendlyName": "meg Geocoded Location",
+          "cSharpName": "MegGeocodedLocation"
+        },
+        {
+          "id": "sensor.meg_last_update_trigger",
+          "friendlyName": "meg Last Update Trigger",
+          "cSharpName": "MegLastUpdateTrigger"
+        },
+        {
+          "id": "sensor.meg_sim_1",
+          "friendlyName": "meg SIM 1",
+          "cSharpName": "MegSim1"
+        },
+        {
+          "id": "sensor.meg_sim_2",
+          "friendlyName": "meg SIM 2",
+          "cSharpName": "MegSim2"
+        },
+        {
+          "id": "sensor.meg_ssid",
+          "friendlyName": "meg SSID",
+          "cSharpName": "MegSsid"
+        },
+        {
           "id": "sensor.sun_next_dawn",
           "friendlyName": "Sun Next dawn",
           "cSharpName": "SunNextDawn"
@@ -727,6 +847,56 @@
           "jsonName": "Time in Milliseconds",
           "cSharpName": "TimeinMilliseconds",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "Low Power Mode",
+          "cSharpName": "LowPowerMode",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "Allows VoIP",
+          "cSharpName": "AllowsVoIP",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "Carrier ID",
+          "cSharpName": "CarrierID",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Carrier Name",
+          "cSharpName": "CarrierName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Current Radio Technology",
+          "cSharpName": "CurrentRadioTechnology",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "ISO Country Code",
+          "cSharpName": "ISOCountryCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Mobile Country Code",
+          "cSharpName": "MobileCountryCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Mobile Network Code",
+          "cSharpName": "MobileNetworkCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Confidence",
+          "cSharpName": "Confidence",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Types",
+          "cSharpName": "Types",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
         }
       ]
     },
@@ -735,14 +905,19 @@
       "isNumeric": true,
       "entities": [
         {
+          "id": "sensor.bedroom_button_battery",
+          "friendlyName": "Bedroom Button Battery",
+          "cSharpName": "BedroomButtonBattery"
+        },
+        {
           "id": "sensor.closet_sensor_battery",
           "friendlyName": "Closet Sensor Battery",
           "cSharpName": "ClosetSensorBattery"
         },
         {
-          "id": "sensor.closet_sensor_illuminance",
+          "id": "sensor.closet_sensor_light_level",
           "friendlyName": "Closet Sensor Illuminance",
-          "cSharpName": "ClosetSensorIlluminance"
+          "cSharpName": "ClosetSensorLightLevel"
         },
         {
           "id": "sensor.closet_sensor_temperature",
@@ -765,14 +940,19 @@
           "cSharpName": "DteskePixelHighAccuracyUpdateInterval"
         },
         {
+          "id": "sensor.dteske_pixel_sleep_confidence",
+          "friendlyName": "dteske-pixel Sleep confidence",
+          "cSharpName": "DteskePixelSleepConfidence"
+        },
+        {
           "id": "sensor.hallway_sensor_battery",
           "friendlyName": "Hallway Sensor Battery",
           "cSharpName": "HallwaySensorBattery"
         },
         {
-          "id": "sensor.hallway_sensor_illuminance",
+          "id": "sensor.hallway_sensor_light_level",
           "friendlyName": "Hallway Sensor Illuminance",
-          "cSharpName": "HallwaySensorIlluminance"
+          "cSharpName": "HallwaySensorLightLevel"
         },
         {
           "id": "sensor.hallway_sensor_temperature",
@@ -795,9 +975,9 @@
           "cSharpName": "LaundryRoomSensorBattery"
         },
         {
-          "id": "sensor.laundry_room_sensor_illuminance",
+          "id": "sensor.laundry_room_sensor_light_level",
           "friendlyName": "Laundry Room Sensor Illuminance",
-          "cSharpName": "LaundryRoomSensorIlluminance"
+          "cSharpName": "LaundryRoomSensorLightLevel"
         },
         {
           "id": "sensor.laundry_room_sensor_temperature",
@@ -810,9 +990,49 @@
           "cSharpName": "LivingRoomButtonBattery"
         },
         {
+          "id": "sensor.meg_average_active_pace",
+          "friendlyName": "meg Average Active Pace",
+          "cSharpName": "MegAverageActivePace"
+        },
+        {
+          "id": "sensor.meg_battery_level",
+          "friendlyName": "meg Battery Level",
+          "cSharpName": "MegBatteryLevel"
+        },
+        {
+          "id": "sensor.meg_distance",
+          "friendlyName": "meg Distance",
+          "cSharpName": "MegDistance"
+        },
+        {
+          "id": "sensor.meg_floors_ascended",
+          "friendlyName": "meg Floors Ascended",
+          "cSharpName": "MegFloorsAscended"
+        },
+        {
+          "id": "sensor.meg_floors_descended",
+          "friendlyName": "meg Floors Descended",
+          "cSharpName": "MegFloorsDescended"
+        },
+        {
+          "id": "sensor.meg_steps",
+          "friendlyName": "meg Steps",
+          "cSharpName": "MegSteps"
+        },
+        {
+          "id": "sensor.meg_storage",
+          "friendlyName": "meg Storage",
+          "cSharpName": "MegStorage"
+        },
+        {
           "id": "sensor.motion_sensor_2_battery",
           "friendlyName": "Motion Sensor 2 Battery",
           "cSharpName": "MotionSensor2Battery"
+        },
+        {
+          "id": "sensor.office_button_battery",
+          "friendlyName": "Office Button Battery",
+          "cSharpName": "OfficeButtonBattery"
         },
         {
           "id": "sensor.office_motion_sensor_battery",
@@ -895,6 +1115,41 @@
           "jsonName": "ghz_advertised",
           "cSharpName": "GhzAdvertised",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "light",
+          "cSharpName": "Light",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "motion",
+          "cSharpName": "Motion",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "timestamp",
+          "cSharpName": "Timestamp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "Available",
+          "cSharpName": "Available",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Available (Important)",
+          "cSharpName": "AvailableImportant",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Available (Opportunistic)",
+          "cSharpName": "AvailableOpportunistic",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Total",
+          "cSharpName": "Total",
+          "clrType": "System.String"
         }
       ]
     },
@@ -1124,7 +1379,7 @@
       "entities": [
         {
           "id": "zone.home",
-          "friendlyName": "dteske-home",
+          "friendlyName": "teske-home",
           "cSharpName": "Home"
         }
       ],
