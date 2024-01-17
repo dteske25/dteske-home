@@ -247,6 +247,16 @@
       "domain": "input_boolean",
       "entities": [
         {
+          "id": "input_boolean.netdaemon_teske_home_assistant_apps_alarm_light_schedule",
+          "friendlyName": "netdaemon_teske_home_assistant_apps_alarm_light_schedule",
+          "cSharpName": "NetdaemonTeskeHomeAssistantAppsAlarmLightSchedule"
+        },
+        {
+          "id": "input_boolean.netdaemon_teske_home_assistant_apps_bedroom_automation",
+          "friendlyName": "netdaemon_teske_home_assistant_apps_bedroom_automation",
+          "cSharpName": "NetdaemonTeskeHomeAssistantAppsBedroomAutomation"
+        },
+        {
           "id": "input_boolean.netdaemon_teske_home_assistant_apps_office_automation",
           "friendlyName": "netdaemon_teske_home_assistant_apps_office_automation",
           "cSharpName": "NetdaemonTeskeHomeAssistantAppsOfficeAutomation"

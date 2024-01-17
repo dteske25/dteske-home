@@ -33,6 +33,27 @@
                     RecalculateSchedule(DaricNextAlarm, MeganNextAlarm);
                 }
             });
+
+            scheduler.ScheduleCron("00 09 * * *", () =>
+            {
+                _entities.Light.BedroomLamp.TurnOff();
+                _entities.Light.BedroomLamp2.TurnOff();
+                ha.Message("Alarm Light Schedule", "09:00 AM Bedroom Lights Off");
+            });
+
+            scheduler.ScheduleCron("00 20 * * *", () =>
+            {
+                _entities.Light.BedroomLamp.TurnOn();
+                _entities.Light.BedroomLamp2.TurnOn();
+                ha.Message("Alarm Light Schedule", "08:00 PM Bedroom Lights On");
+            });
+
+            scheduler.ScheduleCron("00 22 * * *", () =>
+            {
+                _entities.Light.BedroomLamp.TurnOff(transition: 60);
+                _entities.Light.BedroomLamp2.TurnOff(transition: 60);
+                ha.Message("Alarm Light Schedule", "10:00 PM Bedroom Lights Off");
+            });
         }
         private void RecalculateSchedule(DateTimeOffset? daricNextAlarm, DateTimeOffset? meganNextAlarm)
         {
@@ -105,7 +126,7 @@
 
             return GlobalConfiguration.BRIGHTNESS_MED;
         }
-        
+
         private void ClearScheduledAlarms(string prefix)
         {
             var scheduled = ScheduledAlarms.Keys.Where(s => s.StartsWith(prefix)).ToList();
