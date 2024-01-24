@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: "dotnet-results-${{ github.RUN_ID }}"
-        path: /home/runner/work/dteske-home/dteske-home/bin/Release/net7.0/publish/
+        path: /home/runner/work/dteske-home/dteske-home/bin/Release/net8.0/publish/
       if: ${{ always() }}
