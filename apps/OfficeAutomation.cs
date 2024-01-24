@@ -25,20 +25,22 @@ public class OfficeAutomation
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
             entities.InputBoolean.OfficeMotionAllowed.TurnOff();
-            officeLights.TurnOn(dimmer.Current);
+            officeLights.TurnOn(dimmer.Next());
+            logger.LogInformation("New brightness is {@brightness}", dimmer.Current);
             scheduler.Schedule(TimeSpan.FromHours(1), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
-            officeLights.TurnOn(dimmer.Next());
-            logger.LogInformation("New brightness is {@brightness}", dimmer.Current);
+            entities.Switch.Outlet1.Toggle();
         });
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             entities.InputBoolean.OfficeMotionAllowed.TurnOff();
+            entities.Switch.Outlet1.TurnOff();
             officeLights.TurnOff();
+
             dimmer.SetStep(2);
             scheduler.Schedule(TimeSpan.FromHours(2), () => entities.InputBoolean.OfficeMotionAllowed.TurnOn());
         });

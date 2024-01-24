@@ -1,11 +1,12 @@
-﻿namespace TeskeHomeAssistant.apps;
+﻿using System.Reactive.Concurrency;
+
+namespace TeskeHomeAssistant.apps;
 
 [NetDaemonApp]
 public class BedroomAutomation
 {
-    public BedroomAutomation(IHaContext ha, Entities entities)
+    public BedroomAutomation(IScheduler scheduler, IHaContext ha, Entities entities)
     {
-
         var dimmer = new Dimmer(100, 20, 2);
 
         ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
@@ -26,6 +27,27 @@ public class BedroomAutomation
         ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
             entities.Light.BedroomFan.Toggle();
+        });
+
+        scheduler.ScheduleCron("00 09 * * *", () =>
+        {
+            entities.Light.BedroomLamp.TurnOff();
+            entities.Light.BedroomLamp2.TurnOff();
+            ha.Message("Alarm Light Schedule", "09:00 AM Bedroom Lights Off");
+        });
+
+        scheduler.ScheduleCron("00 20 * * *", () =>
+        {
+            entities.Light.BedroomLamp.TurnOn();
+            entities.Light.BedroomLamp2.TurnOn();
+            ha.Message("Alarm Light Schedule", "08:00 PM Bedroom Lights On");
+        });
+
+        scheduler.ScheduleCron("00 22 * * *", () =>
+        {
+            entities.Light.BedroomLamp.TurnOff(transition: 60);
+            entities.Light.BedroomLamp2.TurnOff(transition: 60);
+            ha.Message("Alarm Light Schedule", "10:00 PM Bedroom Lights Off");
         });
     }
 }
