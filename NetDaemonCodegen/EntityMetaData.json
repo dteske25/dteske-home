@@ -81,6 +81,11 @@
           "cSharpName": "BedroomButtonIdentify"
         },
         {
+          "id": "button.elements_ac4b_identify",
+          "friendlyName": "Elements AC4B Identify",
+          "cSharpName": "ElementsAc4bIdentify"
+        },
+        {
           "id": "button.living_room_button_identify",
           "friendlyName": "Living Room Button Identify",
           "cSharpName": "LivingRoomButtonIdentify"
@@ -129,6 +134,11 @@
           "id": "button.outlet_6_identify",
           "friendlyName": "Outlet 6 Identify",
           "cSharpName": "Outlet6Identify"
+        },
+        {
+          "id": "button.shapes_7b48_identify",
+          "friendlyName": "Shapes 7B48 Identify",
+          "cSharpName": "Shapes7b48Identify"
         }
       ],
       "attributes": [
@@ -334,6 +344,11 @@
           "cSharpName": "BedroomLamp2"
         },
         {
+          "id": "light.elements_ac4b",
+          "friendlyName": "Elements AC4B",
+          "cSharpName": "ElementsAc4b"
+        },
+        {
           "id": "light.hue_bloom",
           "friendlyName": "Hue Bloom",
           "cSharpName": "HueBloom"
@@ -347,6 +362,11 @@
           "id": "light.office_lights",
           "friendlyName": "Office Lights",
           "cSharpName": "OfficeLights"
+        },
+        {
+          "id": "light.shapes_7b48",
+          "friendlyName": "Shapes 7B48",
+          "cSharpName": "Shapes7b48"
         }
       ],
       "attributes": [
