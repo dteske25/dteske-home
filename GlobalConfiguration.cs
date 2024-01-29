@@ -25,13 +25,13 @@ public class GlobalConfiguration
 
     public static string GetZigbeeDeviceId(ZigbeeDeviceName device) => device switch
     {
-        ZigbeeDeviceName.LivingRoomButton => "00:12:4b:00:25:16:bd:64",
         ZigbeeDeviceName.LivingRoomSwitch => "84:fd:27:ff:fe:bc:cc:8e",
         ZigbeeDeviceName.LivingRoomOutlet => "00:12:4b:00:25:3d:67:7f",
         ZigbeeDeviceName.LivingRoomTable => "00:12:4b:00:25:3d:6a:08",
         ZigbeeDeviceName.OfficeButton => "00:12:4b:00:25:14:6f:60",
         ZigbeeDeviceName.HallwaySwitch => "84:fd:27:ff:fe:bc:cc:65",
-        ZigbeeDeviceName.MasterBedroomButton => "00:12:4b:00:25:16:b2:ca",
+        ZigbeeDeviceName.MeganBedroomButton => "00:12:4b:00:25:16:bd:64",
+        ZigbeeDeviceName.DaricBedroomButton => "00:12:4b:00:25:16:b2:ca",
         _ => ""
     };
 

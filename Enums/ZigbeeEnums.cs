@@ -22,12 +22,12 @@ namespace TeskeHomeAssistant.Enums
     public enum ZigbeeDeviceName
     {
         Unknown = 0,
-        LivingRoomButton,
+        MeganBedroomButton,
         LivingRoomSwitch,
         LivingRoomOutlet,
         LivingRoomTable,
         OfficeButton,
         HallwaySwitch,
-        MasterBedroomButton
+        DaricBedroomButton
     }
 }

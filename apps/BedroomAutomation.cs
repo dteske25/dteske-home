@@ -9,7 +9,13 @@ public class BedroomAutomation
     {
         var dimmer = new Dimmer(100, 20, 2);
 
-        ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
+        var buttons = new List<ZigbeeDeviceName>
+        {
+            ZigbeeDeviceName.DaricBedroomButton,
+            ZigbeeDeviceName.MeganBedroomButton
+        };
+
+        ha.Events.Where(buttons, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             entities.Light.BedroomFan.TurnOff();
             entities.Light.BedroomLamp.TurnOff();
@@ -17,14 +23,14 @@ public class BedroomAutomation
             dimmer.SetStep(1);
         });
 
-        ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
+        ha.Events.Where(buttons, ZigbeeButtonCommands.Press).Subscribe(_ =>
         {
             var brightnessPercentage = dimmer.Next();
             entities.Light.BedroomLamp.TurnOn(brightnessPct:  brightnessPercentage);
             entities.Light.BedroomLamp2.TurnOn(brightnessPct:  brightnessPercentage);
         });
 
-        ha.Events.Where(ZigbeeDeviceName.MasterBedroomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
+        ha.Events.Where(buttons, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
             entities.Light.BedroomFan.Toggle();
         });
