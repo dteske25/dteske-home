@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -32,13 +32,13 @@
     </Target>
 
     <ItemGroup>
-        <PackageReference Include="NetDaemon.AppModel" Version="24.3.1" />
-        <PackageReference Include="NetDaemon.Runtime" Version="24.3.1" />
-        <PackageReference Include="NetDaemon.HassModel" Version="24.3.1" />
-        <PackageReference Include="NetDaemon.Client" Version="24.3.1" />
-        <PackageReference Include="NetDaemon.Extensions.Scheduling" Version="24.3.1" />
-        <PackageReference Include="NetDaemon.Extensions.Logging" Version="24.3.1" />
-        <PackageReference Include="NetDaemon.Extensions.Tts" Version="24.3.1" />
+        <PackageReference Include="NetDaemon.AppModel" Version="24.16.0" />
+        <PackageReference Include="NetDaemon.Runtime" Version="24.16.0" />
+        <PackageReference Include="NetDaemon.HassModel" Version="24.16.0" />
+        <PackageReference Include="NetDaemon.Client" Version="24.16.0" />
+        <PackageReference Include="NetDaemon.Extensions.Scheduling" Version="24.16.0" />
+        <PackageReference Include="NetDaemon.Extensions.Logging" Version="24.16.0" />
+        <PackageReference Include="NetDaemon.Extensions.Tts" Version="24.16.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
         <PackageReference Include="System.Reactive" Version="6.0.0" />
