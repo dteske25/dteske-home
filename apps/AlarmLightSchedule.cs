@@ -41,7 +41,7 @@
                 {
                     var daricBrightness = PickBrightnessPercentage(daricNextAlarm.Value, meganNextAlarm);
                     _logger.LogInformation("Picked Daric's target brightness as {@daricBrightness}, turning on.", daricBrightness);
-                    _entities.Light.BedroomLamp.TurnOn(new LightTurnOnParameters { BrightnessPct = daricBrightness });
+                    _entities.Light.BedroomLamp1.TurnOn(new LightTurnOnParameters { BrightnessPct = daricBrightness });
 
                     if (daricBrightness == GlobalConfiguration.BRIGHTNESS_HIGH)
                     {
@@ -63,7 +63,7 @@
                     if (meganBrightness == GlobalConfiguration.BRIGHTNESS_HIGH)
                     {
                         _logger.LogInformation("Turning on Daric's to full brightness as well");
-                        _entities.Light.BedroomLamp.TurnOn(new LightTurnOnParameters { BrightnessPct = GlobalConfiguration.BRIGHTNESS_HIGH, Transition = FADE_DURATION_SEC });
+                        _entities.Light.BedroomLamp1.TurnOn(new LightTurnOnParameters { BrightnessPct = GlobalConfiguration.BRIGHTNESS_HIGH, Transition = FADE_DURATION_SEC });
                     }
                     _ha.Message("Alarm Schedule", "Megan Bedroom Light On");
                 }));

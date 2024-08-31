@@ -81,11 +81,6 @@
           "cSharpName": "BedroomButtonIdentify"
         },
         {
-          "id": "button.elements_ac4b_identify",
-          "friendlyName": "Elements AC4B Identify",
-          "cSharpName": "ElementsAc4bIdentify"
-        },
-        {
           "id": "button.living_room_button_identify",
           "friendlyName": "Living Room Button Identify",
           "cSharpName": "LivingRoomButtonIdentify"
@@ -137,7 +132,7 @@
         },
         {
           "id": "button.shapes_7b48_identify",
-          "friendlyName": "Shapes 7B48 Identify",
+          "friendlyName": "Identify",
           "cSharpName": "Shapes7b48Identify"
         }
       ],
@@ -156,6 +151,16 @@
           "jsonName": "device_class",
           "cSharpName": "DeviceClass",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -257,11 +262,6 @@
       "domain": "input_boolean",
       "entities": [
         {
-          "id": "input_boolean.netdaemon_teske_home_assistant_apps_alarm_light_schedule",
-          "friendlyName": "netdaemon_teske_home_assistant_apps_alarm_light_schedule",
-          "cSharpName": "NetdaemonTeskeHomeAssistantAppsAlarmLightSchedule"
-        },
-        {
           "id": "input_boolean.netdaemon_teske_home_assistant_apps_bedroom_automation",
           "friendlyName": "netdaemon_teske_home_assistant_apps_bedroom_automation",
           "cSharpName": "NetdaemonTeskeHomeAssistantAppsBedroomAutomation"
@@ -270,6 +270,11 @@
           "id": "input_boolean.netdaemon_teske_home_assistant_apps_office_automation",
           "friendlyName": "netdaemon_teske_home_assistant_apps_office_automation",
           "cSharpName": "NetdaemonTeskeHomeAssistantAppsOfficeAutomation"
+        },
+        {
+          "id": "input_boolean.netdaemon_teske_home_assistant_apps_simple_alarm_light_schedule",
+          "friendlyName": "netdaemon_teske_home_assistant_apps_simple_alarm_light_schedule",
+          "cSharpName": "NetdaemonTeskeHomeAssistantAppsSimpleAlarmLightSchedule"
         },
         {
           "id": "input_boolean.office_motion_allowed",
@@ -299,14 +304,9 @@
       "domain": "light",
       "entities": [
         {
-          "id": "light.basement_living_room",
-          "friendlyName": "Basement Living Room",
-          "cSharpName": "BasementLivingRoom"
-        },
-        {
-          "id": "light.basement_wall_accent",
-          "friendlyName": "Basement Wall Accent",
-          "cSharpName": "BasementWallAccent"
+          "id": "light.basement_wall_accent_1",
+          "friendlyName": "Basement Wall Accent 1",
+          "cSharpName": "BasementWallAccent1"
         },
         {
           "id": "light.basement_wall_accent_2",
@@ -325,7 +325,7 @@
         },
         {
           "id": "light.bedroom_fan_1",
-          "friendlyName": "Bedroom Fan",
+          "friendlyName": "Bedroom Fan 1",
           "cSharpName": "BedroomFan1"
         },
         {
@@ -334,9 +334,9 @@
           "cSharpName": "BedroomFan2"
         },
         {
-          "id": "light.bedroom_lamp",
-          "friendlyName": "Bedroom Lamp",
-          "cSharpName": "BedroomLamp"
+          "id": "light.bedroom_lamp_1",
+          "friendlyName": "Bedroom Lamp 1",
+          "cSharpName": "BedroomLamp1"
         },
         {
           "id": "light.bedroom_lamp_2",
@@ -344,19 +344,24 @@
           "cSharpName": "BedroomLamp2"
         },
         {
-          "id": "light.elements_ac4b",
-          "friendlyName": "Elements AC4B",
-          "cSharpName": "ElementsAc4b"
+          "id": "light.home",
+          "friendlyName": "Home",
+          "cSharpName": "Home"
         },
         {
-          "id": "light.hue_bloom",
-          "friendlyName": "Hue Bloom",
-          "cSharpName": "HueBloom"
+          "id": "light.hue_bloom_1",
+          "friendlyName": "Hue Bloom 1",
+          "cSharpName": "HueBloom1"
         },
         {
           "id": "light.hue_bloom_2",
           "friendlyName": "Hue Bloom 2",
           "cSharpName": "HueBloom2"
+        },
+        {
+          "id": "light.nightstands",
+          "friendlyName": "Nightstands",
+          "cSharpName": "Nightstands"
         },
         {
           "id": "light.office_lights",
@@ -365,8 +370,23 @@
         },
         {
           "id": "light.shapes_7b48",
-          "friendlyName": "Shapes 7B48",
+          "friendlyName": null,
           "cSharpName": "Shapes7b48"
+        },
+        {
+          "id": "light.square_lamp",
+          "friendlyName": "Square Lamp",
+          "cSharpName": "SquareLamp"
+        },
+        {
+          "id": "light.square_lamp_1",
+          "friendlyName": "Square Lamp 1",
+          "cSharpName": "SquareLamp1"
+        },
+        {
+          "id": "light.square_lamp_2",
+          "friendlyName": "Square Lamp 2",
+          "cSharpName": "SquareLamp2"
         }
       ],
       "attributes": [
@@ -499,6 +519,11 @@
           "jsonName": "color_temp_kelvin",
           "cSharpName": "ColorTempKelvin",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
         }
       ]
     },
@@ -927,6 +952,11 @@
           "jsonName": "Types",
           "cSharpName": "Types",
           "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "options",
+          "cSharpName": "Options",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
         }
       ]
     },
@@ -945,9 +975,9 @@
           "cSharpName": "ClosetSensorBattery"
         },
         {
-          "id": "sensor.closet_sensor_light_level",
+          "id": "sensor.closet_sensor_illuminance",
           "friendlyName": "Closet Sensor Illuminance",
-          "cSharpName": "ClosetSensorLightLevel"
+          "cSharpName": "ClosetSensorIlluminance"
         },
         {
           "id": "sensor.closet_sensor_temperature",
@@ -980,9 +1010,9 @@
           "cSharpName": "HallwaySensorBattery"
         },
         {
-          "id": "sensor.hallway_sensor_light_level",
+          "id": "sensor.hallway_sensor_illuminance",
           "friendlyName": "Hallway Sensor Illuminance",
-          "cSharpName": "HallwaySensorLightLevel"
+          "cSharpName": "HallwaySensorIlluminance"
         },
         {
           "id": "sensor.hallway_sensor_temperature",
@@ -991,12 +1021,12 @@
         },
         {
           "id": "sensor.hallway_thermostat_humidity",
-          "friendlyName": "Hallway Thermostat Humidity",
+          "friendlyName": "Humidity",
           "cSharpName": "HallwayThermostatHumidity"
         },
         {
           "id": "sensor.hallway_thermostat_temperature",
-          "friendlyName": "Hallway Thermostat Temperature",
+          "friendlyName": "Temperature",
           "cSharpName": "HallwayThermostatTemperature"
         },
         {
@@ -1005,9 +1035,9 @@
           "cSharpName": "LaundryRoomSensorBattery"
         },
         {
-          "id": "sensor.laundry_room_sensor_light_level",
+          "id": "sensor.laundry_room_sensor_illuminance",
           "friendlyName": "Laundry Room Sensor Illuminance",
-          "cSharpName": "LaundryRoomSensorLightLevel"
+          "cSharpName": "LaundryRoomSensorIlluminance"
         },
         {
           "id": "sensor.laundry_room_sensor_temperature",
@@ -1180,6 +1210,16 @@
           "jsonName": "Total",
           "cSharpName": "Total",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -1461,22 +1501,22 @@
       "entities": [
         {
           "id": "camera.backyard_camera",
-          "friendlyName": "Backyard camera",
+          "friendlyName": null,
           "cSharpName": "BackyardCamera"
         },
         {
           "id": "camera.front_yard_camera",
-          "friendlyName": "Front yard camera",
+          "friendlyName": null,
           "cSharpName": "FrontYardCamera"
         },
         {
           "id": "camera.garage_camera",
-          "friendlyName": "Garage camera",
+          "friendlyName": null,
           "cSharpName": "GarageCamera"
         },
         {
           "id": "camera.outside",
-          "friendlyName": "Outside",
+          "friendlyName": null,
           "cSharpName": "Outside"
         }
       ],
@@ -1515,6 +1555,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
         }
       ]
     },
@@ -1523,7 +1568,7 @@
       "entities": [
         {
           "id": "climate.hallway_thermostat",
-          "friendlyName": "Hallway Thermostat",
+          "friendlyName": null,
           "cSharpName": "HallwayThermostat"
         }
       ],
@@ -1597,6 +1642,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
         }
       ]
     },
@@ -1607,6 +1657,50 @@
           "id": "tts.google_en_com",
           "friendlyName": "Google en com",
           "cSharpName": "GoogleEnCom"
+        },
+        {
+          "id": "tts.home_assistant_cloud",
+          "friendlyName": "Home Assistant Cloud",
+          "cSharpName": "HomeAssistantCloud"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "conversation",
+      "entities": [
+        {
+          "id": "conversation.home_assistant",
+          "friendlyName": "Home Assistant",
+          "cSharpName": "HomeAssistant"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "stt",
+      "entities": [
+        {
+          "id": "stt.home_assistant_cloud",
+          "friendlyName": "Home Assistant Cloud",
+          "cSharpName": "HomeAssistantCloud"
         }
       ],
       "attributes": [

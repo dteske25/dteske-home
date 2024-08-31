@@ -38,7 +38,7 @@
                 {
                     var brightness = GlobalConfiguration.GetBrightness();
                     _logger.LogInformation("Picked target brightness as {@brightness}, turning on.", brightness);
-                    _entities.Light.BedroomLamp.TurnOn(new LightTurnOnParameters { BrightnessPct = brightness });
+                    _entities.Light.BedroomLamp1.TurnOn(new LightTurnOnParameters { BrightnessPct = brightness });
                     _entities.Light.BedroomLamp2.TurnOn(new LightTurnOnParameters { BrightnessPct = brightness });
 
                     _ha.Message("Alarm Schedule", "Bedroom Lamps On");
