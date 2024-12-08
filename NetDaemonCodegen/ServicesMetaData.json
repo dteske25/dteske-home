@@ -1,57 +1,4 @@
 {
-  "persistent_notification": {
-    "create": {
-      "name": "Create",
-      "description": "Shows a notification on the notifications panel.",
-      "fields": {
-        "message": {
-          "required": true,
-          "example": "Please check your configuration.yaml.",
-          "selector": {
-            "text": null
-          },
-          "name": "Message",
-          "description": "Message body of the notification."
-        },
-        "title": {
-          "example": "Test notification",
-          "selector": {
-            "text": null
-          },
-          "name": "Title",
-          "description": "Optional title of the notification."
-        },
-        "notification_id": {
-          "example": 1234,
-          "selector": {
-            "text": null
-          },
-          "name": "Notification ID",
-          "description": "ID of the notification. This new notification will overwrite an existing notification with the same ID."
-        }
-      }
-    },
-    "dismiss": {
-      "name": "Dismiss",
-      "description": "Removes a notification from the notifications panel.",
-      "fields": {
-        "notification_id": {
-          "required": true,
-          "example": 1234,
-          "selector": {
-            "text": null
-          },
-          "name": "Notification ID",
-          "description": "ID of the notification to be removed."
-        }
-      }
-    },
-    "dismiss_all": {
-      "name": "Dismiss all",
-      "description": "Removes all notifications from the notifications panel.",
-      "fields": {}
-    }
-  },
   "homeassistant": {
     "save_persistent_states": {
       "name": "Save persistent states",
@@ -205,6 +152,89 @@
       "fields": {}
     }
   },
+  "persistent_notification": {
+    "create": {
+      "name": "Create",
+      "description": "Shows a notification on the notifications panel.",
+      "fields": {
+        "message": {
+          "required": true,
+          "example": "Please check your configuration.yaml.",
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "Message body of the notification."
+        },
+        "title": {
+          "example": "Test notification",
+          "selector": {
+            "text": null
+          },
+          "name": "Title",
+          "description": "Optional title of the notification."
+        },
+        "notification_id": {
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Notification ID",
+          "description": "ID of the notification. This new notification will overwrite an existing notification with the same ID."
+        }
+      }
+    },
+    "dismiss": {
+      "name": "Dismiss",
+      "description": "Removes a notification from the notifications panel.",
+      "fields": {
+        "notification_id": {
+          "required": true,
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Notification ID",
+          "description": "ID of the notification to be removed."
+        }
+      }
+    },
+    "dismiss_all": {
+      "name": "Dismiss all",
+      "description": "Removes all notifications from the notifications panel.",
+      "fields": {}
+    }
+  },
+  "logger": {
+    "set_default_level": {
+      "name": "Set default level",
+      "description": "Sets the default log level for integrations.",
+      "fields": {
+        "level": {
+          "selector": {
+            "select": {
+              "options": [
+                "debug",
+                "info",
+                "warning",
+                "error",
+                "fatal",
+                "critical"
+              ],
+              "translation_key": "level"
+            }
+          },
+          "name": "Level",
+          "description": "Default severity level for all integrations."
+        }
+      }
+    },
+    "set_level": {
+      "name": "Set level",
+      "description": "Sets the log level for one or more integrations.",
+      "fields": {}
+    }
+  },
   "system_log": {
     "clear": {
       "name": "Clear all",
@@ -250,36 +280,6 @@
           "description": "Logger name under which to log the message. Defaults to \u0060system_log.external\u0060."
         }
       }
-    }
-  },
-  "logger": {
-    "set_default_level": {
-      "name": "Set default level",
-      "description": "Sets the default log level for integrations.",
-      "fields": {
-        "level": {
-          "selector": {
-            "select": {
-              "options": [
-                "debug",
-                "info",
-                "warning",
-                "error",
-                "fatal",
-                "critical"
-              ],
-              "translation_key": "level"
-            }
-          },
-          "name": "Level",
-          "description": "Default severity level for all integrations."
-        }
-      }
-    },
-    "set_level": {
-      "name": "Set level",
-      "description": "Sets the log level for one or more integrations.",
-      "fields": {}
     }
   },
   "person": {
@@ -688,6 +688,399 @@
           {
             "domain": [
               "scene"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "logbook": {
+    "log": {
+      "name": "Log",
+      "description": "Creates a custom entry in the logbook.",
+      "fields": {
+        "name": {
+          "required": true,
+          "example": "Kitchen",
+          "selector": {
+            "text": null
+          },
+          "name": "Name",
+          "description": "Custom name for an entity, can be referenced using an \u0060entity_id\u0060."
+        },
+        "message": {
+          "required": true,
+          "example": "is being used",
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "Message of the logbook entry."
+        },
+        "entity_id": {
+          "selector": {
+            "entity": null
+          },
+          "name": "Entity ID",
+          "description": "Entity to reference in the logbook entry."
+        },
+        "domain": {
+          "example": "light",
+          "selector": {
+            "text": null
+          },
+          "name": "Domain",
+          "description": "Determines which icon is used in the logbook entry. The icon illustrates the integration domain related to this logbook entry."
+        }
+      }
+    }
+  },
+  "input_number": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Sets the value.",
+      "fields": {
+        "value": {
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "step": 0.001,
+              "mode": "box"
+            }
+          },
+          "name": "Value",
+          "description": "The target value."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    },
+    "increment": {
+      "name": "Increment",
+      "description": "Increments the value by 1 step.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    },
+    "decrement": {
+      "name": "Decrement",
+      "description": "Decrements the current value by 1 step.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "automation": {
+    "trigger": {
+      "name": "Trigger",
+      "description": "Triggers the actions of an automation.",
+      "fields": {
+        "skip_condition": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Skip conditions",
+          "description": "Defines whether or not the conditions will be skipped."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles (enable / disable) an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Enables an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Disables an automation.",
+      "fields": {
+        "stop_actions": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Stop actions",
+          "description": "Stops currently running actions."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads the automation configuration.",
+      "fields": {}
+    }
+  },
+  "input_button": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "press": {
+      "name": "Press",
+      "description": "Mimics the physical button press on the device.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_button"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "zone": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads zones from the YAML-configuration.",
+      "fields": {}
+    }
+  },
+  "input_select": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "select_first": {
+      "name": "First",
+      "description": "Selects the first option.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_last": {
+      "name": "Last",
+      "description": "Selects the last option.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_next": {
+      "name": "Next",
+      "description": "Select the next option.",
+      "fields": {
+        "cycle": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Cycle",
+          "description": "If the option should cycle from the last to the first option on the list."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_option": {
+      "name": "Select",
+      "description": "Selects an option.",
+      "fields": {
+        "option": {
+          "required": true,
+          "example": "\u0022Item A\u0022",
+          "selector": {
+            "text": null
+          },
+          "name": "Option",
+          "description": "Option to be selected."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_previous": {
+      "name": "Previous",
+      "description": "Selects the previous option.",
+      "fields": {
+        "cycle": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Cycle",
+          "description": "If the option should cycle from the last to the first option on the list."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "set_options": {
+      "name": "Set options",
+      "description": "Sets the options.",
+      "fields": {
+        "options": {
+          "required": true,
+          "example": "[\u0022Item A\u0022, \u0022Item B\u0022, \u0022Item C\u0022]",
+          "selector": {
+            "text": {
+              "multiple": true
+            }
+          },
+          "name": "Options",
+          "description": "List of options."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "script": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads all the available scripts.",
+      "fields": {}
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Runs the sequence of actions defined in a script.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Stops a running script.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle a script. Starts it, if isn\u0027t running, stops it otherwise.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
             ]
           }
         ]
@@ -1756,69 +2149,6 @@
       }
     }
   },
-  "input_number": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads helpers from the YAML-configuration.",
-      "fields": {}
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Sets the value.",
-      "fields": {
-        "value": {
-          "required": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "step": 0.001,
-              "mode": "box"
-            }
-          },
-          "name": "Value",
-          "description": "The target value."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    },
-    "increment": {
-      "name": "Increment",
-      "description": "Increments the value by 1 step.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    },
-    "decrement": {
-      "name": "Decrement",
-      "description": "Decrements the current value by 1 step.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "timer": {
     "reload": {
       "name": "Reload",
@@ -1910,336 +2240,6 @@
           {
             "domain": [
               "timer"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "script": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads all the available scripts.",
-      "fields": {}
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Runs the sequence of actions defined in a script.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Stops a running script.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle a script. Starts it, if isn\u0027t running, stops it otherwise.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "zone": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads zones from the YAML-configuration.",
-      "fields": {}
-    }
-  },
-  "input_button": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads helpers from the YAML-configuration.",
-      "fields": {}
-    },
-    "press": {
-      "name": "Press",
-      "description": "Mimics the physical button press on the device.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_button"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "automation": {
-    "trigger": {
-      "name": "Trigger",
-      "description": "Triggers the actions of an automation.",
-      "fields": {
-        "skip_condition": {
-          "default": true,
-          "selector": {
-            "boolean": null
-          },
-          "name": "Skip conditions",
-          "description": "Defines whether or not the conditions will be skipped."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggles (enable / disable) an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Enables an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Disables an automation.",
-      "fields": {
-        "stop_actions": {
-          "default": true,
-          "selector": {
-            "boolean": null
-          },
-          "name": "Stop actions",
-          "description": "Stops currently running actions."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads the automation configuration.",
-      "fields": {}
-    }
-  },
-  "logbook": {
-    "log": {
-      "name": "Log",
-      "description": "Creates a custom entry in the logbook.",
-      "fields": {
-        "name": {
-          "required": true,
-          "example": "Kitchen",
-          "selector": {
-            "text": null
-          },
-          "name": "Name",
-          "description": "Custom name for an entity, can be referenced using an \u0060entity_id\u0060."
-        },
-        "message": {
-          "required": true,
-          "example": "is being used",
-          "selector": {
-            "text": null
-          },
-          "name": "Message",
-          "description": "Message of the logbook entry."
-        },
-        "entity_id": {
-          "selector": {
-            "entity": null
-          },
-          "name": "Entity ID",
-          "description": "Entity to reference in the logbook entry."
-        },
-        "domain": {
-          "example": "light",
-          "selector": {
-            "text": null
-          },
-          "name": "Domain",
-          "description": "Determines which icon is used in the logbook entry. The icon illustrates the integration domain related to this logbook entry."
-        }
-      }
-    }
-  },
-  "input_select": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads helpers from the YAML-configuration.",
-      "fields": {}
-    },
-    "select_first": {
-      "name": "First",
-      "description": "Selects the first option.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_last": {
-      "name": "Last",
-      "description": "Selects the last option.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_next": {
-      "name": "Next",
-      "description": "Select the next option.",
-      "fields": {
-        "cycle": {
-          "default": true,
-          "selector": {
-            "boolean": null
-          },
-          "name": "Cycle",
-          "description": "If the option should cycle from the last to the first option on the list."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_option": {
-      "name": "Select",
-      "description": "Selects an option.",
-      "fields": {
-        "option": {
-          "required": true,
-          "example": "\u0022Item A\u0022",
-          "selector": {
-            "text": null
-          },
-          "name": "Option",
-          "description": "Option to be selected."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_previous": {
-      "name": "Previous",
-      "description": "Selects the previous option.",
-      "fields": {
-        "cycle": {
-          "default": true,
-          "selector": {
-            "boolean": null
-          },
-          "name": "Cycle",
-          "description": "If the option should cycle from the last to the first option on the list."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "set_options": {
-      "name": "Set options",
-      "description": "Sets the options.",
-      "fields": {
-        "options": {
-          "required": true,
-          "example": "[\u0022Item A\u0022, \u0022Item B\u0022, \u0022Item C\u0022]",
-          "selector": {
-            "text": {
-              "multiple": true
-            }
-          },
-          "name": "Options",
-          "description": "List of options."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
             ]
           }
         ]
@@ -2368,115 +2368,6 @@
       "fields": {}
     }
   },
-  "schedule": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads schedules from the YAML-configuration.",
-      "fields": {}
-    }
-  },
-  "counter": {
-    "increment": {
-      "name": "Increment",
-      "description": "Increments a counter.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "counter"
-            ]
-          }
-        ]
-      }
-    },
-    "decrement": {
-      "name": "Decrement",
-      "description": "Decrements a counter.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "counter"
-            ]
-          }
-        ]
-      }
-    },
-    "reset": {
-      "name": "Reset",
-      "description": "Resets a counter.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "counter"
-            ]
-          }
-        ]
-      }
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Sets the counter value.",
-      "fields": {
-        "value": {
-          "required": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "mode": "box"
-            }
-          },
-          "name": "Value",
-          "description": "The new counter value the entity should be set to."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "counter"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "input_text": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads helpers from the YAML-configuration.",
-      "fields": {}
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Sets the value.",
-      "fields": {
-        "value": {
-          "required": true,
-          "example": "This is an example text",
-          "selector": {
-            "text": null
-          },
-          "name": "Value",
-          "description": "The target value."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_text"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "cast": {
     "show_lovelace_view": {
       "name": "Show dashboard view",
@@ -2564,6 +2455,221 @@
           {
             "domain": [
               "input_datetime"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "blink": {
+    "send_pin": {
+      "name": "Send pin",
+      "description": "Sends a new PIN to blink for 2FA.",
+      "fields": {
+        "config_entry_id": {
+          "required": true,
+          "selector": {
+            "config_entry": {
+              "integration": "blink"
+            }
+          },
+          "name": "Integration ID",
+          "description": "The Blink Integration id."
+        },
+        "pin": {
+          "example": "abc123",
+          "selector": {
+            "text": null
+          },
+          "name": "Pin",
+          "description": "PIN received from blink. Leave empty if you only received a verification email."
+        }
+      }
+    },
+    "record": {
+      "name": "Record",
+      "description": "Requests camera to record a clip.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "integration": "blink",
+            "domain": [
+              "camera"
+            ]
+          }
+        ]
+      }
+    },
+    "trigger_camera": {
+      "name": "Trigger camera",
+      "description": "Requests camera to take new image.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "integration": "blink",
+            "domain": [
+              "camera"
+            ]
+          }
+        ]
+      }
+    },
+    "save_recent_clips": {
+      "name": "Save recent clips",
+      "description": "Saves all recent video clips to local directory with file pattern \u0022%Y%m%d_%H%M%S_[camera name].mp4\u0022.",
+      "fields": {
+        "file_path": {
+          "required": true,
+          "example": "/tmp",
+          "selector": {
+            "text": null
+          },
+          "name": "Output directory",
+          "description": "Directory name of writable path (directory may need to be included in allowlist_external_dirs in config)."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "integration": "blink",
+            "domain": [
+              "camera"
+            ]
+          }
+        ]
+      }
+    },
+    "save_video": {
+      "name": "Save video",
+      "description": "Saves last recorded video clip to local file.",
+      "fields": {
+        "filename": {
+          "required": true,
+          "example": "/tmp/video.mp4",
+          "selector": {
+            "text": null
+          },
+          "name": "File name",
+          "description": "Filename to writable path (directory may need to be included in allowlist_external_dirs in config)."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "integration": "blink",
+            "domain": [
+              "camera"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "counter": {
+    "increment": {
+      "name": "Increment",
+      "description": "Increments a counter.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "counter"
+            ]
+          }
+        ]
+      }
+    },
+    "decrement": {
+      "name": "Decrement",
+      "description": "Decrements a counter.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "counter"
+            ]
+          }
+        ]
+      }
+    },
+    "reset": {
+      "name": "Reset",
+      "description": "Resets a counter.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "counter"
+            ]
+          }
+        ]
+      }
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Sets the counter value.",
+      "fields": {
+        "value": {
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "mode": "box"
+            }
+          },
+          "name": "Value",
+          "description": "The new counter value the entity should be set to."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "counter"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "schedule": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads schedules from the YAML-configuration.",
+      "fields": {}
+    }
+  },
+  "input_text": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Sets the value.",
+      "fields": {
+        "value": {
+          "required": true,
+          "example": "This is an example text",
+          "selector": {
+            "text": null
+          },
+          "name": "Value",
+          "description": "The target value."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_text"
             ]
           }
         ]
@@ -2799,137 +2905,6 @@
           "name": "Battery level",
           "description": "Battery level of the device."
         }
-      }
-    }
-  },
-  "hue": {
-    "activate_scene": {
-      "name": "Activate Hue scene",
-      "description": "Activates a Hue scene with more control over the options.",
-      "fields": {
-        "transition": {
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 3600,
-              "unit_of_measurement": "seconds"
-            }
-          },
-          "name": "Transition",
-          "description": "Transition duration it takes to bring devices to the state defined in the scene."
-        },
-        "dynamic": {
-          "selector": {
-            "boolean": null
-          },
-          "name": "Dynamic",
-          "description": "Enable dynamic mode of the scene."
-        },
-        "speed": {
-          "advanced": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100
-            }
-          },
-          "name": "Speed",
-          "description": "Speed of dynamic palette for this scene."
-        },
-        "brightness": {
-          "advanced": true,
-          "selector": {
-            "number": {
-              "min": 1,
-              "max": 255
-            }
-          },
-          "name": "Brightness",
-          "description": "Set brightness for the scene."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "scene"
-            ],
-            "integration": "hue"
-          }
-        ]
-      }
-    },
-    "hue_activate_scene": {
-      "name": "Activate scene",
-      "description": "Activates a hue scene stored in the hue hub.",
-      "fields": {
-        "group_name": {
-          "example": "Living Room",
-          "selector": {
-            "text": null
-          },
-          "name": "Group",
-          "description": "Name of hue group/room from the hue app."
-        },
-        "scene_name": {
-          "example": "Energize",
-          "selector": {
-            "text": null
-          },
-          "name": "Scene",
-          "description": "Name of hue scene from the hue app."
-        },
-        "dynamic": {
-          "selector": {
-            "boolean": null
-          },
-          "name": "Dynamic",
-          "description": "Enable dynamic mode of the scene (V2 bridges and supported scenes only)."
-        }
-      }
-    }
-  },
-  "switch": {
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turns a switch off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turns a switch on.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggles a switch on/off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
       }
     }
   },
@@ -3452,6 +3427,318 @@
             ],
             "supported_features": [
               262144
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "hue": {
+    "activate_scene": {
+      "name": "Activate Hue scene",
+      "description": "Activates a Hue scene with more control over the options.",
+      "fields": {
+        "transition": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 3600,
+              "unit_of_measurement": "seconds"
+            }
+          },
+          "name": "Transition",
+          "description": "Transition duration it takes to bring devices to the state defined in the scene."
+        },
+        "dynamic": {
+          "selector": {
+            "boolean": null
+          },
+          "name": "Dynamic",
+          "description": "Enable dynamic mode of the scene."
+        },
+        "speed": {
+          "advanced": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100
+            }
+          },
+          "name": "Speed",
+          "description": "Speed of dynamic palette for this scene."
+        },
+        "brightness": {
+          "advanced": true,
+          "selector": {
+            "number": {
+              "min": 1,
+              "max": 255
+            }
+          },
+          "name": "Brightness",
+          "description": "Set brightness for the scene."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "scene"
+            ],
+            "integration": "hue"
+          }
+        ]
+      }
+    },
+    "hue_activate_scene": {
+      "name": "Activate scene",
+      "description": "Activates a hue scene stored in the hue hub.",
+      "fields": {
+        "group_name": {
+          "example": "Living Room",
+          "selector": {
+            "text": null
+          },
+          "name": "Group",
+          "description": "Name of hue group/room from the hue app."
+        },
+        "scene_name": {
+          "example": "Energize",
+          "selector": {
+            "text": null
+          },
+          "name": "Scene",
+          "description": "Name of hue scene from the hue app."
+        },
+        "dynamic": {
+          "selector": {
+            "boolean": null
+          },
+          "name": "Dynamic",
+          "description": "Enable dynamic mode of the scene (V2 bridges and supported scenes only)."
+        }
+      }
+    }
+  },
+  "switch": {
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turns a switch off.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turns a switch on.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles a switch on/off.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "alarm_control_panel": {
+    "alarm_disarm": {
+      "name": "Disarm",
+      "description": "Disarms the alarm.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to disarm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_home": {
+      "name": "Arm home",
+      "description": "Sets the alarm to: _armed, but someone is home_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_away": {
+      "name": "Arm away",
+      "description": "Sets the alarm to: _armed, no one home_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_night": {
+      "name": "Arm night",
+      "description": "Sets the alarm to: _armed for the night_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_vacation": {
+      "name": "Arm vacation",
+      "description": "Sets the alarm to: _armed for vacation_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_custom_bypass": {
+      "name": "Arm with custom bypass",
+      "description": "Arms the alarm while allowing to bypass a custom area.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              16
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_trigger": {
+      "name": "Trigger",
+      "description": "Enables an external alarm trigger.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              8
             ]
           }
         ]
@@ -4491,187 +4778,6 @@
               "lock"
             ],
             "integration": "zha"
-          }
-        ]
-      }
-    }
-  },
-  "alarm_control_panel": {
-    "alarm_disarm": {
-      "name": "Disarm",
-      "description": "Disarms the alarm.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to disarm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_home": {
-      "name": "Arm home",
-      "description": "Sets the alarm to: _armed, but someone is home_.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to arm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ],
-            "supported_features": [
-              1
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_away": {
-      "name": "Arm away",
-      "description": "Sets the alarm to: _armed, no one home_.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to arm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ],
-            "supported_features": [
-              2
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_night": {
-      "name": "Arm night",
-      "description": "Sets the alarm to: _armed for the night_.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to arm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ],
-            "supported_features": [
-              4
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_vacation": {
-      "name": "Arm vacation",
-      "description": "Sets the alarm to: _armed for vacation_.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to arm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ],
-            "supported_features": [
-              32
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_custom_bypass": {
-      "name": "Arm with custom bypass",
-      "description": "Arms the alarm while allowing to bypass a custom area.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to arm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ],
-            "supported_features": [
-              16
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_trigger": {
-      "name": "Trigger",
-      "description": "Enables an external alarm trigger.",
-      "fields": {
-        "code": {
-          "example": "1234",
-          "selector": {
-            "text": null
-          },
-          "name": "Code",
-          "description": "Code to arm the alarm."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ],
-            "supported_features": [
-              8
-            ]
           }
         ]
       }

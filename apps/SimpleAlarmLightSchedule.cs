@@ -6,13 +6,13 @@
         private readonly IScheduler _scheduler;
         private readonly Entities _entities;
         private readonly IHaContext _ha;
-        private readonly ILogger<AlarmLightSchedule> _logger;
+        private readonly ILogger<SimpleAlarmLightSchedule> _logger;
 
         private Dictionary<string, IDisposable> ScheduledAlarms { get; set; } = new Dictionary<string, IDisposable>();
 
         private DateTimeOffset? NextAlarm { get; set; }
 
-        public SimpleAlarmLightSchedule(IScheduler scheduler, Entities entities, IHaContext ha, ILogger<AlarmLightSchedule> logger)
+        public SimpleAlarmLightSchedule(IScheduler scheduler, Entities entities, IHaContext ha, ILogger<SimpleAlarmLightSchedule> logger)
         {
             _scheduler = scheduler;
             _entities = entities;

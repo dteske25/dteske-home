@@ -1,48 +1,23 @@
-//namespace TeskeHomeAssistant.apps;
+using System.Reactive.Concurrency;
 
-//[NetDaemonApp]
-//public class LivingRoomAutomation
-//{
-//    public LivingRoomAutomation(IHaContext ha, Entities entities)
-//    {
-//        var livingRoomLights = new List<Entity>
-//        {
-//            entities.Light.LivingRoomSwitchLight,
-//            entities.Light.LivingRoomLamp,
-//            entities.Switch.LivingRoomTableSwitch
-//        };
-//        var dimmer = new Dimmer(100, 20, 2);
+namespace TeskeHomeAssistant.apps;
 
-//        ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.Press).Subscribe(_ =>
-//        {
-//            livingRoomLights.TurnOn(dimmer.Next());
-//        });
+[NetDaemonApp]
+public class LivingRoomAutomation
+{
+    public LivingRoomAutomation(IHaContext ha, Entities entities, IScheduler scheduler)
+    {
 
-//        ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
-//        {
-//            entities.Switch.LivingRoomSquareLampSwitch.Toggle();
-//        });
+        scheduler.ScheduleCron("00 18 * * *", () =>
+        {
+            entities.Switch.Outlet1.TurnOn();
+            ha.Message("Living Room Light Schedule", "06:00 PM Christmas Tree On");
+        });
 
-//        ha.Events.Where(ZigbeeDeviceName.LivingRoomButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
-//        {
-//            livingRoomLights.TurnOff();
-//        });
-
-//        entities.Light.LivingRoomSwitchLight.StateChanges()
-//            .Subscribe(e =>
-//            {
-//                if (e.New?.State == "on")
-//                {
-//                    dimmer.SetStep(2);
-//                    livingRoomLights.TurnOn(dimmer.Current);
-//                    entities.Switch.LivingRoomSquareLampSwitch.TurnOn();
-//                }
-//                if (e.New?.State == "off")
-//                {
-//                    livingRoomLights.TurnOff();
-//                    entities.Switch.LivingRoomSquareLampSwitch.TurnOff();
-//                }
-//            });
-
-//    }
-//}
+        scheduler.ScheduleCron("00 01 * * *", () =>
+        {
+            entities.Switch.Outlet1.TurnOff();
+            ha.Message("Living Room Light Schedule", "01:00 AM Christmas Tree Off");
+        });
+    }
+}
