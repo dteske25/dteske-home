@@ -42,11 +42,11 @@ public class BedroomAutomation
             ha.Message("Alarm Light Schedule", "09:00 AM Bedroom Lights Off");
         });
 
-        scheduler.ScheduleCron("00 20 * * *", () =>
+        scheduler.ScheduleCron("00 18 * * *", () =>
         {
             entities.Light.BedroomLamp1.TurnOn(brightnessPct: GlobalConfiguration.BRIGHTNESS_MED);
             entities.Light.BedroomLamp2.TurnOn(brightnessPct: GlobalConfiguration.BRIGHTNESS_MED);
-            ha.Message("Alarm Light Schedule", "08:00 PM Bedroom Lights On");
+            ha.Message("Alarm Light Schedule", "06:00 PM Bedroom Lights On");
         });
 
         //scheduler.ScheduleCron("00 22 * * *", () =>
