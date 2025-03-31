@@ -5,28 +5,27 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4.1.1
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4.0.0
-      with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet publish -c Release
-    - name: Upload dotnet artifacts
-      uses: actions/upload-artifact@v4.3.0
-      with:
-        name: "dotnet-results-${{ github.RUN_ID }}"
-        path: /home/runner/work/dteske-home/dteske-home/bin/Release/net8.0/publish/
-      if: ${{ always() }}
+      - uses: actions/checkout@v4.1.1
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4.0.0
+        with:
+          dotnet-version: 9.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet publish -c Release
+      - name: Upload dotnet artifacts
+        uses: actions/upload-artifact@v4.3.0
+        with:
+          name: "dotnet-results-${{ github.RUN_ID }}"
+          path: /home/runner/work/dteske-home/dteske-home/bin/Release/net9.0/publish/
+        if: ${{ always() }}

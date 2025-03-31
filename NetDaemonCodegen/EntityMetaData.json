@@ -19,23 +19,18 @@
           "cSharpName": "ClosetSensorMotion"
         },
         {
-          "id": "binary_sensor.dteske_pixel_high_accuracy_mode",
-          "friendlyName": "dteske-pixel High accuracy mode",
-          "cSharpName": "DteskePixelHighAccuracyMode"
-        },
-        {
           "id": "binary_sensor.front_door_ding",
-          "friendlyName": "Ding",
+          "friendlyName": "Front Door Ding",
           "cSharpName": "FrontDoorDing"
         },
         {
           "id": "binary_sensor.front_door_motion",
-          "friendlyName": "Motion",
+          "friendlyName": "Front Door Motion",
           "cSharpName": "FrontDoorMotion"
         },
         {
           "id": "binary_sensor.garage_motion",
-          "friendlyName": "Motion",
+          "friendlyName": "Garage Motion",
           "cSharpName": "GarageMotion"
         },
         {
@@ -114,6 +109,21 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "state",
+          "cSharpName": "State",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "expires_at",
+          "cSharpName": "ExpiresAt",
+          "clrType": "System.String"
         }
       ]
     },
@@ -126,9 +136,24 @@
           "cSharpName": "BedroomButtonIdentify"
         },
         {
+          "id": "button.couch_side_table_lamp_identify",
+          "friendlyName": "Couch Side Table Lamp Identify",
+          "cSharpName": "CouchSideTableLampIdentify"
+        },
+        {
+          "id": "button.entryway_lamp_identify",
+          "friendlyName": "Entryway Lamp Identify",
+          "cSharpName": "EntrywayLampIdentify"
+        },
+        {
           "id": "button.living_room_button_identify",
           "friendlyName": "Living Room Button Identify",
           "cSharpName": "LivingRoomButtonIdentify"
+        },
+        {
+          "id": "button.living_room_sentsy_identify",
+          "friendlyName": "Living Room Sentsy Identify",
+          "cSharpName": "LivingRoomSentsyIdentify"
         },
         {
           "id": "button.motion_sensor_2_identify",
@@ -146,29 +171,9 @@
           "cSharpName": "OfficeMotionSensorIdentify"
         },
         {
-          "id": "button.outlet_1_identify",
-          "friendlyName": "Outlet 1 Identify",
-          "cSharpName": "Outlet1Identify"
-        },
-        {
           "id": "button.outlet_2_identify",
           "friendlyName": "Outlet 2 Identify",
           "cSharpName": "Outlet2Identify"
-        },
-        {
-          "id": "button.outlet_3_identify",
-          "friendlyName": "Outlet 3 Identify",
-          "cSharpName": "Outlet3Identify"
-        },
-        {
-          "id": "button.outlet_4_identify",
-          "friendlyName": "Outlet 4 Identify",
-          "cSharpName": "Outlet4Identify"
-        },
-        {
-          "id": "button.outlet_5_identify",
-          "friendlyName": "Outlet 5 Identify",
-          "cSharpName": "Outlet5Identify"
         },
         {
           "id": "button.outlet_6_identify",
@@ -179,6 +184,11 @@
           "id": "button.shapes_7b48_identify",
           "friendlyName": "Identify",
           "cSharpName": "Shapes7b48Identify"
+        },
+        {
+          "id": "button.table_identify",
+          "friendlyName": "Table Identify",
+          "cSharpName": "TableIdentify"
         }
       ],
       "attributes": [
@@ -772,48 +782,43 @@
           "cSharpName": "DteskePixelNextAlarm"
         },
         {
-          "id": "sensor.dteske_pixel_volume_level_alarm",
-          "friendlyName": "dteske-pixel Volume level alarm",
-          "cSharpName": "DteskePixelVolumeLevelAlarm"
-        },
-        {
           "id": "sensor.front_door_last_activity",
-          "friendlyName": "Last activity",
+          "friendlyName": "Front Door Last activity",
           "cSharpName": "FrontDoorLastActivity"
         },
         {
           "id": "sensor.front_door_last_ding",
-          "friendlyName": "Last ding",
+          "friendlyName": "Front Door Last ding",
           "cSharpName": "FrontDoorLastDing"
         },
         {
           "id": "sensor.front_door_last_motion",
-          "friendlyName": "Last motion",
+          "friendlyName": "Front Door Last motion",
           "cSharpName": "FrontDoorLastMotion"
         },
         {
           "id": "sensor.front_door_volume",
-          "friendlyName": "Volume",
+          "friendlyName": "Front Door Volume",
           "cSharpName": "FrontDoorVolume"
         },
         {
           "id": "sensor.garage_last_activity",
-          "friendlyName": "Last activity",
+          "friendlyName": "Garage Last activity",
           "cSharpName": "GarageLastActivity"
         },
         {
           "id": "sensor.garage_last_ding",
-          "friendlyName": "Last ding",
+          "friendlyName": "Garage Last ding",
           "cSharpName": "GarageLastDing"
         },
         {
           "id": "sensor.garage_last_motion",
-          "friendlyName": "Last motion",
+          "friendlyName": "Garage Last motion",
           "cSharpName": "GarageLastMotion"
         },
         {
           "id": "sensor.garage_volume",
-          "friendlyName": "Volume",
+          "friendlyName": "Garage Volume",
           "cSharpName": "GarageVolume"
         },
         {
@@ -1002,6 +1007,31 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "created_at",
+          "cSharpName": "CreatedAt",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "answered",
+          "cSharpName": "Answered",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "recording_status",
+          "cSharpName": "RecordingStatus",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "category",
+          "cSharpName": "Category",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
         }
       ]
     },
@@ -1050,23 +1080,18 @@
           "cSharpName": "DteskePixelBatteryLevel"
         },
         {
-          "id": "sensor.dteske_pixel_high_accuracy_update_interval",
-          "friendlyName": "dteske-pixel High accuracy update interval",
-          "cSharpName": "DteskePixelHighAccuracyUpdateInterval"
-        },
-        {
           "id": "sensor.dteske_pixel_sleep_confidence",
           "friendlyName": "dteske-pixel Sleep confidence",
           "cSharpName": "DteskePixelSleepConfidence"
         },
         {
           "id": "sensor.front_door_battery",
-          "friendlyName": "Battery",
+          "friendlyName": "Front Door Battery",
           "cSharpName": "FrontDoorBattery"
         },
         {
           "id": "sensor.garage_battery",
-          "friendlyName": "Battery",
+          "friendlyName": "Garage Battery",
           "cSharpName": "GarageBattery"
         },
         {
@@ -1275,6 +1300,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
         }
       ]
     },
@@ -1359,8 +1389,18 @@
           "cSharpName": "ClosetSensorMotionSensorEnabled"
         },
         {
+          "id": "switch.couch_side_table_lamp",
+          "friendlyName": "Couch Side Table Lamp Switch",
+          "cSharpName": "CouchSideTableLamp"
+        },
+        {
+          "id": "switch.entryway_lamp",
+          "friendlyName": "Entryway Lamp Switch",
+          "cSharpName": "EntrywayLamp"
+        },
+        {
           "id": "switch.garage_siren",
-          "friendlyName": "Siren",
+          "friendlyName": "Garage Siren",
           "cSharpName": "GarageSiren"
         },
         {
@@ -1384,9 +1424,9 @@
           "cSharpName": "LaundryRoomSensorMotionSensorEnabled"
         },
         {
-          "id": "switch.outlet_1",
-          "friendlyName": "Outlet 1 Switch",
-          "cSharpName": "Outlet1"
+          "id": "switch.living_room_sentsy",
+          "friendlyName": "Living Room Sentsy Switch",
+          "cSharpName": "LivingRoomSentsy"
         },
         {
           "id": "switch.outlet_2",
@@ -1394,24 +1434,14 @@
           "cSharpName": "Outlet2"
         },
         {
-          "id": "switch.outlet_3",
-          "friendlyName": "Outlet 3 Switch",
-          "cSharpName": "Outlet3"
-        },
-        {
-          "id": "switch.outlet_4",
-          "friendlyName": "Outlet 4 Switch",
-          "cSharpName": "Outlet4"
-        },
-        {
-          "id": "switch.outlet_5",
-          "friendlyName": "Outlet 5 Switch",
-          "cSharpName": "Outlet5"
-        },
-        {
           "id": "switch.outlet_6",
           "friendlyName": "Outlet 6 Switch",
           "cSharpName": "Outlet6"
+        },
+        {
+          "id": "switch.table",
+          "friendlyName": "Table Switch",
+          "cSharpName": "Table"
         },
         {
           "id": "switch.upstairs_camera_motion_detection",
@@ -1444,6 +1474,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
         }
       ]
     },
@@ -1586,12 +1621,12 @@
         },
         {
           "id": "camera.front_door",
-          "friendlyName": null,
+          "friendlyName": "Front Door",
           "cSharpName": "FrontDoor"
         },
         {
           "id": "camera.garage",
-          "friendlyName": null,
+          "friendlyName": "Garage",
           "cSharpName": "Garage"
         },
         {
@@ -1749,6 +1784,21 @@
         {
           "jsonName": "type",
           "cSharpName": "Type",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "video_url",
+          "cSharpName": "VideoUrl",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "last_video_id",
+          "cSharpName": "LastVideoId",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
           "clrType": "System.String"
         }
       ]

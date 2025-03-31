@@ -19,6 +19,7 @@
             _ha = ha;
             _logger = logger;
 
+           
             entities.Sensor.DteskePixelNextAlarm.StateChanges().Subscribe(e =>
             {
                 var nextAlarmTime = GetNextAlarm(e);

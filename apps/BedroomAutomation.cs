@@ -1,4 +1,5 @@
 ﻿using System.Reactive.Concurrency;
+using NetDaemon.HassModel.Entities;
 
 namespace TeskeHomeAssistant.apps;
 
@@ -42,11 +43,18 @@ public class BedroomAutomation
             ha.Message("Alarm Light Schedule", "09:00 AM Bedroom Lights Off");
         });
 
-        scheduler.ScheduleCron("00 18 * * *", () =>
+        entities.Sensor.SunNextDusk.StateChanges().Subscribe((stateChange) =>
+        {
+            var dusk = stateChange.New?.State;
+            var result = DateTimeOffset.TryParse(dusk, out DateTimeOffset nextDusk);
+            ha.Message("Dusk Time", $"{result} lights would have turned on");
+        });
+
+        scheduler.ScheduleCron("00 21 * * *", () =>
         {
             entities.Light.BedroomLamp1.TurnOn(brightnessPct: GlobalConfiguration.BRIGHTNESS_MED);
             entities.Light.BedroomLamp2.TurnOn(brightnessPct: GlobalConfiguration.BRIGHTNESS_MED);
-            ha.Message("Alarm Light Schedule", "06:00 PM Bedroom Lights On");
+            ha.Message("Alarm Light Schedule", "09:00 PM Bedroom Lights On");
         });
 
         //scheduler.ScheduleCron("00 22 * * *", () =>

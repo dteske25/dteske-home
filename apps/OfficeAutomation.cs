@@ -33,13 +33,13 @@ public class OfficeAutomation
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.DoublePress).Subscribe(_ =>
         {
-            entities.Switch.Outlet1.Toggle();
+            //entities.Switch.Outlet1.Toggle();
         });
 
         ha.Events.Where(ZigbeeDeviceName.OfficeButton, ZigbeeButtonCommands.LongPress).Subscribe(_ =>
         {
             entities.InputBoolean.OfficeMotionAllowed.TurnOff();
-            entities.Switch.Outlet1.TurnOff();
+            //entities.Switch.Outlet1.TurnOff();
             entities.Light.OfficeLights.TurnOff();
             entities.Light.Shapes7b48.TurnOff();
 
