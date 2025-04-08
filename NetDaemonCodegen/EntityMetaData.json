@@ -39,11 +39,6 @@
           "cSharpName": "HallwaySensorMotion"
         },
         {
-          "id": "binary_sensor.laundry_room_sensor_motion",
-          "friendlyName": "Laundry Room Sensor Motion",
-          "cSharpName": "LaundryRoomSensorMotion"
-        },
-        {
           "id": "binary_sensor.meg_focus",
           "friendlyName": "meg Focus",
           "cSharpName": "MegFocus"
@@ -54,9 +49,9 @@
           "cSharpName": "MotionSensor2Motion"
         },
         {
-          "id": "binary_sensor.office_motion_sensor",
-          "friendlyName": "Office Motion Sensor Motion",
-          "cSharpName": "OfficeMotionSensor"
+          "id": "binary_sensor.office_sensor_motion",
+          "friendlyName": "Office Sensor Motion",
+          "cSharpName": "OfficeSensorMotion"
         },
         {
           "id": "binary_sensor.remote_ui",
@@ -164,11 +159,6 @@
           "id": "button.office_button_identify",
           "friendlyName": "Office Button Identify",
           "cSharpName": "OfficeButtonIdentify"
-        },
-        {
-          "id": "button.office_motion_sensor_identify",
-          "friendlyName": "Office Motion Sensor Identify",
-          "cSharpName": "OfficeMotionSensorIdentify"
         },
         {
           "id": "button.outlet_2_identify",
@@ -757,16 +747,6 @@
       "domain": "sensor",
       "entities": [
         {
-          "id": "sensor.blink_basement_wi_fi_signal_strength",
-          "friendlyName": "Basement Wi-Fi signal strength",
-          "cSharpName": "BlinkBasementWiFiSignalStrength"
-        },
-        {
-          "id": "sensor.blink_upstairs_wi_fi_signal_strength",
-          "friendlyName": "Upstairs Wi-Fi signal strength",
-          "cSharpName": "BlinkUpstairsWiFiSignalStrength"
-        },
-        {
           "id": "sensor.dteske_pixel_battery_state",
           "friendlyName": "dteske-pixel Battery state",
           "cSharpName": "DteskePixelBatteryState"
@@ -1050,9 +1030,19 @@
           "cSharpName": "BlinkBasementTemperature"
         },
         {
+          "id": "sensor.blink_basement_wi_fi_signal_strength",
+          "friendlyName": "Basement Wi-Fi signal strength",
+          "cSharpName": "BlinkBasementWiFiSignalStrength"
+        },
+        {
           "id": "sensor.blink_upstairs_temperature",
           "friendlyName": "Upstairs Temperature",
           "cSharpName": "BlinkUpstairsTemperature"
+        },
+        {
+          "id": "sensor.blink_upstairs_wi_fi_signal_strength",
+          "friendlyName": "Upstairs Wi-Fi signal strength",
+          "cSharpName": "BlinkUpstairsWiFiSignalStrength"
         },
         {
           "id": "sensor.closet_sensor_battery",
@@ -1110,21 +1100,6 @@
           "cSharpName": "HallwaySensorTemperature"
         },
         {
-          "id": "sensor.laundry_room_sensor_battery",
-          "friendlyName": "Laundry Room Sensor Battery",
-          "cSharpName": "LaundryRoomSensorBattery"
-        },
-        {
-          "id": "sensor.laundry_room_sensor_illuminance",
-          "friendlyName": "Laundry Room Sensor Illuminance",
-          "cSharpName": "LaundryRoomSensorIlluminance"
-        },
-        {
-          "id": "sensor.laundry_room_sensor_temperature",
-          "friendlyName": "Laundry Room Sensor Temperature",
-          "cSharpName": "LaundryRoomSensorTemperature"
-        },
-        {
           "id": "sensor.living_room_button_battery",
           "friendlyName": "Living Room Button Battery",
           "cSharpName": "LivingRoomButtonBattery"
@@ -1175,9 +1150,19 @@
           "cSharpName": "OfficeButtonBattery"
         },
         {
-          "id": "sensor.office_motion_sensor_battery",
-          "friendlyName": "Office Motion Sensor Battery",
-          "cSharpName": "OfficeMotionSensorBattery"
+          "id": "sensor.office_sensor_battery",
+          "friendlyName": "Office Sensor Battery",
+          "cSharpName": "OfficeSensorBattery"
+        },
+        {
+          "id": "sensor.office_sensor_illuminance",
+          "friendlyName": "Office Sensor Illuminance",
+          "cSharpName": "OfficeSensorIlluminance"
+        },
+        {
+          "id": "sensor.office_sensor_temperature",
+          "friendlyName": "Office Sensor Temperature",
+          "cSharpName": "OfficeSensorTemperature"
         }
       ],
       "attributes": [
@@ -1390,13 +1375,28 @@
         },
         {
           "id": "switch.couch_side_table_lamp",
-          "friendlyName": "Couch Side Table Lamp Switch",
+          "friendlyName": "Couch Side Table Lamp",
           "cSharpName": "CouchSideTableLamp"
         },
         {
           "id": "switch.entryway_lamp",
           "friendlyName": "Entryway Lamp Switch",
           "cSharpName": "EntrywayLamp"
+        },
+        {
+          "id": "switch.front_door_in_home_chime",
+          "friendlyName": "Front Door In-home chime",
+          "cSharpName": "FrontDoorInHomeChime"
+        },
+        {
+          "id": "switch.front_door_motion_detection",
+          "friendlyName": "Front Door Motion detection",
+          "cSharpName": "FrontDoorMotionDetection"
+        },
+        {
+          "id": "switch.garage_motion_detection",
+          "friendlyName": "Garage Motion detection",
+          "cSharpName": "GarageMotionDetection"
         },
         {
           "id": "switch.garage_siren",
@@ -1414,19 +1414,19 @@
           "cSharpName": "HallwaySensorMotionSensorEnabled"
         },
         {
-          "id": "switch.laundry_room_sensor_light_sensor_enabled",
-          "friendlyName": "Laundry Room Sensor Light sensor enabled",
-          "cSharpName": "LaundryRoomSensorLightSensorEnabled"
-        },
-        {
-          "id": "switch.laundry_room_sensor_motion_sensor_enabled",
-          "friendlyName": "Laundry Room Sensor Motion sensor enabled",
-          "cSharpName": "LaundryRoomSensorMotionSensorEnabled"
-        },
-        {
           "id": "switch.living_room_sentsy",
           "friendlyName": "Living Room Sentsy Switch",
           "cSharpName": "LivingRoomSentsy"
+        },
+        {
+          "id": "switch.office_sensor_light_sensor_enabled",
+          "friendlyName": "Office Sensor Light sensor enabled",
+          "cSharpName": "OfficeSensorLightSensorEnabled"
+        },
+        {
+          "id": "switch.office_sensor_motion_sensor_enabled",
+          "friendlyName": "Office Sensor Motion sensor enabled",
+          "cSharpName": "OfficeSensorMotionSensorEnabled"
         },
         {
           "id": "switch.outlet_2",
@@ -1621,13 +1621,23 @@
         },
         {
           "id": "camera.front_door",
-          "friendlyName": "Front Door",
+          "friendlyName": "Front Door Last recording",
           "cSharpName": "FrontDoor"
         },
         {
+          "id": "camera.front_door_live_view",
+          "friendlyName": "Front Door Live view",
+          "cSharpName": "FrontDoorLiveView"
+        },
+        {
           "id": "camera.garage",
-          "friendlyName": "Garage",
+          "friendlyName": "Garage Last recording",
           "cSharpName": "Garage"
+        },
+        {
+          "id": "camera.garage_live_view",
+          "friendlyName": "Garage Live view",
+          "cSharpName": "GarageLiveView"
         },
         {
           "id": "camera.upstairs",
@@ -1895,7 +1905,7 @@
       "entities": [
         {
           "id": "tts.google_en_com",
-          "friendlyName": "Google en com",
+          "friendlyName": "Google Translate en com",
           "cSharpName": "GoogleEnCom"
         },
         {
@@ -2020,6 +2030,128 @@
           "jsonName": "local_storage",
           "cSharpName": "LocalStorage",
           "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "event",
+      "entities": [
+        {
+          "id": "event.front_door_ding",
+          "friendlyName": "Front Door Ding",
+          "cSharpName": "FrontDoorDing"
+        },
+        {
+          "id": "event.front_door_motion",
+          "friendlyName": "Front Door Motion",
+          "cSharpName": "FrontDoorMotion"
+        },
+        {
+          "id": "event.garage_motion",
+          "friendlyName": "Garage Motion",
+          "cSharpName": "GarageMotion"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "event_types",
+          "cSharpName": "EventTypes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "event_type",
+          "cSharpName": "EventType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "number",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "number.front_door_volume",
+          "friendlyName": "Front Door Volume",
+          "cSharpName": "FrontDoorVolume"
+        },
+        {
+          "id": "number.garage_volume",
+          "friendlyName": "Garage Volume",
+          "cSharpName": "GarageVolume"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "min",
+          "cSharpName": "Min",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max",
+          "cSharpName": "Max",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "step",
+          "cSharpName": "Step",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "siren",
+      "entities": [
+        {
+          "id": "siren.garage_siren",
+          "friendlyName": "Garage Siren",
+          "cSharpName": "GarageSiren"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
         },
         {
           "jsonName": "friendly_name",
