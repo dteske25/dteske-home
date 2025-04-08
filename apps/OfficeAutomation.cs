@@ -7,7 +7,7 @@ public class OfficeAutomation
     {
         var dimmer = new Dimmer(100, 20, 2);
 
-        new MotionBuilder(entities.BinarySensor.OfficeMotionSensor, scheduler, logger)
+        new MotionBuilder(entities.BinarySensor.OfficeSensorMotion, scheduler, logger)
             .WithMotionAllowed(entities.InputBoolean.OfficeMotionAllowed)
             .WithOnAction(_ =>
             {
